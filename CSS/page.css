@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body{
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*-----------------------------boton whatsapp------------------------------------------------*/
+.btn__wsp{
+    position: fixed;/*Posicion fija en la pantalla*/
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    bottom: 30px;
+    right: 30px;
+    background: #0df053;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease;/* animación para cuando crezca el boton */
+}
+
+.btn__wsp:hover{
+    text-decoration: none;
+    background: #fff;
+    transform: scale(1.5);/* hace mas grande la escala al colocar el raton */
+}
+
+.icon__whatsapp{
+    filter: invert(86%) sepia(78%) saturate(0%) hue-rotate(74deg) brightness(112%) contrast(100%);
+}
+.icon__whatsapp:hover{
+    filter: invert(85%) sepia(29%) saturate(5655%) hue-rotate(80deg) brightness(97%) contrast(98%);
+}
+
+/* ----------------------------------------NavBar------------------------------------ */
+#options{
+    gap: 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ----------------------------Sección bienvenidos al Cauca------------------------ */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    /*Ocupe el 100% del ancho de la pantalla*/
+    height: 100%;   /*Ocupe el 100% del alto de la pantalla*/
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../IMAGES/parque.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-size: cover; /*Para adaptarse a la pagina*/
+    background-position: center; /*Para mover la imagen que esta dentro del contenedor*/
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+}
+
+.container {
+    width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
+    margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+    overflow: hidden; /*Todo lo que salga de lo anterior se esconda*/
+    padding: var(--padding-container);
+}
+
+.welcome{
+    max-width: 800px;   /*ancho maximo*/
+    display: grid;
+    grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
+    align-content: center;  /*que el contenido se alinee verticalmente*/
+    gap: 1rem;   /*espaciado*/
+    padding-bottom: 100px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    text-align: center; /*los textos que contienen esten centrados*/
+}
+
+.paragraph{
+    margin-bottom: 20px;    /*margen entre texto y boton*/
+    color: #fff;
+}
+
+.Title{
+    margin-top: 30%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.description{
+    text-align: center;  
+    --padding-container:0;
+    color: #0832A2;   
+}
+.info__destination{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.info__paragraph{
+    font-size: 17px;
+}
+
+/* -------------------------------Carrusel de imagenes------------------------------- */
+
+.carousel-inner{
+    max-height: 39rem;
+}
+
+
