@@ -39,67 +39,79 @@
     </nav>
 
     <!----------------------------------- Contenedor bienvenidos al Cauca -------------------------------->
-    <section class="container welcome">
+    <section class="container1 welcome">
         <h1 class="Title">BIENVENIDOS AL CAUCA</h1>
         <p class="paragraph">Descubre la magia ancestral del Departamento del Cauca, un rincón encantador de Colombia donde la historia y la naturaleza se entrelazan en un tapiz vibrante de colores y experiencias. Déjate seducir por la hospitalidad de su gente, que te recibirán con los brazos abiertos.
         <br>¡Ven y déjate enamorar por el Cauca!</p>
     </section>
     <main>
-      <section class="container description">
-        <h2 class="info__destination">Lugares imprescindibles por conocer</h2>
+      <section class="container1 description">
+        <h2 class="info__destination fw-bold">Lugares imprescindibles por conocer</h2>
         <p class="info__paragraph">Explora los tesoros del Cauca y embárcate en una aventura única llena de sorpresas</p>
       </section>
       <section class="carousel">
       <!------------------------- Carrusel de imagenes con destinos e información ------------------------>
-      <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active"> <!--( data-bs-interval="3000") Tiempo en que las imagenes se mueven de manera automatica -->
+            <img src="./IMAGES/puente.JPEG" class="d-block w-100" alt="slide1">
+              <div class="carousel-caption d-none d-sm-block">
+                <h5 class="text-carousel fw-bold">Popayán</h5>
+                <p>Explora la historia viviente de Popayán, una joya arquitectónica enclavada en las montañas del Departamento del Cauca en Colombia. Con sus imponentes edificios coloniales, esta encanta a los visitantes con su historia. Pero es durante la Semana Santa que Popayán se ilumina con una magia especial, transformando sus calles en escenarios de fervor religioso y belleza cultural.</p>
+                <button class="conocer-mas" href="#">Conocelo!</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./IMAGES/silvia.jpg" class="d-block w-100" alt="slide2">
+              <div class="carousel-caption d-none d-sm-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./IMAGES/purace.jpg" class="d-block w-100" alt="slide3">
+              <div class="carousel-caption d-none d-sm-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./IMAGES/tierradentro.png" class="d-block w-100" alt="slide4">
+              <div class="carousel-caption d-none d-sm-block">
+                <h5>fourt slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active"> <!--( data-bs-interval="3000") Tiempo en que las imagenes se mueven de manera automatica -->
-           <img src="./IMAGES/puente.JPEG" class="d-block w-100" alt="slide1">
-            <div class="carousel-caption d-none d-sm-block">
-              <h5 class="text-carousel fw-bold">Popayán</h5>
-              <p>Explora la historia viviente de Popayán, una joya arquitectónica enclavada en las montañas del Departamento del Cauca en Colombia. Con sus imponentes edificios coloniales, esta encanta a los visitantes con su historia. Pero es durante la Semana Santa que Popayán se ilumina con una magia especial, transformando sus calles en escenarios de fervor religioso y belleza cultural.</p>
-              <button class="conocer-mas" href="#">Conocelo!</button>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./IMAGES/silvia.jpg" class="d-block w-100" alt="slide2">
-            <div class="carousel-caption d-none d-sm-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./IMAGES/purace.jpg" class="d-block w-100" alt="slide3">
-            <div class="carousel-caption d-none d-sm-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./IMAGES/tierradentro.png" class="d-block w-100" alt="slide4">
-            <div class="carousel-caption d-none d-sm-block">
-              <h5>fourt slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-    </div>
-      </section>
+    </section>
+    <!----------------------------------------------------final pagina-------------------------------------------------------->
+    <section class="finalPage">
+      <div class="container__final container">
+          <h3 class="desing__for">Desarrollado por:</h3>
+          <div class="logos__container">
+              <img src="./IMAGES/telematica.png" class="telematica">
+              <img src="./IMAGES/agencia.png" class="agencia">
+          </div>
+          <h3 class="fusion">Con el apoyo de:</h3>
+          <img src="./IMAGES/fusioni3png.png" class="fusioni3">
+      </div>
+  </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

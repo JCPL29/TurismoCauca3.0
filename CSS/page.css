@@ -43,7 +43,7 @@ body{
 }
 
 /* ----------------------------Sección bienvenidos al Cauca------------------------ */
-.container::before {
+.container1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -57,11 +57,10 @@ body{
     z-index: -1;
 }
 
-.container {
+.container1 {
     width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
     margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
     overflow: hidden; /*Todo lo que salga de lo anterior se esconda*/
-    padding: var(--padding-container);
 }
 
 .welcome{
@@ -103,6 +102,42 @@ body{
 
 .carousel-inner{
     max-height: 39rem;
+}
+
+/*----------------------------------------final pagina----------------------------------------------*/
+.finalPage {
+    text-align: center; /* Para centrar los elementos horizontalmente */
+    font-size: 0.75rem;
+    background: url(../ICONS/wave.svg) no-repeat center center;
+    background-color: #0832A2;
+    background-size: cover;
+    color: #fff;
+}
+
+.container__final{
+    transform: scale(0.9);
+    margin-top: -6rem;
+}
+
+.desing__for{
+    margin-top: 140px;
+}
+.logos__container {
+    display: flex; /* Mostrar los logos en línea */
+    justify-content: center; /* Centrar los logos horizontalmente */
+    align-items: center; /* Centrar los logos verticalmente */
+    margin-bottom: 5px; /* Espacio entre los logos y el siguiente elemento */
+    width: 105%;
+    transform: scale(0.8);
+}
+.logos__container img {
+    margin: 0 10px; /* Espacio entre los logos */
+}
+.fusioni3{
+    transform: scale(0.6);
+}
+.fusion{
+    margin-bottom: -30px;
 }
 
 
