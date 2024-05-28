@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body{
-    overflow: hidden;
+    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -88,7 +88,7 @@ body{
 
 .description{
     text-align: center;  
-    --padding-container:0;
+    padding-top: 7%;
     color: #0832A2;   
 }
 .info__destination{
