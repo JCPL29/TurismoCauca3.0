@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 /*-----------------------------boton whatsapp------------------------------------------------*/
@@ -128,7 +129,6 @@ body{
     text-align: center;
     color: white;
   }
-
 /*----------------------------------------final pagina----------------------------------------------*/
 .finalPage {
     text-align: center; /* Para centrar los elementos horizontalmente */
@@ -246,6 +246,7 @@ body{
 /*----------------------------------------- cartas interactivas ---------------------------------------*/
 .cards{
     margin-top: 6rem;
+    align-items: center;
 }
 
 .card-img-top{
