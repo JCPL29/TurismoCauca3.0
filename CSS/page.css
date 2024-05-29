@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body{
-    
     font-family: 'Poppins', sans-serif;
 }
 
@@ -53,14 +52,13 @@ body{
     background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../IMAGES/parque.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
     background-size: cover; /*Para adaptarse a la pagina*/
     background-position: center; /*Para mover la imagen que esta dentro del contenedor*/
-    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    clip-path: polygon(50% 95%, 100% 80%, 100% 0, 0 0, 0 80%);
     z-index: -1;
 }
 
 .container1 {
     width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
     margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
-    overflow: hidden; /*Todo lo que salga de lo anterior se esconda*/
 }
 
 .welcome{
@@ -69,7 +67,7 @@ body{
     grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
     align-content: center;  /*que el contenido se alinee verticalmente*/
     gap: 1rem;   /*espaciado*/
-    padding-bottom: 100px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    padding-bottom: 200px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
     text-align: center; /*los textos que contienen esten centrados*/
 }
 
@@ -93,7 +91,7 @@ body{
 }
 .info__destination{
     margin-top: 2rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 .info__paragraph{
@@ -158,6 +156,20 @@ body{
 }
 .fusion{
     margin-bottom: -30px;
+}
+
+/* texto en carrusel para celulares */
+@media (max-width: 768px) {
+    .carousel-caption h5 {
+        font-size: 1rem; /* Tamaño de fuente reducido para los títulos en móviles */
+        padding: 0 10px; /* Agrega padding si es necesario para evitar que el texto toque los bordes */
+    }
+
+    .carousel-caption p {
+        font-size: 0.6rem; /* Tamaño de fuente más pequeño para los párrafos en móviles */
+        padding: 0 10px; /* Agrega padding para mejorar la legibilidad */
+        line-height: 1.4; /* Ajusta el interlineado para mejorar la legibilidad */
+    }
 }
 
 
