@@ -41,6 +41,12 @@ body{
     font-weight: 500;
 }
 
+.navbar {
+    position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+    width: 100%; /* Asegura que la barra de navegación cubra todo el ancho */
+    z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros contenidos */
+}
+
 /* ----------------------------Sección bienvenidos al Cauca------------------------ */
 .container1::before {
     content: "";
@@ -90,7 +96,7 @@ body{
     color: #0832A2;   
 }
 .info__destination{
-    margin-top: 2rem;
+    margin-top: 7rem;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
