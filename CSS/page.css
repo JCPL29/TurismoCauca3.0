@@ -47,7 +47,9 @@ body{
     width: 100%; /* Asegura que la barra de navegación cubra todo el ancho */
     z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros contenidos */
 }
-
+.Principal-text-nav{
+    color: #0832A2;
+}
 /* ----------------------------Sección bienvenidos al Cauca (pagina principal) ------------------------ */
 .container1::before {
     content: "";
@@ -55,11 +57,11 @@ body{
     top: 0;
     left: 0;
     width: 100%;    /*Ocupe el 100% del ancho de la pantalla*/
-    height: 100%;   /*Ocupe el 100% del alto de la pantalla*/
+    height: 80%;   /*Ocupe el 100% del alto de la pantalla*/
     background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../IMAGES/parque.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
     background-size: cover; /*Para adaptarse a la pagina*/
     background-position: center; /*Para mover la imagen que esta dentro del contenedor*/
-    clip-path: polygon(50% 95%, 100% 80%, 100% 0, 0 0, 0 80%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     z-index: -1;
 }
 
@@ -98,7 +100,7 @@ body{
 }
 /*----------------------------- seccion lugares info --------------------------------*/
 .info__destination{
-    margin-top: 7rem;
+    margin-top: 2rem;
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
@@ -134,48 +136,73 @@ body{
     text-align: center; /* Para centrar los elementos horizontalmente */
     font-size: 0.75rem;
     background: url(../ICONS/wave.svg) no-repeat center center;
-    background-color: #0832A2;
+    /* background-color: #0832A2; */
+    /* background-position: center -80px; */
     background-size: cover;
     color: #fff;
+    padding-top: 4rem;
 }
 
 .container__final{
     transform: scale(0.9);
-    margin-top: -6rem;
+    margin-top: -2rem;
 }
 
 .desing__for{
-    margin-top: 140px;
+    margin-top: 4rem !important;
+    font-size: 18px;
+    margin-bottom: -23px;
 }
 .logos__container {
     display: flex; /* Mostrar los logos en línea */
     justify-content: center; /* Centrar los logos horizontalmente */
     align-items: center; /* Centrar los logos verticalmente */
-    margin-bottom: 5px; /* Espacio entre los logos y el siguiente elemento */
+    margin-bottom: -30px; /* Espacio entre los logos y el siguiente elemento */
     width: 105%;
-    transform: scale(0.8);
+    transform: scale(0.63);
 }
 .logos__container img {
     margin: 0 10px; /* Espacio entre los logos */
 }
 .fusioni3{
-    transform: scale(0.6);
+    transform: scale(0.5);
+    margin-bottom: -45px;
 }
 .fusion{
     margin-bottom: -30px;
+    font-size: 18px;
 }
 
-/* texto en carrusel para celulares */
+/* texto en carrusel y creditos para celulares */
 @media (max-width: 768px) {
+    /*------------------------------- Carrusel ----------------------------*/
     .carousel-caption h5 {
         font-size: 1rem; /* Tamaño de fuente reducido para los títulos en móviles */
         padding: 0 10px; /* Agrega padding si es necesario para evitar que el texto toque los bordes */
     }
-
+    
     .carousel-caption p {
         font-size: 0.7rem; /* Tamaño de fuente más pequeño para los párrafos en móviles */
         padding: 0 10px; /* Agrega padding para mejorar la legibilidad */
         line-height: 1.3; /* Ajusta el interlineado para mejorar la legibilidad */
+    }
+    /*---------------------------- Creditos -------------------------------*/
+    .fusion{
+        margin-bottom: -40px;
+        font-size: 10px;
+    }
+    .desing__for{
+        margin-top: 140px;
+        font-size: 10px;
+        margin-bottom: -46px;
+    }
+    .fusioni3{
+        transform: scale(0.38);
+        margin-bottom: -50px;
+    }
+    .logos__container{
+        transform: scale(0.4);
+        margin-bottom: -54px;
     }
 }
 
