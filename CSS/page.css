@@ -158,6 +158,17 @@ body{
     text-align: center;
     color: white;
   }
+/*------------------------------------- seccion cotizacion ----------------------------------*/
+.cotizacion{
+    text-align: center;
+    width: 90%;
+    margin:0 auto;
+    margin-top: 4rem;
+}
+.Comentarios{
+    width: 800px;
+    height: 200px;
+}
 /*----------------------------------------final pagina (principal y tour)----------------------------------------------*/
 .finalPage {
     text-align: center; /* Para centrar los elementos horizontalmente */
