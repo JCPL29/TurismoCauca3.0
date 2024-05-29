@@ -98,7 +98,7 @@ body{
     grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
     align-content: center;  /*que el contenido se alinee verticalmente*/
     gap: 1rem;   /*espaciado*/
-    padding-bottom: 200px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    padding-bottom: 195px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
     text-align: center; /*los textos que contienen esten centrados*/
 }
 
@@ -121,17 +121,22 @@ body{
     color: #0832A2;   
 }
 /*----------------------------- seccion lugares info --------------------------------*/
+.container2 {
+    width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
+    margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+    margin-bottom: 50px;
+}
 .info__destination{
     margin-top: 2rem;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 .info__paragraph{
     font-size: 17px;
+    margin-bottom: 100px;
 }
 
 /* -------------------------------Carrusel de imagenes------------------------------- */
-
 .carousel-inner{
     max-height: 39rem;
 }
