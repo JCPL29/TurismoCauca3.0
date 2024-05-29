@@ -131,7 +131,7 @@ body{
     text-align: center;
     color: white;
   }
-/*----------------------------------------final pagina----------------------------------------------*/
+/*----------------------------------------final pagina (principal y tour)----------------------------------------------*/
 .finalPage {
     text-align: center; /* Para centrar los elementos horizontalmente */
     font-size: 0.75rem;
@@ -140,7 +140,7 @@ body{
     /* background-position: center -80px; */
     background-size: cover;
     color: #fff;
-    padding-top: 4rem;
+    padding-top: 4rem; /* por si necesito mover los contenidos dentro del contenedor (como darle más espacio entre el inicio del contenedor y el siguiente objeto) */
 }
 
 .container__final{
@@ -224,6 +224,7 @@ body{
 .container-tour {
     width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
     margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+    margin-bottom: 200px;
 }
 
 .welcome-tour{
@@ -232,7 +233,7 @@ body{
     grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
     align-content: center;  /*que el contenido se alinee verticalmente*/
     gap: 1rem;   /*espaciado*/
-    padding-bottom: 200px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    padding-bottom: 100px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
     text-align: center; /*los textos que contienen esten centrados*/
 }
 
@@ -318,5 +319,9 @@ body{
     justify-content: center;
     align-items: center;
     color: white;  /* Cambia el color del texto para mejorar la legibilidad */
+}
+/* cartas en moviles (animacion) */
+.card-img-overlay.active{
+    opacity: 1;
 }
 
