@@ -50,6 +50,28 @@ body{
 .Principal-text-nav{
     color: #0832A2;
 }
+.nav-link{
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+.nav-link:hover{
+    border-radius: 50px;
+    background-color: #0832A2;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .nav-link{
+        background-color: transparent;
+        transition: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+    .nav-link:hover{
+        background-color: transparent;
+        border-radius: 0;
+        color: black;
+    }
+}
 /* ----------------------------Sección bienvenidos al Cauca (pagina principal) ------------------------ */
 .container1::before {
     content: "";
