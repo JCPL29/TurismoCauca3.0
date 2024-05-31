@@ -5,7 +5,7 @@ body{
     overflow-x: hidden;
 }
 
-/*-----------------------------boton whatsapp------------------------------------------------*/
+/*--------------------------------------------------boton whatsapp------------------------------------------------*/
 .btn__wsp{
     position: fixed;/*Posicion fija en la pantalla*/
     width: 50px;
@@ -35,7 +35,7 @@ body{
     filter: invert(85%) sepia(29%) saturate(5655%) hue-rotate(80deg) brightness(97%) contrast(98%);
 }
 
-/* ----------------------------------------NavBar------------------------------------ */
+/* ------------------------------------------------NavBar----------------------------------------------- */
 #options{
     gap: 1.1rem;
     font-size: 1.1rem;
@@ -72,7 +72,7 @@ body{
         color: black;
     }
 }
-/* ----------------------------Sección bienvenidos al Cauca (pagina principal) ------------------------ */
+/* -------------------------------------Sección bienvenidos al Cauca (pagina principal) ---------------------------- */
 .container1::before {
     content: "";
     position: absolute;
@@ -120,7 +120,7 @@ body{
     padding-top: 7%;
     color: #0832A2;   
 }
-/*----------------------------- seccion lugares info --------------------------------*/
+/*----------------------------------------------- seccion lugares info --------------------------------------*/
 .container2 {
     width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
     margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
@@ -136,7 +136,7 @@ body{
     margin-bottom: 100px;
 }
 
-/* -------------------------------Carrusel de imagenes------------------------------- */
+/* ---------------------------------------------Carrusel de imagenes----------------------------------------- */
 .carousel-inner{
     max-height: 39rem;
 }
@@ -158,7 +158,7 @@ body{
     text-align: center;
     color: white;
   }
-/*------------------------------------- seccion cotizacion ----------------------------------*/
+/*------------------------------------------------ seccion cotizacion ----------------------------------------------*/
 .cotizacion{
     text-align: center;
     width: 90%;
@@ -213,7 +213,7 @@ body{
 
 /* texto en carrusel y creditos para celulares */
 @media (max-width: 768px) {
-    /*------------------------------- Carrusel ----------------------------*/
+    /*-------------------------------------------- Carrusel ----------------------------------------*/
     .carousel-caption h5 {
         font-size: 1rem; /* Tamaño de fuente reducido para los títulos en móviles */
         padding: 0 10px; /* Agrega padding si es necesario para evitar que el texto toque los bordes */
@@ -224,7 +224,7 @@ body{
         padding: 0 10px; /* Agrega padding para mejorar la legibilidad */
         line-height: 1.3; /* Ajusta el interlineado para mejorar la legibilidad */
     }
-    /*---------------------------- Creditos -------------------------------*/
+    /*-------------------------------------------- Creditos -----------------------------------------*/
     .fusion{
         margin-bottom: -40px;
         font-size: 10px;
