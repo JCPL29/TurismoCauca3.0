@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         const items = slider.querySelectorAll('.list .item');
         const thumbnails = slider.querySelectorAll('.thumbnail .item');
-        let itemActive = items.length - 1;  // Empezamos en el último debido a la inicialización inicial
+        let itemActive = 0;
+        let refreshInterval;
 
         function showSlider() {
             items.forEach(item => item.classList.remove('active'));
@@ -12,13 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             items[itemActive].classList.add('active');
             thumbnails[itemActive].classList.add('active');
+            resetAutoRun();
         }
 
-        // Cambia inmediatamente a la primera imagen tan pronto como sea posible
+        function resetAutoRun() {
+            clearInterval(refreshInterval);  // Limpia el intervalo actual
+            refreshInterval = setInterval(() => {
+                itemActive = (itemActive + 1) % items.length;
+                showSlider();
+            }, 7000);  // Reinicia el intervalo
+        }
+
+        // Inicializar el slider con la primera imagen visible
         setTimeout(() => {
-            itemActive = 0;  // Cambia a la primera imagen
-            showSlider();
-        }, 100);  // Reducir el tiempo a 100 ms para una transición rápida
+            showSlider();  // Asegura que se muestre la primera imagen al cargar
+        }, 100);
 
         const observerOptions = {
             root: null,
@@ -47,11 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSlider();
             });
         });
-
-        // Configurar el autorun para seguir funcionando normalmente
-        setInterval(() => {
-            itemActive = (itemActive + 1) % items.length;
-            showSlider();
-        }, 7000);
     });
 });
