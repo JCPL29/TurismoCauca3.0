@@ -366,8 +366,7 @@ body{
 
 /* --------------------------------Reserva Online--------------------------------------- */
 .snap-section2 {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     overflow: hidden;
     align-items: center;
     display: grid;
@@ -376,18 +375,22 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
 }
 
 .columna {
     width: 90%;
+    margin-left: 2rem; /* Elimina márgenes por defecto */
+    margin-top: 100px;
 }
 
 .popayan {
-    display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
-    height: 100vh; /* Asegura que el contenedor tenga altura completa de la ventana */
-    margin-left: 2rem; /* Elimina márgenes por defecto */
     color: black;
+    align-items: start;
+}
+.columna h2{
+    font-size: 20px;
+}
+.list-group{
+    width: 60%;
 }
 

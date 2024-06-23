@@ -30,23 +30,56 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
       <!------------------------------- Idea para mostrar los paquetes turisticos ------------------------------->
-      <div class="snap-section2">
+    <div class="snap-section2">
         <div class="columna">
             <h1 class="popayan fw-bold">Popayán</h1>
+            <p>Conoce la Ciudad Blanca de Colombia con la mejor comodidad que te puede brindar la ciudad, junto de los increibles paquetes que te ofrece <em>La Agencia de Viajes Sin Limites</em>.</p>
+            <!--------------------------------------------- Hotel ------------------------------------------------->
+            <div class="hotel">
+                <h2 class="fw-bold">Elige el hotel de tu preferencia:</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="" id="firstRadio" checked>
+                    <label class="form-check-label fst-italic" for="firstRadio">Hotel Sin Limites</label>
+                    </li>
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="" id="secondRadio">
+                    <label class="form-check-label fst-italic" for="secondRadio">Hotel Dann Monasterio</label>
+                    </li>
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="" id="thirdRadio">
+                    <label class="form-check-label fst-italic" for="thirdRadio">Third radio</label>
+                    </li>
+                </ul>
+            </div>
+            <!---------------------------------- Transpprte ----------------------------------->
+            <div class="transporte">
+                <h2 class="fw-bold">¿Te gustaria tener transporte entre el hotel y el aeropuerto?</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioTransporte" value="" id="firstRadio" checked>
+                    <label class="form-check-label fst-italic" for="firstRadio">Si, me gustaria</label>
+                    </li>
+                    <li class="list-group-item">
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioTransporte" value="" id="secondRadio">
+                    <label class="form-check-label fst-italic" for="secondRadio">No es necesario</label>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="columna">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="..." class="d-block w-100">
+                  <div class="carousel-item active " data-bs-interval="5000">
+                    <img src="./IMAGES/hotelPrueba1.jpg" class="d-block w-100">
                   </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="./IMAGES/hotelPrueba2.jpeg" class="d-block w-100">
                   </div>
-                  <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="./IMAGES/hotelPrueba3.jpeg" class="d-block w-100">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -58,9 +91,8 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </div>
-      </div>
-    </section>
-        </div> <!-- Cierra correctamente el div de columna -->
-    </div>
+        </div>
+    </div> <!-- Cierra correctamente el div de columna -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
