@@ -54,7 +54,7 @@ body{
 .slider .list .item .content{
     position: absolute;
     left: 10%;
-    top: 20%;
+    top: 14%;
     width: 500px;
     max-width: 80%;
     z-index: 1;
@@ -67,6 +67,9 @@ body{
     font-size: 100px;
     margin: 0;
     font-weight: bolder;
+}
+.content p{
+    margin-top: 1rem;
 }
 .slider .list .item.active{
     opacity: 1;
@@ -92,8 +95,8 @@ body{
 .slider .list .item.active p:nth-child(3){
     animation-duration: 1.3s;
 }
-/* Felchas */
-.arrows{
+/* flechas */
+/* .arrows{
     position: absolute;
     top: 30%;
     right: 50px;
@@ -113,7 +116,7 @@ body{
 .arrows button:hover{
     background-color: #eee;
     color: #000;
-}
+} */
 /* carrusel */
 .thumbnail{
     position: absolute;
@@ -150,6 +153,8 @@ body{
 }
 .thumbnail .item.active{
     filter: brightness(1.2);
+    width: 190px;
+    height: 250px;
 }
 .thumbnail .item .content{
     position: absolute;
@@ -167,37 +172,10 @@ body{
     .slider .list .item .content h2{
         font-size: 60px;
     }
-    .arrows{
-        top: 10%;
-    }
+    /* .arrows{
+        top: 16%;
+        right: 33px;
+    } */
 }
   /* ------------------------ */
   
-  .snap-section:nth-child(2) {
-    background: #4ecdc4;
-  }
-  
-  .snap-section:nth-child(3) {
-    background: #c7f464;
-  }
-  
-  .snap-section:nth-child(4) {
-    background: #ff6b6b;
-  }
-  
-  .snap-section:nth-child(5) {
-    background: #c44d58;
-  }
-  
-  .snap-section h3 {
-    font-family: 'Pacifico', cursive;
-    font-size: 52px;
-    color: white;
-    margin-bottom: 30px;
-  }
-  
-  .snap-section p {
-    font-family: 'Arimo', sans-serif;
-    color: white;
-    
-  }
