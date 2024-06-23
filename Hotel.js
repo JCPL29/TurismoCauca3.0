@@ -10,9 +10,9 @@ function updateCarouselImages(hotel) {
 
     // Definir los conjuntos de imágenes para cada hotel
     const imageSets = {
-        hotelSinLimites: ['./IMAGES/hotel1_1.jpg', './IMAGES/hotel1_2.jpg', './IMAGES/hotel1_3.jpg'],
-        hotelDannMonasterio: ['./IMAGES/hotel2_1.jpg', './IMAGES/hotel2_2.jpg', './IMAGES/hotel2_3.jpg'],
-        thirdHotel: ['./IMAGES/hotel3_1.jpg', './IMAGES/hotel3_2.jpg', './IMAGES/hotel3_3.jpg']
+        SinLimites: ['./IMAGES/hotelPrueba1.jpg', './IMAGES/hotelPrueba2.jpeg', './IMAGES/hotelPrueba3.jpeg'],
+        Monasterio: ['./IMAGES/monasterio1.jpg', './IMAGES/monasterio2.jpg', './IMAGES/monasterio3.jpeg'],
+        achalay: ['./IMAGES/hotel3_1.jpg', './IMAGES/hotel3_2.jpg', './IMAGES/hotel3_3.jpg']
     };
 
     // Agregar nuevas imágenes al carrusel
