@@ -1,0 +1,12 @@
+{
+    "hoteles": {
+      "SinLimites": 60000,
+      "Monasterio": 252000,
+      "achalay": 154000
+    },
+    "transporte": {
+      "Si": 50000,
+      "No": 0
+    }
+  }
+  

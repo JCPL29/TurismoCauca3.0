@@ -384,13 +384,51 @@ body{
 }
 
 .popayan {
-    color: black;
+    color: #0832A2;
     align-items: start;
 }
 .columna h2{
     font-size: 20px;
+    color: #0832A2;
 }
 .list-group{
-    width: 60%;
+    width: 75%;
 }
+.VR {
+    border: 2px solid #0e6fd6;
+    background-color: white;
+    color: #0056b3;
+    padding: 2px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 140px;
+    margin-left: 35%;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+.VR:hover{
+    color: white;
+    background-color: #0e6fd6;
+}
+.cost{
+    font-size: 16px;
+    margin-left: 51.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.dias h2{
+    margin-top: 15px;
+}
+.input-group{
+    width: 75%;
+}
+.btn:hover{
+    background-color: #11bb47;    
+}
+
 
