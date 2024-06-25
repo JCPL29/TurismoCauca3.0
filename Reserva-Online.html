@@ -35,14 +35,15 @@
     <div class="inicio-reserva">
       <!------------------------------------------- fechas de viaje ---------------------------------------->
       <div class="dias">
+        <p>Atrevete a vivir la magia que solo encontraras en <span id="typewriter"></span></p>
         <div class="fecha">
           <div class="entrada">
             <h2 class="fw-bold">Fecha de entrada</h2>
             <div class="input-group mb-3">
-              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="diasHospedaje" aria-label="Días de hospedaje" min="1" max="30" step="1">
+              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="entrada" aria-label="Días de hospedaje" min="1" max="30" step="1">
             </div>
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 Destino
               </button>
               <ul class="dropdown-menu">
@@ -56,12 +57,13 @@
           <div class="salida">
             <h2 class="fw-bold">Fecha de salida</h2>
             <div class="input-group mb-3">
-              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="diasHospedaje" aria-label="Días de hospedaje" min="1" max="30" step="1">
+              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="salida" aria-label="Días de hospedaje" min="1" max="30" step="1">
             </div>
             <div class="input-people mb-3">
               <input type="number" class="form-control fst-italic" placeholder="# de personas" id="Num-personas" aria-label="Num-personas" min="1" max="" step="1">
             </div>
           </div>
+          <button class="buscar">Buscar</button>
         </div>
       </div>
     </div>
@@ -106,6 +108,8 @@
                 </ul>
             </div>
             <!-------------------------------- Total precio ---------------------------------->
+            <h4 class="costo-habitacion fst-italic fw-bold">Costo habitación por noche:</h4>
+            <h4 class="costo-transporte fst-italic fw-bold">Costo del transporte:</h4>
             <h4 class="cost fst-italic fw-bold">Total del paquete:</h4>
         </div>
         <!----------------------------- Carrusel de imagens ---------------------------------->
@@ -136,5 +140,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="habitaciones.js"></script>
     <script src="costo.js"></script>
+    <script src="maquina_escribir.js"></script>
+    <!-------------------- Cambio en el texto del boton destino ------------------------------>
+    <script>
+      document.querySelectorAll('.dropdown-item').forEach(item => {
+          item.addEventListener('click', function () {
+              var btn = document.getElementById('dropdownMenuButton');
+              btn.textContent = this.textContent;
+          });
+      });
+      </script>
 </body>
 </html>

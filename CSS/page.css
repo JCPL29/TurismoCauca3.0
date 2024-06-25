@@ -148,7 +148,7 @@ body{
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      /* background-color: rgba(0, 0, 0, 0.5); */ /* Quita filtro del carrusel */
 }
 .carousel-caption {
     position: absolute;
@@ -425,6 +425,27 @@ body{
     transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
     opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
 }
+.habitacion{
+    font-size: 16px;
+    margin-left: 51.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.costo-habitacion{
+    font-size: 16px;
+    margin-left: 39.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.costo-transporte{
+    font-size: 16px;
+    margin-left: 48.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
 /*-------------------------------------- inicio reserva --------------------------------*/
 .inicio-reserva{
     width: 100%;
@@ -432,7 +453,40 @@ body{
     background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/parque.JPEG');
     background-position: 15rem 58%;
     background-repeat: no-repeat;
+    /* transition: background-image 0.8s ease-in-out; */
 }
+/* .inicio-reserva.popayan {
+    width: 100%;
+    height: 40rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/parque.JPEG');
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
+  }
+  
+  .inicio-reserva.silvia {
+    width: 100%;
+    height: 40rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/silvia.jpg');
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
+  }
+  
+  .inicio-reserva.purace {
+    width: 100%;
+    height: 40rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/purace2.jpg');
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
+  }
+  
+  .inicio-reserva.tierradentro {
+    width: 100%;
+    height: 40rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/tierradentro.png');
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
+  } */
+  
 .dias{
     width: 100%;
     overflow: hidden;
@@ -440,7 +494,7 @@ body{
     display: grid;
 }
 .fecha{
-    margin-top: 25%;
+    margin-top: 19%;
     margin-left: 2rem;
     display: flex;
     gap: 30px;
@@ -462,5 +516,38 @@ body{
     width: 100%;
     
 }
-
+.buscar{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 150px;
+    margin-left: -325px;
+    background-color: #0e6fd6;
+    border: #fff;
+    transition:0.3s;
+    color: #fff;
+}
+.buscar:hover{
+    width: 105px;
+    height: 35px;
+    font-size: 20px;
+}
+/*---------------------------------- Efecto maquina -----------------------*/
+.dias p{
+    margin-top: 10%;
+    margin-bottom: -11%;
+    margin-left: 2rem;
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .typewriter {
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+    border-right: 3px solid black; /* Cursor parpadeante */
+    padding-right: 5px; /* Espacio entre el texto y el cursor */
+    animation: blink 0.75s step-end infinite; /* Animación de parpadeo */
+  }
+  
 

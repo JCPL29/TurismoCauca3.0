@@ -1,49 +1,72 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const botonConfirmar = document.getElementById('button-addon2');
-    const inputDias = document.getElementById('diasHospedaje');
+    const botonBuscar = document.querySelector('.buscar');
+    const entrada = document.getElementById('entrada');
+    const salida = document.getElementById('salida');
+    const opcionesHabitacion = document.querySelectorAll('input[name="listGroupRadioHabitacion"]');
+    const opcionesTransporte = document.querySelectorAll('input[name="listGroupRadioTransporte"]');
     const costDisplay = document.querySelector('.cost');
+    const costoHabitacionDisplay = document.querySelector('.costo-habitacion');
+    const costoTransporteDisplay = document.querySelector('.costo-transporte');
 
-    // Inicializa el total del paquete como $0 cuando se carga la página
-    costDisplay.textContent = `Total del paquete: $0`;
-
-    if (!botonConfirmar || !inputDias || !costDisplay) {
+    if (!botonBuscar || !entrada || !salida || !costDisplay || !costoHabitacionDisplay || !costoTransporteDisplay) {
         console.error('No se encontraron uno o más de los elementos del formulario.');
         return;
     }
 
-    botonConfirmar.addEventListener('click', function() {
+    const calcularCostos = () => {
+        const fechaEntrada = new Date(entrada.value);
+        const fechaSalida = new Date(salida.value);
+        const diferenciaTiempo = fechaSalida.getTime() - fechaEntrada.getTime();
+        const diasHospedaje = Math.max(0, diferenciaTiempo / (1000 * 3600 * 24));
+
         fetch('precios.json')
             .then(response => response.json())
             .then(data => {
-                actualizarTotal(data, inputDias, costDisplay);
+                actualizarTotal(data, diasHospedaje, costDisplay, costoHabitacionDisplay, costoTransporteDisplay);
             })
             .catch(error => {
                 console.error('Error al cargar el archivo JSON:', error);
             });
+    };
+
+    botonBuscar.addEventListener('click', calcularCostos);
+
+    opcionesHabitacion.forEach(option => {
+        option.addEventListener('change', calcularCostos);
+    });
+
+    opcionesTransporte.forEach(option => {
+        option.addEventListener('change', calcularCostos);
     });
 });
 
-function actualizarTotal(precios, inputDias, costDisplay) {
-    const dias = parseInt(inputDias.value);
-    const hotelElegido = document.querySelector('input[name="listGroupRadioHotel"]:checked').value;
+function actualizarTotal(precios, diasHospedaje, costDisplay, costoHabitacionDisplay, costoTransporteDisplay) {
+    const hotelElegido = document.querySelector('input[name="listGroupRadioHabitacion"]:checked').value;
     const transporteElegido = document.querySelector('input[name="listGroupRadioTransporte"]:checked').value;
 
-    // Primero, desvanecemos el elemento
     costDisplay.style.opacity = '0';
+    costoHabitacionDisplay.style.opacity = '0';
+    costoTransporteDisplay.style.opacity = '0';
 
-    // Esperamos a que termine la transición de opacidad antes de actualizar el valor
     setTimeout(() => {
+        let costoHabitacion = precios.hoteles[hotelElegido];
+        let costoTransporte = precios.transporte[transporteElegido];
         let total = 0;
-        if (!isNaN(dias) && dias > 0) {
-            total += precios.hoteles[hotelElegido] * (dias - 1);
-            total += precios.transporte[transporteElegido];
+
+        if (!isNaN(diasHospedaje) && diasHospedaje > 1) {
+            total = (costoHabitacion * (diasHospedaje - 1)) + costoTransporte;
         } else {
-            total = 0; // Asegura que el total sea 0 si los días no son válidos o antes de confirmar
+            costoHabitacion = 0; // Asegura que no se muestre un costo si los días no son válidos
+            costoTransporte = 0;
+            total = 0;
         }
 
-        costDisplay.textContent = `Total del paquete: $${total}`;
+        costDisplay.textContent = `Total del paquete: $${total.toFixed(0)}`;
+        costoHabitacionDisplay.textContent = `Costo habitación por noche: $${costoHabitacion.toFixed(0)}`;
+        costoTransporteDisplay.textContent = `Costo del transporte: $${costoTransporte.toFixed(0)}`;
 
-        // Reaparecemos el elemento con el nuevo valor
         costDisplay.style.opacity = '1';
-    }, 500); // Coincide con la duración de la transición de opacidad
+        costoHabitacionDisplay.style.opacity = '1';
+        costoTransporteDisplay.style.opacity = '1';
+    }, 500);
 }

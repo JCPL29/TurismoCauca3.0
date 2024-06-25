@@ -1,8 +1,8 @@
 {
     "hoteles": {
-      "SinLimites": 60000,
-      "Monasterio": 252000,
-      "achalay": 154000
+      "sencilla": 60000,
+      "doble": 252000,
+      "multiple": 154000
     },
     "transporte": {
       "Si": 50000,
