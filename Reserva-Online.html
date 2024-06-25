@@ -31,29 +31,63 @@
           </div>
         </div>
     </nav>
+    <!-------------------------------------------------- Inicio ---------------------------------------------->
+    <div class="inicio-reserva">
+      <!------------------------------------------- fechas de viaje ---------------------------------------->
+      <div class="dias">
+        <div class="fecha">
+          <div class="entrada">
+            <h2 class="fw-bold">Fecha de entrada</h2>
+            <div class="input-group mb-3">
+              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="diasHospedaje" aria-label="Días de hospedaje" min="1" max="30" step="1">
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Destino
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Popayán</a></li>
+                <li><a class="dropdown-item" href="#">Silvia</a></li>
+                <li><a class="dropdown-item" href="#">Purace</a></li>
+                <li><a class="dropdown-item" href="#">Tierradentro</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="salida">
+            <h2 class="fw-bold">Fecha de salida</h2>
+            <div class="input-group mb-3">
+              <input type="date" class="form-control fst-italic" placeholder="Días de hospedaje" id="diasHospedaje" aria-label="Días de hospedaje" min="1" max="30" step="1">
+            </div>
+            <div class="input-people mb-3">
+              <input type="number" class="form-control fst-italic" placeholder="# de personas" id="Num-personas" aria-label="Num-personas" min="1" max="" step="1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <!------------------------------- Idea para mostrar los paquetes turisticos ------------------------------->
     <div class="snap-section2">
         <div class="columna">
             <h1 class="popayan fw-bold">Popayán</h1>
-            <p>Conoce la Ciudad Blanca de Colombia con la mejor comodidad que te puede brindar la ciudad, junto de los increibles paquetes que te ofrece <em>Agencia de Viajes Sin Limites</em>.</p>
-            <!--------------------------------------------- Hotel ------------------------------------------------->
-            <div class="hotel">
-                <h2 class="fw-bold">Elige el hotel de tu preferencia:</h2>
+            <p>Conoce la Ciudad Blanca de Colombia con la mejor comodidad que te puede brindar la capital caucana, hospedandote en el hotel <em>(nombre del hotel)</em> y disfrutando de los increibles paquetes turísticos que te ofrece <em>Agencia de Viajes Sin Limites</em>.</p>
+            <!--------------------------------------------- Tipo de Habitaciones ------------------------------------------------->
+            <div class="habitaciones">
+                <h2 class="fw-bold">Elige la habitación de tu preferencia:</h2>
                 <ul class="list-group">
                     <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="SinLimites" id="firstRadio" checked>
-                    <label class="form-check-label fst-italic" for="firstRadio">Hotel Sin Limites</label>
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHabitacion" value="sencilla" id="firstRadio" checked>
+                    <label class="form-check-label fst-italic" for="firstRadio">Habitación sencilla</label>
                         <a href="index.html">
                             <button class="VR" href="index.html">Explorar en VR</button>
                         </a>
                     </li>
                     <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="Monasterio" id="secondRadio">
-                    <label class="form-check-label fst-italic" for="secondRadio">Hotel Dann Monasterio</label>
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHabitacion" value="doble" id="secondRadio">
+                    <label class="form-check-label fst-italic" for="secondRadio">Habitación doble</label>
                     </li>
                     <li class="list-group-item">
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHotel" value="achalay" id="thirdRadio">
-                    <label class="form-check-label fst-italic" for="thirdRadio">Hotel ACHALAY</label>
+                    <input class="form-check-input me-1" type="radio" name="listGroupRadioHabitacion" value="multiple" id="thirdRadio">
+                    <label class="form-check-label fst-italic" for="thirdRadio">Habitación triple</label>
                     </li>
                 </ul>
             </div>
@@ -71,16 +105,10 @@
                     </li>
                 </ul>
             </div>
-            <!---------------------------------- # de días ---------------------------------->
-            <div class="dias">
-                <h2 class="fw-bold">Cuantos días estarás en la ciudad:</h2>
-                <div class="input-group mb-3">
-                    <input type="number" class="form-control fst-italic" placeholder="Días de hospedaje" id="diasHospedaje" aria-label="Días de hospedaje" min="1" max="30" step="1">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Confirmar</button>
-                </div>               
-            </div>
+            <!-------------------------------- Total precio ---------------------------------->
             <h4 class="cost fst-italic fw-bold">Total del paquete:</h4>
         </div>
+        <!----------------------------- Carrusel de imagens ---------------------------------->
         <div class="columna">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -106,7 +134,7 @@
         </div>
     </div> <!-- Cierra correctamente el div de columna -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="Hotel.js"></script>
+    <script src="habitaciones.js"></script>
     <script src="costo.js"></script>
 </body>
 </html>

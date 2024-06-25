@@ -382,7 +382,7 @@ body{
 
 .columna {
     width: 90%;
-    margin-left: 2rem; /* Elimina márgenes por defecto */
+    margin-left: 2rem;
     margin-top: 30px;
 }
 
@@ -397,9 +397,7 @@ body{
 .list-group{
     width: 75%;
 }
-.btn{
-    background-color: #fff;
-}
+
 .VR {
     border: 2px solid #0e6fd6;
     background-color: white;
@@ -427,14 +425,42 @@ body{
     transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
     opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
 }
-.dias h2{
-    margin-top: 15px;
+/*-------------------------------------- inicio reserva --------------------------------*/
+.inicio-reserva{
+    width: 100%;
+    height: 40rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/parque.JPEG');
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
 }
-.input-group{
-    width: 75%;
+.dias{
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    display: grid;
 }
-.btn:hover{
-    background-color: #11bb47;    
+.fecha{
+    margin-top: 25%;
+    margin-left: 2rem;
+    display: flex;
+    gap: 30px;
+    height: 50rem;
+}
+.fecha h2{
+    font-size: 18px;
+}
+.entrada .input-group{
+    width: 100%;
+}
+.salida .input-group{
+    width: 80%;
+}
+.input-people{
+    width: 80%;
+}
+.btn{
+    width: 100%;
+    
 }
 
 

@@ -1,22 +1,22 @@
-document.querySelectorAll('input[name="listGroupRadioHotel"]').forEach(input => {
+document.querySelectorAll('input[name="listGroupRadioHabitacion"]').forEach(input => {
     input.addEventListener('change', function() {
         updateCarouselImages(this.value);
     });
 });
 
-function updateCarouselImages(hotel) {
+function updateCarouselImages(habitacion) {
     const carouselInner = document.querySelector('.carousel-inner');
     carouselInner.innerHTML = ''; // Limpia el contenido actual del carrusel
 
     // Definir los conjuntos de imágenes para cada hotel
     const imageSets = {
-        SinLimites: ['./IMAGES/hotelPrueba1.jpg', './IMAGES/hotelPrueba2.jpeg', './IMAGES/hotelPrueba3.jpeg'],
-        Monasterio: ['./IMAGES/monasterio1.jpg', './IMAGES/monasterio2.jpg', './IMAGES/monasterio3.jpeg'],
-        achalay: ['./IMAGES/achalay1.jpg', './IMAGES/achalay2.jpg', './IMAGES/achalay3.jpeg']
+        sencilla: ['./IMAGES/hotelPrueba1.jpg', './IMAGES/hotelPrueba2.jpeg', './IMAGES/hotelPrueba3.jpeg'],
+        doble: ['./IMAGES/monasterio1.jpg', './IMAGES/monasterio2.jpg', './IMAGES/monasterio3.jpeg'],
+        multiple: ['./IMAGES/achalay1.jpg', './IMAGES/achalay2.jpg', './IMAGES/achalay3.jpeg']
     };
 
     // Agregar nuevas imágenes al carrusel
-    imageSets[hotel].forEach((src, index) => {
+    imageSets[habitacion].forEach((src, index) => {
         const carouselItem = document.createElement('div');
         carouselItem.className = 'carousel-item' + (index === 0 ? ' active' : '');
         const img = document.createElement('img');
