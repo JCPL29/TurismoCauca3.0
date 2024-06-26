@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -447,45 +448,13 @@ body{
     opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
 }
 /*-------------------------------------- inicio reserva --------------------------------*/
-.inicio-reserva{
+.inicio-reserva {
     width: 100%;
     height: 40rem;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/parque.JPEG');
     background-position: 15rem 58%;
     background-repeat: no-repeat;
-    /* transition: background-image 0.8s ease-in-out; */
+    transition: background-image 0.8s ease-in-out; /* Descomenta esta línea para la transición suave */
 }
-/* .inicio-reserva.popayan {
-    width: 100%;
-    height: 40rem;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/parque.JPEG');
-    background-position: 15rem 58%;
-    background-repeat: no-repeat;
-  }
-  
-  .inicio-reserva.silvia {
-    width: 100%;
-    height: 40rem;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/silvia.jpg');
-    background-position: 15rem 58%;
-    background-repeat: no-repeat;
-  }
-  
-  .inicio-reserva.purace {
-    width: 100%;
-    height: 40rem;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/purace2.jpg');
-    background-position: 15rem 58%;
-    background-repeat: no-repeat;
-  }
-  
-  .inicio-reserva.tierradentro {
-    width: 100%;
-    height: 40rem;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('../IMAGES/tierradentro.png');
-    background-position: 15rem 58%;
-    background-repeat: no-repeat;
-  } */
   
 .dias{
     width: 100%;
@@ -532,22 +501,74 @@ body{
     height: 35px;
     font-size: 20px;
 }
+/*----------------------- detalles habitaciones ----------------------------*/
+.detalles{
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.carousel-inner{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.detalles img{
+    height: 18px;
+    margin-left: 0.5rem;
+}
+
+.detalle-habitacion{
+    margin-left: 1.7rem;
+    font-size: 14px;
+    color: #575757;
+}
+.icon{
+    margin-left: 1.1rem;
+    display: flex;
+}
+.ocupantes, .tipo-cama{
+    font-size: 17.5px;
+    padding-left: 0.2rem;
+    color: #575757;
+}
+.tipo-cama{
+    font-size: 15px;
+}
+.servicios{
+    display: flex;
+}
+.serv_adicionales{
+    padding-top: 30px;
+}
+.serv_adicionales img{
+    height: 30px;
+    margin-left: 48px;
+}
+
 /*---------------------------------- Efecto maquina -----------------------*/
 .dias p{
     margin-top: 10%;
     margin-bottom: -11%;
     margin-left: 2rem;
+    width: 40rem;
+    height: 6.5rem;
+    font-size: 40px;
 }
 @keyframes blink {
     50% { border-color: transparent; }
   }
   
   .typewriter {
-    font-family: 'Courier New', monospace;
+    font-family: 'Allura', cursive;
     display: inline-block;
-    border-right: 3px solid black; /* Cursor parpadeante */
+    font-weight: bold;
+    border-right: 5px solid #0832A2; /* Cursor parpadeante */
     padding-right: 5px; /* Espacio entre el texto y el cursor */
     animation: blink 0.75s step-end infinite; /* Animación de parpadeo */
+    font-size: 55px;
+    color: #0832A2;
+    text-decoration: underline;
   }
   
 
