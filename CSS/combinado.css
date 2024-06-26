@@ -64,8 +64,13 @@ body{
         color: black;
     }
 }
+/*---------------------------------------------- Inicio ----------------------------------------------*/
+.welcome{
+    height: 100vh;
+    background-color: aqua;
+}
 
-/* css slider (prueba) */
+/*-------------------------------------- css slider (prueba) ------------------------------------------*/
 .slider{
     height: 100vh;
     /* margin-top: -50px; */
