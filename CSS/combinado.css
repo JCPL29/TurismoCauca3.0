@@ -97,8 +97,11 @@ body{
 /*---------------------------------------------- Inicio ----------------------------------------------*/
 .welcome{
     height: 100vh;
+    width: 100%;
     background-image: linear-gradient(to left, #000000c8 0%, #000000c8 100%), url('../IMAGES/popayan2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
     display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
     justify-content: center;
     align-items: center;
 }
