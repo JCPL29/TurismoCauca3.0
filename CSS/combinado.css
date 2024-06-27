@@ -64,10 +64,72 @@ body{
         color: black;
     }
 }
+
+/*--------------------------------------------------boton whatsapp------------------------------------------------*/
+.btn__wsp{
+    position: fixed;/*Posicion fija en la pantalla*/
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    bottom: 30px;
+    right: 30px;
+    background: #0df053;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease;/* animación para cuando crezca el boton */
+}
+
+.btn__wsp:hover{
+    text-decoration: none;
+    background: #fff;
+    transform: scale(1.5);/* hace mas grande la escala al colocar el raton */
+}
+
+.icon__whatsapp{
+    filter: invert(86%) sepia(78%) saturate(0%) hue-rotate(74deg) brightness(112%) contrast(100%);
+}
+.icon__whatsapp:hover{
+    filter: invert(85%) sepia(29%) saturate(5655%) hue-rotate(80deg) brightness(97%) contrast(98%);
+}
 /*---------------------------------------------- Inicio ----------------------------------------------*/
 .welcome{
     height: 100vh;
-    background-color: aqua;
+    background-image: linear-gradient(to left, #000000c8 0%, #000000c8 100%), url('../IMAGES/popayan2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-texts{
+    text-align: center;
+    width: 70%;
+    
+}
+.welcome-texts h4{
+    margin-top: 7rem;
+    
+}
+.arrow-down{
+    width: 4rem;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;/* animación para cuando crezca el boton */
+    border-radius: 50px;
+}
+@media (max-width: 768px) {
+    .welcome-texts{
+        width: 90%;
+        font-size: 10px;
+    }
+    .welcome-texts p{
+        font-size: 13px;
+    }
+    .welcome-texts h4{
+        margin-top: 5rem;
+        
+    }
 }
 
 /*-------------------------------------- css slider (prueba) ------------------------------------------*/
