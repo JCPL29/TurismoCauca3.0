@@ -570,5 +570,10 @@ body{
     color: #0832A2;
     text-decoration: underline;
   }
+  @media (max-width: 768px) {
+    .inicio-reserva{
+        background-position: 10rem 58%;
+    }
+}
   
 
