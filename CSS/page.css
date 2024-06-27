@@ -403,17 +403,17 @@ body{
     border: 2px solid #0e6fd6;
     background-color: white;
     color: #0056b3;
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 5px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    width: 140px;
+    width: 120px;
     margin-left: 35%;
     transition: background-color 0.3s ease;
-    font-size: 15px;
+    font-size: 13px;
 }
 .VR:hover{
     color: white;
@@ -600,19 +600,93 @@ body{
     .salida h2{
         margin-left: -50px;
     }
-    .entrada .input-group{
+    .snap-section2 {
+        width: 100%;
+        height: 75rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+    .columna{
+        margin-left: 0;
         width: 100%;
     }
-    .salida .input-group{
-        width: 80%;
+    .habitaciones h2{
+        text-align: center;
     }
-    .input-people{
-        width: 80%;
-    }
-    .btn{
+    .list-group-item{
         width: 100%;
-        
+        margin-left: 50px;
+    }
+    .VR{
+        margin-left: 0;
+    }
+    .costo-habitacion, .costo-transporte, .cost{
+        font-size: 15px;
+        margin-left: -0.5rem;
+        text-align: center;
     }
 }
+/*------------------------------------------- Final reserva ----------------------------------------------*/
+.final-reserva{
+    text-align: center;
+    background-color: #a6c7ea;
+}
+.mas-info{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10%;
+}
+.logo-SL img{
+    padding-top: 1rem;
+    height: 120px;
+}
+.direccion{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: #575757;
+}
+.direccion img{
+    width: 40px;
+}
+.direccion h4{
+    font-size: 10px;
+
+}
+.telefono{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: 10px;
+    color: #575757;
+    
+}
+.telefono h4{
+    font-size: 10px;
+    padding-left: 7px;
+}
+.contactanos{
+    display: block;
+    text-align: justify;
+    color: #575757;
+    padding-top: 10px;
+    padding-left: 13px;
+}
+.contactanos h4{
+    font-size: 15px;
+    padding-left: 2px;
+}
+.correo{
+    display: flex;
+    
+    align-items: center;
+    justify-content: start;
+}
+.correo h4{
+    font-size: 10px;
+}
+
   
 

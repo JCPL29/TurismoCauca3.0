@@ -118,6 +118,9 @@ body{
     transition: transform 0.3s ease;/* animación para cuando crezca el boton */
     border-radius: 50px;
 }
+.arrow-down:hover{
+    transform: scale(1.5);
+}
 @media (max-width: 768px) {
     .welcome-texts{
         width: 90%;
