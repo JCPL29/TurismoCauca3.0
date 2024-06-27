@@ -571,8 +571,47 @@ body{
     text-decoration: underline;
   }
   @media (max-width: 768px) {
-    .inicio-reserva{
-        background-position: 10rem 58%;
+    .dias{
+        justify-content: center;
+        text-align: center;
+    }
+    .dias p{
+        font-size: 20px;
+        width: 100%;
+        padding-top: 80px;
+        margin-left: 0;
+        
+    }
+    #typewriter{
+        font-size: 30px;
+    }
+    .fecha{
+        margin-top: 40%;
+        margin-left: 0;
+        display: flex;
+        gap: 30px;
+        height: 50rem;
+        width: 100%;
+    }
+    .fecha h2{
+        font-size: 15px;
+        margin-left: 0;
+    }
+    .salida h2{
+        margin-left: -50px;
+    }
+    .entrada .input-group{
+        width: 100%;
+    }
+    .salida .input-group{
+        width: 80%;
+    }
+    .input-people{
+        width: 80%;
+    }
+    .btn{
+        width: 100%;
+        
     }
 }
   
