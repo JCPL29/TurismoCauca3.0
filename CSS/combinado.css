@@ -120,11 +120,21 @@ body{
     margin-top: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;/* animación para cuando crezca el boton */
-    border-radius: 50px;
 }
 .arrow-down:hover{
     transform: scale(1.5);
 }
+/* .arrow-down-section{
+    width: 3rem;
+    
+    margin-top: -2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+}
+.arrow-down-section:hover{
+    transform: scale(1.5);
+} */
 @media (max-width: 768px) {
     .welcome-texts{
         width: 95%;
@@ -253,7 +263,8 @@ body{
 }
 .thumbnail .item .content{
     position: absolute;
-    inset: auto 10px 10px 10px;
+    inset: auto auto 1rem auto;
+    padding-left: 0.7rem;
 }
 @media (max-width: 768px) {
     .thumbnail{
@@ -263,6 +274,13 @@ body{
 @media screen and  (max-width: 678px){
     .thumbnail{
         justify-content: start;
+    }
+    .slider .list .item .content{
+        width: 58rem;
+        max-width: 90%;
+    }
+    .thumbnail .item .content{
+        inset: auto auto 2rem auto;
     }
     .slider .list .item .content h2{
         font-size: 50px;
