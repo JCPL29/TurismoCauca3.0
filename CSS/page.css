@@ -687,6 +687,84 @@ body{
 .correo h4{
     font-size: 10px;
 }
+/*---------------------------------------- Conocenos -----------------------------------------*/
+.agencia{
+    position: relative;
+    width: 100%;
+    height:100vh; /* Ajusta la altura según tus necesidades */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    overflow: hidden;
+    align-content: center;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+  }
+  .sin-limites{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .sin-limites img{
+    height: 250px;
+  }
+  .title-agencia{
+    color: #0832A2;
+    font-size: 50px;
+    margin-top: 3rem;
+  }
+  .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0832A2;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 600px;
+  }
+@media (max-width: 768px) {
+    .about{
+        height: 1200px;
+    }
+    .ubication{
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+    }
+    .mapa{
+        margin-top: 20px;
+    }
+    iframe{
+        width: 100%;
+    }
+
+}
+  .mision{
+    width: 80%;
+}
+.ubication{
+    display: flex;
+    width: 100%;
+
+}
+.des-ubi{
+    text-align: justify;
+    align-content: center;
+    width: 70%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
 
   
 
