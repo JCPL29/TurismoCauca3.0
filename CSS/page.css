@@ -312,58 +312,7 @@ body{
 
 
 /*----------------------------------------- cartas interactivas ---------------------------------------*/
-.cards{
-    margin-top: 6rem;
-    align-items: center;
-}
 
-.card-img-top{
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-}
-
-.card-body{
-    text-align: center;
-}
-
-.link-tour{
-    border-radius: 20px;
-    background-color: #fff;
-}
-
-/* animacion */
-.card {
-    position: relative;
-    overflow: hidden;  /* Asegura que el pseudo-elemento no se extienda fuera de la tarjeta */
-}
-
-.card-img-top:hover {
-    transform: scale(1.1);  /* Opcional: Efecto de zoom para la imagen al pasar el mouse */
-}
-
-.card:hover .card-img-overlay {
-    opacity: 1;  /* Cambia la opacidad a 1 cuando el mouse está sobre la tarjeta */
-}
-
-.card-img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);  /* Fondo negro semitransparente */
-    opacity: 0;  /* Inicia invisible */
-    transition: opacity 0.5s ease;  /* Transición suave para el fundido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;  /* Cambia el color del texto para mejorar la legibilidad */
-}
-/* cartas en moviles (animacion) */
-.card-img-overlay.active{
-    opacity: 1;
-}
 
 /* --------------------------------Reserva Online--------------------------------------- */
 .snap-section2 {
@@ -747,6 +696,9 @@ body{
     }
     iframe{
         width: 100%;
+    }
+    .list-group-item {
+        margin-left: 0;
     }
 
 }
