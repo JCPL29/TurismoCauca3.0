@@ -1,0 +1,94 @@
+/* ------------------------------------------------NavBar----------------------------------------------- */
+#options{
+    gap: 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.navbar {
+    position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+    width: 100%; /* Asegura que la barra de navegación cubra todo el ancho */
+    z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros contenidos */
+    background-color: rgb(255, 255, 255);
+}
+.Principal-text-nav{
+    color: #0832A2;
+}
+.nav-link{
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+.nav-link:hover{
+    border-radius: 50px;
+    background-color: #0832A2;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .nav-link{
+        background-color: transparent;
+        transition: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+    .nav-link:hover{
+        background-color: transparent;
+        border-radius: 0;
+        color: black;
+    }
+}
+/*--------------------------------------------------boton whatsapp------------------------------------------------*/
+.btn__wsp{
+    position: fixed;/*Posicion fija en la pantalla*/
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    bottom: 30px;
+    right: 30px;
+    background: #0df053;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease;/* animación para cuando crezca el boton */
+}
+
+.btn__wsp:hover{
+    text-decoration: none;
+    background: #fff;
+    transform: scale(1.5);/* hace mas grande la escala al colocar el raton */
+}
+
+.icon__whatsapp{
+    filter: invert(86%) sepia(78%) saturate(0%) hue-rotate(74deg) brightness(112%) contrast(100%);
+}
+.icon__whatsapp:hover{
+    filter: invert(85%) sepia(29%) saturate(5655%) hue-rotate(80deg) brightness(97%) contrast(98%);
+}
+/*---------------------------------------- Final pagina ---------------------------------------------------*/
+footer{
+    width: 100%;
+    background-color: #0832A2;
+}
+footer p{
+    color: #fff;
+}
+.redes_icons img {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+.facebook, .instagram, .email{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+.facebook:hover, .instagram:hover, .email:hover{
+    text-decoration: none;
+    transform: scale(1.3);/* hace mas grande la escala al colocar el raton */
+}
