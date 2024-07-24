@@ -778,13 +778,22 @@ body{
     transition: all 0.3s ease;
 }
 .btn-contact:hover{
- transform: scale(1.2);
+ transform: scale(1);
 }
 /* Carrusel hotel */
 .carousel-inner{
     width: 35rem;
     height: 20rem;
 }
+@media (max-width: 768px) {
+    .carousel-inner{
+        width: 10rem;
+    }
+    .hotel-room{
+        align-items: center;
+        display: block;
+    }
+  }
 
 /*------------------------------------------ Colapsables --------------------------------------------------*/
 .btn{
