@@ -764,10 +764,7 @@ body{
     margin: 10px 0;
     color: #555;
 }
-.contact-button{
-    display: flex;
-    justify-content: center;
-}
+
 .btn-contact{
     width: 10rem;
     height: 2rem;
