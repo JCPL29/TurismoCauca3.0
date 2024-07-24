@@ -99,3 +99,50 @@ footer p{
     text-decoration: none;
     transform: scale(1.3);/* hace mas grande la escala al colocar el raton */
 }
+
+
+
+.contact-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.contact-button {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-button:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.contact-button.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Ajusta el desplazamiento vertical según sea necesario */
+}
+
+.contact-button.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-button.transition {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
