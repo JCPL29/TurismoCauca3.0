@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/*--------------------------------------------------boton whatsapp------------------------------------------------*/
+.btn__wsp{
+    position: fixed;/*Posicion fija en la pantalla*/
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    bottom: 30px;
+    right: 30px;
+    background: #0df053;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: transform 0.3s ease;/* animación para cuando crezca el boton */
+}
+
+.btn__wsp:hover{
+    text-decoration: none;
+    background: #fff;
+    transform: scale(1.5);/* hace mas grande la escala al colocar el raton */
+}
+
+.icon__whatsapp{
+    filter: invert(86%) sepia(78%) saturate(0%) hue-rotate(74deg) brightness(112%) contrast(100%);
+}
+.icon__whatsapp:hover{
+    filter: invert(85%) sepia(29%) saturate(5655%) hue-rotate(80deg) brightness(97%) contrast(98%);
+}
+
+/* ------------------------------------------------NavBar----------------------------------------------- */
+#options{
+    gap: 1.1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.navbar {
+    position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+    width: 100%; /* Asegura que la barra de navegación cubra todo el ancho */
+    z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros contenidos */
+    background-color: rgb(255, 255, 255);
+}
+.Principal-text-nav{
+    color: #0832A2;
+}
+.nav-link{
+    transition: all 0.4s ease;
+    border-radius: 10px;
+}
+.nav-link:hover{
+    border-radius: 50px;
+    background-color: #0832A2;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .nav-link{
+        background-color: transparent;
+        transition: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+    }
+    .nav-link:hover{
+        background-color: transparent;
+        border-radius: 0;
+        color: black;
+    }
+}
+/* -------------------------------------Sección bienvenidos al Cauca (pagina principal) ---------------------------- */
+.container1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    /*Ocupe el 100% del ancho de la pantalla*/
+    height: 80%;   /*Ocupe el 100% del alto de la pantalla*/
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../IMAGES/parque.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-size: cover; /*Para adaptarse a la pagina*/
+    background-position: center; /*Para mover la imagen que esta dentro del contenedor*/
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+.container1 {
+    width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
+    margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+}
+
+.welcome{
+    max-width: 800px;   /*ancho maximo*/
+    display: grid;
+    grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
+    align-content: center;  /*que el contenido se alinee verticalmente*/
+    gap: 1rem;   /*espaciado*/
+    padding-bottom: 195px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    text-align: center; /*los textos que contienen esten centrados*/
+}
+
+.paragraph{
+    margin-bottom: 20px;    /*margen entre texto y boton*/
+    color: #fff;
+}
+
+.Title{
+    margin-top: 30%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.description{
+    text-align: center;  
+    padding-top: 7%;
+    color: #0832A2;   
+}
+/*----------------------------------------------- seccion lugares info --------------------------------------*/
+.container2 {
+    width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
+    margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+    margin-bottom: 50px;
+}
+.info__destination{
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.info__paragraph{
+    font-size: 17px;
+    margin-bottom: 100px;
+}
+
+/* ---------------------------------------------Carrusel de imagenes----------------------------------------- */
+.carousel-inner{
+    max-height: 39rem;
+}
+.carousel-item::before{
+    content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background-color: rgba(0, 0, 0, 0.5); */ /* Quita filtro del carrusel */
+}
+.carousel-caption {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajusta el ancho del texto según sea necesario */
+    text-align: center;
+    color: white;
+  }
+/*------------------------------------------------ seccion cotizacion ----------------------------------------------*/
+.cotizacion{
+    text-align: center;
+    width: 90%;
+    margin:0 auto;
+    margin-top: 4rem;
+}
+.Comentarios{
+    width: 800px;
+    height: 200px;
+}
+/*----------------------------------------final pagina (principal y tour)----------------------------------------------*/
+.finalPage {
+    text-align: center; /* Para centrar los elementos horizontalmente */
+    font-size: 0.75rem;
+    background: url(../ICONS/wave.svg) no-repeat center center;
+    /* background-color: #0832A2; */
+    /* background-position: center -80px; */
+    background-size: cover;
+    color: #fff;
+    padding-top: 4rem; /* por si necesito mover los contenidos dentro del contenedor (como darle más espacio entre el inicio del contenedor y el siguiente objeto) */
+}
+
+.container__final{
+    transform: scale(0.9);
+    margin-top: -2rem;
+}
+
+.desing__for{
+    margin-top: 4rem !important;
+    font-size: 18px;
+    margin-bottom: -23px;
+}
+.logos__container {
+    display: flex; /* Mostrar los logos en línea */
+    justify-content: center; /* Centrar los logos horizontalmente */
+    align-items: center; /* Centrar los logos verticalmente */
+    margin-bottom: -30px; /* Espacio entre los logos y el siguiente elemento */
+    width: 105%;
+    transform: scale(0.63);
+}
+.logos__container img {
+    margin: 0 10px; /* Espacio entre los logos */
+}
+.fusioni3{
+    transform: scale(0.5);
+    margin-bottom: -45px;
+}
+.fusion{
+    margin-bottom: -30px;
+    font-size: 18px;
+}
+
+/* texto en carrusel y creditos para celulares */
+@media (max-width: 768px) {
+    /*-------------------------------------------- Carrusel ----------------------------------------*/
+    .carousel-caption h5 {
+        font-size: 1rem; /* Tamaño de fuente reducido para los títulos en móviles */
+        padding: 0 10px; /* Agrega padding si es necesario para evitar que el texto toque los bordes */
+    }
+    
+    .carousel-caption p {
+        font-size: 0.7rem; /* Tamaño de fuente más pequeño para los párrafos en móviles */
+        padding: 0 10px; /* Agrega padding para mejorar la legibilidad */
+        line-height: 1.3; /* Ajusta el interlineado para mejorar la legibilidad */
+    }
+    /*-------------------------------------------- Creditos -----------------------------------------*/
+    .fusion{
+        margin-bottom: -40px;
+        font-size: 10px;
+    }
+    .desing__for{
+        margin-top: 140px;
+        font-size: 10px;
+        margin-bottom: -46px;
+    }
+    .fusioni3{
+        transform: scale(0.38);
+        margin-bottom: -50px;
+    }
+    .logos__container{
+        transform: scale(0.4);
+        margin-bottom: -54px;
+    }
+}
+
+/*------------------------------------------------- Tour virtual ---------------------------------------------------*/
+.container-tour::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    /*Ocupe el 100% del ancho de la pantalla*/
+    height: 100%;   /*Ocupe el 100% del alto de la pantalla*/
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../IMAGES/iglesia.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-size: cover; /*Para adaptarse a la pagina*/
+    background-position:center; /*Para mover la imagen que esta dentro del contenedor*/
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+.container-tour {
+    width: 90%; /*Ocupar el porcentaje deseado de la pagina*/
+    margin: 0 auto; /*0 para centrar verticalemnete y margin auto de ambos lados*/
+    margin-bottom: 270px;
+}
+
+.welcome-tour{
+    max-width: 800px;   /*ancho maximo*/
+    display: grid;
+    grid-auto-rows: max-content;    /*Para que las filas no ocupen más de lo que deberian*/
+    align-content: center;  /*que el contenido se alinee verticalmente*/
+    gap: 1rem;   /*espaciado*/
+    padding-bottom: 100px;  /*Para que no se pegue al corte (movimiento vertical dentro del contenedor)*/
+    text-align: center; /*los textos que contienen esten centrados*/
+}
+
+.paragraph-tour{
+    margin-bottom: 20px;    /*margen entre texto y boton*/
+    color: #fff;
+}
+
+.Title-tour{
+    margin-top: 30%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.description-tour{
+    text-align: center;  
+    padding-top: 7%;
+    color: #0832A2;   
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .container-tour {
+        padding: 10px; /* Ajusta el padding para dar más espacio */
+    }
+
+    .Title-tour {
+        font-size: 1.5rem; /* Reduce el tamaño del título para evitar que se corte */
+    }
+
+    .paragraph-tour {
+        font-size: 0.8rem; /* Reduce el tamaño de la fuente del párrafo */
+    }
+}
+
+
+/*----------------------------------------- cartas interactivas ---------------------------------------*/
+
+
+/* --------------------------------Reserva Online--------------------------------------- */
+.snap-section2 {
+    margin-top: 50rem;
+    width: 100%;
+    height: 50rem;
+    overflow: hidden;
+    align-items: center;
+    gap: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(180deg, #f1f0f0c8 0%, #f1f0f0c8 100%), url('../IMAGES/parque.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-position: center;
+}
+
+.columna {
+    width: 90%;
+    margin-left: 2rem;
+    margin-top: 30px;
+}
+
+.popayan {
+    color: #0832A2;
+    align-items: start;
+}
+.columna h2{
+    font-size: 20px;
+    color: #0832A2;
+}
+.list-group{
+    width: 75%;
+}
+
+.VR {
+    border: 2px solid #0e6fd6;
+    background-color: white;
+    color: #0056b3;
+    padding: 2px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+    margin-left: 35%;
+    transition: background-color 0.3s ease;
+    font-size: 13px;
+}
+.VR:hover{
+    color: white;
+    background-color: #0e6fd6;
+}
+.cost{
+    font-size: 16px;
+    margin-left: 51.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.habitacion{
+    font-size: 16px;
+    margin-left: 51.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.costo-habitacion{
+    font-size: 16px;
+    margin-left: 39.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+.costo-transporte{
+    font-size: 16px;
+    margin-left: 48.5%;
+    margin-top: 2%;
+    transition: opacity 0.5s ease-in-out; /* Suaviza la transición de opacidad */
+    opacity: 1; /* Asegúrate de que el elemento es completamente visible inicialmente */
+}
+/*-------------------------------------- inicio reserva --------------------------------*/
+.inicio-reserva {
+    width: 100%;
+    height: 40rem;
+    background-position: 15rem 58%;
+    background-repeat: no-repeat;
+    transition: background-image 0.8s ease-in-out; /* Descomenta esta línea para la transición suave */
+}
+  
+.dias{
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    display: grid;
+}
+.fecha{
+    margin-top: 15%;
+    margin-left: 2rem;
+    display: flex;
+    gap: 30px;
+    height: 22rem;
+}
+.buscar{
+    border-radius: 10px;
+    background-color: #0832A2;
+    border: #fff;
+    transition: all 0.4s ease;
+    color: #fff;
+}
+.buscar:hover{
+    transform: scale(1.3);
+    background-color: #0e6fd6;
+    color: #fff;
+
+}
+/*----------------------- detalles habitaciones ----------------------------*/
+/* .detalles{
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.carousel-inner{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.detalles img{
+    height: 18px;
+    margin-left: 0.5rem;
+}
+
+.detalle-habitacion{
+    margin-left: 1.7rem;
+    font-size: 14px;
+    color: #575757;
+}
+.icon{
+    margin-left: 1.1rem;
+    display: flex;
+}
+.ocupantes, .tipo-cama{
+    font-size: 17.5px;
+    padding-left: 0.2rem;
+    color: #575757;
+}
+.tipo-cama{
+    font-size: 15px;
+}
+.servicios{
+    display: flex;
+}
+.serv_adicionales{
+    padding-top: 30px;
+}
+.serv_adicionales img{
+    height: 30px;
+    margin-left: 48px;
+}
+ */
+/*---------------------------------- Efecto maquina -----------------------*/
+.dias p{
+    margin-top: 10%;
+    margin-bottom: -11%;
+    margin-left: 2rem;
+    width: 40rem;
+    height: 6.5rem;
+    font-size: 40px;
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .typewriter {
+    font-family: 'Allura', cursive;
+    display: inline-block;
+    font-weight: bold;
+    border-right: 5px solid #0832A2; /* Cursor parpadeante */
+    padding-right: 5px; /* Espacio entre el texto y el cursor */
+    animation: blink 0.75s step-end infinite; /* Animación de parpadeo */
+    font-size: 55px;
+    color: #0832A2;
+    text-decoration: underline;
+  }
+  @media (max-width: 768px) {
+    .dias{
+        justify-content: center;
+        text-align: center;
+    }
+    .entrada{
+        justify-content: center;
+        text-align: center;
+    }
+    .dias p{
+        font-size: 20px;
+        width: 100%;
+        padding-top: 80px;
+        margin-left: 0;
+        
+    }
+    #typewriter{
+        font-size: 30px;
+    }
+    .fecha{
+        margin-top: 40%;
+        margin-left: 15%;
+        display: flex;
+        gap: 30px;
+        height: 26.3rem;
+        width: 100%;
+    }
+    .fecha h2{
+        font-size: 15px;
+        margin-left: 0;
+    }
+    .salida h2{
+        margin-left: -50px;
+    }
+    .snap-section2 {
+        width: 100%;
+        height: 75rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+    .columna{
+        margin-left: 0;
+        width: 100%;
+    }
+    .habitaciones h2{
+        text-align: center;
+    }
+    .list-group-item{
+        width: 100%;
+        margin-left: 50px;
+    }
+    .VR{
+        margin-left: 0;
+    }
+    .costo-habitacion, .costo-transporte, .cost{
+        font-size: 15px;
+        margin-left: -0.5rem;
+        text-align: center;
+    }
+}
+
+/*------------------------------------ Tarjetas para paquetes turisticos ------------------------------------------*/
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-overlay {
+    position: relative;
+  }
+  
+  .card-overlay img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover{
+    transform: scale(1.05);
+  }
+
+  .card-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .card-overlay:hover::after,
+  .card-overlay:active::after {
+    opacity: 1;
+  }
+  
+  .card-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 20px;
+    z-index: 2;
+    color: #0832A2;
+    transition: all 0.3s ease;
+  }
+  .card-button:hover{
+    background-color: #0832A2;
+    color: #fff;
+  }
+  
+  .card-overlay:hover .card-button,
+  .card-overlay:active .card-button {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .card:hover{
+        transform: scale(1);
+      }
+  }
+/*------------------------------------------ Colapsables --------------------------------------------------*/
+.btn{
+    background-color: #0832A2;
+    border: #0832A2;
+}
+/*---------------------------------------- Final pagina ---------------------------------------------------*/
+footer{
+    width: 100%;
+    background-color: #0832A2;
+}
+footer p{
+    color: #fff;
+}
+.redes_icons img {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+.facebook, .instagram, .email{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+.facebook:hover, .instagram:hover, .email:hover{
+    text-decoration: none;
+    transform: scale(1.3);/* hace mas grande la escala al colocar el raton */
+}
+
+
