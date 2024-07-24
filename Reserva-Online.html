@@ -59,6 +59,7 @@
       </div>
     
       <!------------------------------- Idea para mostrar los paquetes turisticos ------------------------------->
+
       <!------------------------------------------- Paquetes para Popayán --------------------------------------->
       <div class="cartas mt-4 mb-4 d-none" id="paquetes-popayan">
         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -66,7 +67,7 @@
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/iglesia.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal1-popayan" data-modal="detalles-paquete1-popayan">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Adrenalina pura</h5>
@@ -74,11 +75,72 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete1-popayan" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Adrenalina pura</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/IMG_2636.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal2-popayan" data-modal="detalles-paquete2-popayan">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Un viaje en el tiempo</h5>
@@ -86,15 +148,137 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete2-popayan" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Un viaje en el tiempo</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/popayan.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal3-popayan" data-modal="detalles-paquete3-popayan">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Experiencia religiosa</h5>
                 <p class="card-text">Vive la tradición y la espiritualidad de la Semana Santa en Popayán, reconocida como Patrimonio Cultural Inmaterial de la Humanidad. Disfruta de 4 días y 3 noches de procesiones, eventos culturales y más.</p>
+              </div>
+            </div>
+          </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete3-popayan" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Experiencia religiosa</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -108,7 +292,7 @@
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/iglesia.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal1-silvia" data-modal="detalles-paquete1-silvia">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Descubre Silvia</h5>
@@ -116,11 +300,72 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete1-silvia" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/silvia.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Descubre Silvia</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/IMG_2636.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal2-silvia" data-modal="detalles-paquete2-silvia">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Viaje cultural</h5>
@@ -128,15 +373,137 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete2-silvia" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/silvia.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Viaje cultural</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/popayan.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal3-silvia" data-modal="detalles-paquete3-silvia">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Sabores de Silvia</h5>
                 <p class="card-text">Disfruta de los sabores únicos de la gastronomía andina. Participa en talleres de cocina tradicional y degusta platos típicos en restaurantes locales. 3 días y 2 noches de delicias culinarias.</p>
+              </div>
+            </div>
+          </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete3-silvia" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/silvia.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Sabores de Silvia</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +517,7 @@
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/iglesia.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal1-purace" data-modal="detalles-paquete1-purace">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Exploración Volcánica</h5>
@@ -158,11 +525,72 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete1-purace" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/purace3.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Exploración Volcánica</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/IMG_2636.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal2-purace" data-modal="detalles-paquete2-purace">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Rutas Termales</h5>
@@ -170,15 +598,137 @@
               </div>
             </div>
           </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete2-purace" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/purace3.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Rutas Termales</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col">
             <div class="card h-100">
               <div class="card-overlay">
                 <img src="./IMAGES/popayan.JPEG" class="card-img-top" alt="...">
-                <button class="card-button">Más detalles</button>
+                <button class="card-button" id="openModal3-purace" data-modal="detalles-paquete3-purace">Más detalles</button>
               </div>
               <div class="card-body">
                 <h5 class="card-title fw-bold">Puracé en su Esplendor</h5>
                 <p class="card-text">Explora la biodiversidad del Parque Nacional Puracé. Realiza caminatas guiadas para avistar flora y fauna única. 3 días y 2 noches de conexión con la naturaleza.</p>
+              </div>
+            </div>
+          </div>
+          <!--------------------------------------------- Mas detalles ---------------------------------------------->
+          <div id="detalles-paquete3-purace" class="ventana">
+            <div class="detalles-content">
+              <span class="close">&times;</span>
+              <div class="detalles-header">
+                <img src="./IMAGES/purace3.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
+              </div>
+              <div class="detalles-body">
+                <h2 class="fw-bold">Puracé en su Esplendor</h2>
+                <p class="description-paquete">
+                    Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
+                </p>
+                <h3 class="fw-bold">Itinerario</h3>
+                <ul class="itinerario">
+                    <li>Día 1: Descripción del primer día</li>
+                    <li>Día 2: Descripción del segundo día</li>
+                    <li>Día 3: Descripción del tercer día</li>
+                    <!--------------------------------- Detalles paquete ------------------------------------->
+                </ul>
+                <h3 class="fw-bold">Precios y Detalles</h3>
+                <p class="precio-detalles">
+                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                </p>
+                <h3 class="fw-bold">Hotel y Habitación</h3>
+                <div class="hotel-room d-flex gap-4">
+                  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./IMAGES/monasterio1.jpg" class="d-block w-100">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio2.jpg" class="d-block w-100" >
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./IMAGES/monasterio3.jpeg" class="d-block w-100" >
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                    <div class="room-details">
+                        <h4 class="fw-bold">Hotel Nombre</h4>
+                        <p>Descripción del hotel, incluyendo servicios y características.</p>
+                        <h4 class="fw-bold">Tipo de Habitación</h4>
+                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                    </div>
+                </div>
+                <div class="contact-button mt-3">
+                  <a href="">
+                    <button class="btn-contact">Reserva ahora!</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -205,10 +755,10 @@
             <div class="detalles-content">
               <span class="close">&times;</span>
               <div class="detalles-header">
-                <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+                <img src="./IMAGES/tierradentro2.0.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
               </div>
               <div class="detalles-body">
-                <h2 class="fw-bold">Nombre 1</h2>
+                <h2 class="fw-bold">Historia y Arqueología</h2>
                 <p class="description-paquete">
                     Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
                 </p>
@@ -278,10 +828,10 @@
             <div class="detalles-content">
               <span class="close">&times;</span>
               <div class="detalles-header">
-                <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+                <img src="./IMAGES/tierradentro2.0.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
               </div>
               <div class="detalles-body">
-                <h2 class="fw-bold">Nombre 2</h2>
+                <h2 class="fw-bold">Aventura Subterránea</h2>
                 <p class="description-paquete">
                     Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
                 </p>
@@ -351,10 +901,10 @@
               <div class="detalles-content">
                 <span class="close">&times;</span>
                 <div class="detalles-header">
-                  <img src="./IMAGES/parapente.png" alt="Imagen del Paquete Turístico" class="detalles-image">
+                  <img src="./IMAGES/tierradentro2.0.jpg" alt="Imagen del Paquete Turístico" class="detalles-image">
                 </div>
                 <div class="detalles-body">
-                  <h2 class="fw-bold">Nombre 3</h2>
+                  <h2 class="fw-bold">Paisajes de Tierradentro</h2>
                   <p class="description-paquete">
                       Esta es una descripción detallada del paquete turístico, incluyendo información sobre los destinos, actividades y cualquier otro detalle relevante.
                   </p>
