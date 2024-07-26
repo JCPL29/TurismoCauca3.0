@@ -7,12 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./CSS/normalize.css">
     <link rel="stylesheet" href="./CSS/combinado.css">
+    <link rel="stylesheet" href="./CSS/general.css">
 </head>
 <body>
-    <!--------------------------------- Boton whatsapp --------------------------------------->
-    <a href="https://api.whatsapp.com/send?phone=3145302715&text=Me encantaría conocer el Cauca!" class="btn__wsp common__hover" target="_blank">
-        <img src="./ICONS/whatsapp.svg" class="icon__whatsapp">
-    </a>
+    <!----------------------------------------- Idea contactos ------------------------------------->
+    <div class="contact-buttons">
+        <div class="contact-button" id="generalButton">
+            <img src="./ICONS/client.svg" class="icon__general">
+        </div>
+        <div class="contact-button hidden" id="whatsappButton">
+            <a href="https://api.whatsapp.com/send?phone=3145302715&text=Me encantaría conocer el Cauca!" target="_blank">
+                <img src="./ICONS/whatsapp.svg" class="icon_whatsapp">
+            </a>
+        </div>
+        <div class="contact-button hidden" id="phoneButton">
+            <a href="tel:+1234567890">
+                <img src="./ICONS/facebook.svg" class="icon__facebook">
+            </a>
+        </div>
+        <div class="contact-button hidden" id="emailButton">
+            <a href="mailto:info@example.com">
+                <img src="./ICONS/email.svg" class="icon__email">
+            </a>
+        </div>
+    </div>
     <!---------------------------------------- Barra de navegación --------------------------------------------->
     <nav class="navbar navbar-expand-lg p-3" id="menu">
         <div class="container-fluid">
@@ -59,27 +77,7 @@
                             <p class="fst-italic">La Ciudad Blanca</p>
                             <h2>Popayán</h2>
                             <p>
-                                Explora la historia viviente de Popayán, una joya arquitectónica en las montañas del Cauca, Colombia. Con sus imponentes edificios coloniales, encanta a los visitantes con su historia, especialmente durante la Semana Santa, cuando sus calles se llenan de fervor religioso y belleza cultural.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="./IMAGES/popayan.JPEG">
-                        <div class="content">
-                            <p class="fst-italic">La Ciudad Blanca</p>
-                            <h2>Popayán</h2>
-                            <p>
-                                Texto prueba
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="./IMAGES/parque.JPEG">
-                        <div class="content">
-                            <p class="fst-italic">La Ciudad Blanca</p>
-                            <h2>Popayán</h2>
-                            <p>
-                                Texto prueba
+                                ¡Descubre los sabores auténticos de Popayán! Popayán no solo destaca por su arquitectura colonial, sino también por su rica tradición gastronómica. En cada rincón encontrarás platos llenos de historia y sabor, como el tamal y las empanadas de pipián. Y para los amantes del dulce, el manjar blanco, un postre cremoso y suave que te llevará al cielo.
                             </p>
                         </div>
                     </div>
@@ -89,7 +87,27 @@
                             <p class="fst-italic">La Ciudad Blanca</p>
                             <h2>Popayán</h2>
                             <p>
-                                Texto prueba
+                                Explora la historia viviente de Popayán, una joya arquitectónica en las montañas del Cauca, Colombia. Con sus imponentes edificios coloniales, encanta a los visitantes con su historia, especialmente durante la Semana Santa, cuando sus calles se llenan de fervor religioso y belleza cultural.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./IMAGES/parque.JPEG">
+                        <div class="content">
+                            <p class="fst-italic">La Ciudad Blanca</p>
+                            <h2>Popayán</h2>
+                            <p>
+                                ¡Explora la riqueza cultural de Popayán en sus museos! Descubre el arte sacro en el Museo Arquidiocesano, la poesía en el Museo Nacional Guillermo Valencia y la biodiversidad en el Museo de Historia Natural. Cada museo te ofrece una ventana única a la historia y cultura de la "Ciudad Blanca".
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./IMAGES/popayan.JPEG">
+                        <div class="content">
+                            <p class="fst-italic">La Ciudad Blanca</p>
+                            <h2>Popayán</h2>
+                            <p>
+                                ¡Vive la espiritualidad y tradición en Popayán! Conocida por su impresionante Semana Santa, Popayán se convierte en un epicentro de fe y cultura religiosa. Durante esta semana, las calles se llenan de procesiones solemnes, imágenes sagradas y una atmósfera de devoción única. Una celebración reconocida como Patrimonio Cultural Inmaterial de la Humanidad.
                             </p>
                         </div>
                     </div>
@@ -108,7 +126,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="./IMAGES/popayan.JPEG">
+                        <img src="./IMAGES/IMG_2636.JPEG">
                         <div class="content">
                             Arquitectura
                         </div>
@@ -120,7 +138,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="./IMAGES/IMG_2636.JPEG">
+                        <img src="./IMAGES/popayan.JPEG">
                         <div class="content">
                             Cultura religiosa
                         </div>
@@ -152,7 +170,7 @@
                             <p class="fst-italic">La Suiza de America</p>
                             <h2>Silvia</h2>
                             <p>
-                                Texto prueba
+                                Rodeada de montañas y valles andinos, Silvia ofrece paisajes impresionantes perfectos para el senderismo y paseos a caballo. Disfruta de la flora y fauna autóctonas mientras exploras esta región de belleza natural inigualable.
                             </p>
                         </div>
                     </div>
@@ -162,7 +180,7 @@
                             <p class="fst-italic">La Suiza de America</p>
                             <h2>Silvia</h2>
                             <p>
-                                Texto prueba
+                                Silvia, donde los sabores tradicionales te llevarán a un viaje culinario único. Prueba la sopa de maíz mote, una receta ancestral con maíz, papas y carne. No te pierdas las empanadas de pipián, rellenas de maní y especias, ni la chicha de maíz, una bebida fermentada tradicional que celebra las raíces indígenas de la región.
                             </p>
                         </div>
                     </div>
@@ -172,7 +190,7 @@
                             <p class="fst-italic">La Suiza de America</p>
                             <h2>Silvia</h2>
                             <p>
-                                Texto prueba
+                                Descubre el talento artesanal de los Misak en el mercado local. Aquí encontrarás textiles, tejidos y otros productos hechos a mano que reflejan la rica herencia cultural de la comunidad. Lleva a casa un pedazo de Silvia con una de estas únicas y hermosas artesanías.
                             </p>
                         </div>
                     </div>
@@ -187,25 +205,25 @@
                     <div class="item active">
                         <img src="./IMAGES/silvia.jpg">
                         <div class="content">
-                            Sus parques
+                            Cultura
                         </div>
                     </div>
                     <div class="item">
                         <img src="./IMAGES/silvia2.png">
                         <div class="content">
-                            Su cultura
+                            Paisajes
                         </div>
                     </div>
                     <div class="item">
                         <img src="./IMAGES/silvia3.jpg">
                         <div class="content">
-                            Sus iglesias
+                            Gastronomia
                         </div>
                     </div>
                     <div class="item">
                         <img src="./IMAGES/silvia4.jpg">
                         <div class="content">
-                            Su encanto
+                            Artesanias
                         </div>
                     </div>
                 </div>
@@ -232,17 +250,7 @@
                         <p class="fst-italic">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            Texto prueba
-                        </p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./IMAGES/purace3.jpg">
-                    <div class="content">
-                        <p class="fst-italic">Ecoturismo y Termalismo</p>
-                        <h2>Purace y Coconuco</h2>
-                        <p>
-                            Texto prueba
+                            Relájate en las Termales de San Juan o Aguas Tibias, donde las aguas termales naturales ofrecen una experiencia rejuvenecedora. Rodeadas de un paisaje montañoso espectacular, estas aguas ricas en minerales son perfectas para un descanso después de un día de exploración.
                         </p>
                     </div>
                 </div>
@@ -252,7 +260,17 @@
                         <p class="fst-italic">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            Texto prueba
+                            Embárcate en una emocionante ascensión y disfruta de vistas panorámicas desde la cima. Observa la actividad geotérmica y siente la energía de este volcán activo, una experiencia única para los aventureros.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./IMAGES/purace3.jpg">
+                    <div class="content">
+                        <p class="fst-italic">Ecoturismo y Termalismo</p>
+                        <h2>Purace y Coconuco</h2>
+                        <p>
+                            El Parque Nacional Natural Puracé es uno de los pocos lugares donde puedes avistar el majestuoso cóndor de los Andes en su hábitat natural. Este ave emblemática, con su impresionante envergadura, sobrevuela las montañas y valles del parque, ofreciendo una experiencia inolvidable para los amantes de la naturaleza y la observación de aves.
                         </p>
                     </div>
                 </div>
@@ -267,25 +285,25 @@
                 <div class="item active">
                     <img src="./IMAGES/purace.jpg">
                     <div class="content">
-                        Sus parques
+                        Ecoturismo
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/purace2.jpg">
                     <div class="content">
-                        Su cultura
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="./IMAGES/purace3.jpg">
-                    <div class="content">
-                        Sus iglesias
+                        Termales
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/purace4.jpg">
                     <div class="content">
-                        Su encanto
+                        Geología
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./IMAGES/purace3.jpg">
+                    <div class="content">
+                        Condor de los Andes
                     </div>
                 </div>
             </div>
@@ -312,7 +330,7 @@
                         <p class="fst-italic">Patrimonio de la Humanidad - UNESCO 1995</p>
                         <h2>Tierradentro</h2>
                         <p>
-                            Texto prueba
+                            Los senderos de Tierradentro te llevarán a través de paisajes montañosos y valles que te dejarán sin aliento. Ideales para la exploración y la observación de la biodiversidad local, estos caminos ofrecen una conexión íntima con la naturaleza y la historia.
                         </p>
                     </div>
                 </div>
@@ -322,7 +340,7 @@
                         <p class="fst-italic">Patrimonio de la Humanidad - UNESCO 1995</p>
                         <h2>Tierradentro</h2>
                         <p>
-                            Texto prueba
+                            El Museo Etnográfico de Tierradentro te invita a descubrir la rica historia y cultura de las comunidades indígenas. A través de una fascinante colección de artefactos y exposiciones, conocerás más sobre las tradiciones, costumbres y la vida diaria de estos pueblos antiguos.
                         </p>
                     </div>
                 </div>
@@ -332,7 +350,7 @@
                         <p class="fst-italic">Patrimonio de la Humanidad - UNESCO 1995</p>
                         <h2>Tierradentro</h2>
                         <p>
-                            Texto prueba
+                            Admira los petroglifos y las pinturas rupestres que se encuentran en Tierradentro. Estas antiguas expresiones artísticas ofrecen un vistazo fascinante a las creencias y prácticas de las civilizaciones que habitaron la región hace miles de años, conectándote con un pasado remoto y misterioso.
                         </p>
                     </div>
                 </div>
@@ -347,25 +365,25 @@
                 <div class="item active">
                     <img src="./IMAGES/tierradentro.png">
                     <div class="content">
-                        Sus parques
+                        Arqueología
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/tierradentro2.0.jpg">
                     <div class="content">
-                        Su cultura
+                        Naturaleza
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/tierradentro3.png">
                     <div class="content">
-                        Sus iglesias
+                        Museos
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/tierradentro4.jpeg">
                     <div class="content">
-                        Su encanto
+                        Arte Rupestre
                     </div>
                 </div>
             </div>
@@ -374,5 +392,24 @@
     </div>
     <script src="idea2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-------------------------------------- Boton contactos ---------------------------------------->
+    <script>
+        document.getElementById('generalButton').addEventListener('click', function() {
+        const buttons = document.querySelectorAll('.contact-button.hidden, .contact-button.visible');
+
+        buttons.forEach(button => {
+            if (button !== document.getElementById('generalButton')) {
+                if (button.classList.contains('visible')) {
+                    button.classList.remove('visible');
+                    button.classList.add('hidden');
+                } else {
+                    button.classList.remove('hidden');
+                    button.classList.add('visible');
+                }
+                button.classList.add('transition');
+            }
+        });
+        });
+    </script>
 </body>
 </html>

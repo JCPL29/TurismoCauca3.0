@@ -9,10 +9,27 @@
     <link rel="stylesheet" href="./CSS/general.css">
 </head>
 <body>
-    <!--------------------------------- Boton whatsapp --------------------------------------->
-    <a href="https://api.whatsapp.com/send?phone=3145302715&text=Me encantaría conocer el Cauca!" class="btn__wsp common__hover"    target="_blank">
-        <img src="./ICONS/whatsapp.svg" class="icon__whatsapp">
-    </a>
+    <!----------------------------------------- Idea contactos ------------------------------------->
+    <div class="contact-buttons">
+      <div class="contact-button" id="generalButton">
+          <img src="./ICONS/client.svg" class="icon__general">
+      </div>
+      <div class="contact-button hidden" id="whatsappButton">
+          <a href="https://api.whatsapp.com/send?phone=3145302715&text=Me encantaría conocer el Cauca!" target="_blank">
+              <img src="./ICONS/whatsapp.svg" class="icon_whatsapp">
+          </a>
+      </div>
+      <div class="contact-button hidden" id="phoneButton">
+          <a href="tel:+1234567890">
+              <img src="./ICONS/facebook.svg" class="icon__facebook">
+          </a>
+      </div>
+      <div class="contact-button hidden" id="emailButton">
+          <a href="mailto:info@example.com">
+              <img src="./ICONS/email.svg" class="icon__email">
+          </a>
+      </div>
+    </div>
        <!------------------------------------ Barra de navegación -------------------------------------->
     <nav class="navbar navbar-expand-lg p-3" id="menu">
         <div class="container-fluid">
@@ -89,15 +106,19 @@
                 </p>
                 <h3 class="fw-bold">Itinerario</h3>
                 <ul class="itinerario">
-                    <li>Día 1: Descripción del primer día</li>
-                    <li>Día 2: Descripción del segundo día</li>
-                    <li>Día 3: Descripción del tercer día</li>
+                    <li>Día 1: Llegada a Popayán, visita al centro histórico y recorrido por la Catedral Basílica de Nuestra Señora de la Asunción.</li>
+                    <li>Día 2: Tour por los museos de la ciudad, incluyendo el Museo Nacional Guillermo Valencia y el Museo de Historia Natural.</li>
+                    <li>Día 3: Visita a los alrededores de Popayán, exploración de las iglesias coloniales y participación en actividades culturales locales.</li>
                     <!--------------------------------- Detalles paquete ------------------------------------->
                 </ul>
                 <h3 class="fw-bold">Precios y Detalles</h3>
                 <p class="precio-detalles">
-                    Información sobre los precios, lo que está incluido en el paquete, y cualquier detalle adicional sobre costos.
+                  Este paquete incluye:
                 </p>
+                <li>Alojamiento en el Hotel Dann Monasterio por 2 noches.</li>
+                <li>Desayuno incluido.</li>
+                <li>Tours guiados por la ciudad y sus alrededores.</li>
+                <li>Entradas a museos y sitios históricos.</li>
                 <h3 class="fw-bold">Hotel y Habitación</h3>
                 <div class="hotel-room d-flex gap-4">
                   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -122,10 +143,10 @@
                     </button>
                   </div>
                     <div class="room-details">
-                        <h4 class="fw-bold">Hotel Nombre</h4>
-                        <p>Descripción del hotel, incluyendo servicios y características.</p>
-                        <h4 class="fw-bold">Tipo de Habitación</h4>
-                        <p>Descripción de la habitación, incluyendo comodidades y servicios.</p>
+                        <h4 class="fw-bold">Hotel Dann Monasterio</h4>
+                        <p>Un hotel histórico con todas las comodidades modernas, situado en el corazón de Popayán.</p>
+                        <h4 class="fw-bold">Habitación Deluxe.</h4>
+                        <p>Amplia habitación con vistas al centro histórico, cama king-size, minibar, Wi-Fi gratuito y baño privado con todas las comodidades.</p>
                     </div>
                 </div>
                 <div class="contact-button mt-3">
@@ -1044,6 +1065,25 @@
           });
       });
       </script>
+    <!-------------------------------------- Boton contactos ---------------------------------------->
+    <script>
+      document.getElementById('generalButton').addEventListener('click', function() {
+      const buttons = document.querySelectorAll('.contact-button.hidden, .contact-button.visible');
+
+      buttons.forEach(button => {
+          if (button !== document.getElementById('generalButton')) {
+              if (button.classList.contains('visible')) {
+                  button.classList.remove('visible');
+                  button.classList.add('hidden');
+              } else {
+                  button.classList.remove('hidden');
+                  button.classList.add('visible');
+              }
+              button.classList.add('transition');
+          }
+      });
+      });
+    </script>
       <!------------------------------------ Boton buscar ------------------------------------>
       <script>
         document.addEventListener('DOMContentLoaded', function() {

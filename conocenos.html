@@ -9,6 +9,27 @@
     <title>Document</title>
 </head>
 <body>
+  <!----------------------------------------- Idea contactos ------------------------------------->
+    <div class="contact-buttons">
+      <div class="contact-button" id="generalButton">
+          <img src="./ICONS/client.svg" class="icon__general">
+      </div>
+      <div class="contact-button hidden" id="whatsappButton">
+          <a href="https://api.whatsapp.com/send?phone=3145302715&text=Me encantaría conocer el Cauca!" target="_blank">
+              <img src="./ICONS/whatsapp.svg" class="icon_whatsapp">
+          </a>
+      </div>
+      <div class="contact-button hidden" id="phoneButton">
+          <a href="tel:+1234567890">
+              <img src="./ICONS/facebook.svg" class="icon__facebook">
+          </a>
+      </div>
+      <div class="contact-button hidden" id="emailButton">
+          <a href="mailto:info@example.com">
+              <img src="./ICONS/email.svg" class="icon__email">
+          </a>
+      </div>
+    </div>
     <!------------------------------------------- Barra de navegación ---------------------------------------->
     <nav class="navbar navbar-expand-lg p-3" id="menu">
         <div class="container-fluid">
@@ -211,6 +232,24 @@
   
       document.getElementById("more").addEventListener('hidden.bs.collapse', function() {
         document.getElementById("readMoreLink").textContent = "Leer más";
+      });
+    </script>
+    <script>
+      document.getElementById('generalButton').addEventListener('click', function() {
+      const buttons = document.querySelectorAll('.contact-button.hidden, .contact-button.visible');
+
+      buttons.forEach(button => {
+          if (button !== document.getElementById('generalButton')) {
+              if (button.classList.contains('visible')) {
+                  button.classList.remove('visible');
+                  button.classList.add('hidden');
+              } else {
+                  button.classList.remove('hidden');
+                  button.classList.add('visible');
+              }
+              button.classList.add('transition');
+          }
+      });
       });
     </script>
 </body>

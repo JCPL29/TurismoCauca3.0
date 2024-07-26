@@ -333,17 +333,14 @@ body{
 .carousel-tour .list-tour .item-tour .author-tour{
     font-weight: bold;
     letter-spacing: 10px;
-    color: #000000;
-}
-.des-tour{
-    color: #000000;
+    color: #fff;
 }
 .carousel-tour .list-tour .item-tour .title-tour,
 .carousel-tour .list-tour .item-tour .topic-tour{
     font-size: 3.5rem;
     font-weight: bold;
     line-height: 1.3em;
-    color: #000000;
+    color: #fff;
 }
 .carousel-tour .list-tour .item-tour .topic-tour{
     color: #0832A2;
