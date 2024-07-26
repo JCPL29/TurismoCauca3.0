@@ -269,6 +269,220 @@ body{
     inset: auto auto 1rem auto;
     padding-left: 0.7rem;
 }
+
+.card-button {
+    width: 7.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #0832A2;
+    transition: all 0.3s ease;
+  }
+  .card-button:hover{
+    background-color: #0832A2;
+    color: #fff;
+  }
+
+/* --------------------------------------------------------- */
+.ventana {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.detalles-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.detalles-header img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.detalles-body {
+    padding: 20px;
+}
+
+.detalles-body h2, .detalles-body h3 {
+    margin-top: 0;
+}
+
+.itinerario {
+    list-style: none;
+    padding: 0;
+}
+
+.itinerario li {
+    margin: 10px 0;
+}
+
+.contact-button {
+    text-align: center;
+}
+
+.btn-contact {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .ventana{
+        margin-top: 20%;
+    }
+    .detalles-content{
+        width: 90%;
+    }
+  }
+
+/* Estilos para la imagen destacada */
+.detalles-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.detalles-image {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    object-position: 10% 60%;
+    border-radius: 5px;
+}
+
+/* Estilos para el cuerpo del modal */
+.detalles-body {
+    padding: 20px;
+}
+
+.detalles-body h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.detalles-body p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.detalles-body h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.itinerario {
+    color: #333;
+    list-style-type: none;
+    padding: 0;
+}
+
+.itinerario li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.itinerario li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 20px;
+}
+
+/* Estilos para el hotel y la habitación */
+.hotel-room {
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.hotel-image {
+    width: 40%;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.room-details {
+    width: 60%;
+}
+
+.room-details h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.room-details p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.btn-contact{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 12px;
+    border: none;
+    background-color: #0832A2;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.btn-contact:hover{
+ transform: scale(1);
+}
+/* Carrusel hotel */
+.carousel-inner{
+    width: 35rem;
+    height: 20rem;
+}
+@media (max-width: 768px) {
+    .carousel-inner{
+        width: 10rem;
+    }
+    .hotel-room{
+        align-items: center;
+        display: block;
+    }
+  }
+/* --------------------------------------------------------- */
 @media (max-width: 768px) {
     .thumbnail{
         justify-content: start;
