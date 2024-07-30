@@ -727,7 +727,7 @@ body{
 
 /* running time */
 
-.carousel-tour .time{
+/* .carousel-tour .time{
     position: absolute;
     z-index: 1000;
     width: 0%;
@@ -744,7 +744,7 @@ body{
 @keyframes runningTime{
     from{ width: 100%}
     to{width: 0}
-}
+} */
 
 
 /* prev click */
