@@ -42,6 +42,9 @@ body{
         border-radius: 0;
         color: black;
     }
+    .fs-3 {
+        font-size: calc(1.2rem + -0.5vw) !important;
+    }
 }
 /*--------------------------------------------------boton whatsapp------------------------------------------------*/
 .btn__wsp{

@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbnails[itemActive].classList.add('active');
             resetAutoRun();
         }
-
+        /* 
         function resetAutoRun() {
             clearInterval(refreshInterval);  // Limpia el intervalo actual
             refreshInterval = setInterval(() => {
                 itemActive = (itemActive + 1) % items.length;
                 showSlider();
-            }, 7000);  // Reinicia el intervalo
-        }
+            }, 3000);  // Reinicia el intervalo
+        } */
 
         // Inicializar el slider con la primera imagen visible
         setTimeout(() => {

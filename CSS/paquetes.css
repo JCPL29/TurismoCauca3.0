@@ -680,6 +680,9 @@ body{
     .detalles-content{
         width: 90%;
     }
+    .hotel-room{
+        flex-direction: column;
+    }
   }
 
 /* Estilos para la imagen destacada */
@@ -766,8 +769,7 @@ body{
 }
 
 .btn-contact{
-    width: 10rem;
-    height: 2rem;
+    width: 11rem;
     border-radius: 12px;
     border: none;
     background-color: #0832A2;
@@ -775,7 +777,11 @@ body{
     transition: all 0.3s ease;
 }
 .btn-contact:hover{
- transform: scale(1);
+ transform: scale(1.2);
+}
+.boton-reserva{
+    display: flex;
+    justify-content: center;
 }
 /* Carrusel hotel */
 .carousel-inner{
@@ -784,11 +790,14 @@ body{
 }
 @media (max-width: 768px) {
     .carousel-inner{
-        width: 10rem;
+        width: 18rem;
+        height: 13rem;
     }
     .hotel-room{
         align-items: center;
-        display: block;
+    }
+    .room-details{
+        width: 100%;
     }
   }
 
