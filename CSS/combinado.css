@@ -228,7 +228,7 @@ body{
 /* carrusel */
 .thumbnail{
     position: absolute;
-    bottom: 50px;
+    bottom: 5px;
     z-index: 11;
     display: flex;
     gap: 30px;
@@ -266,7 +266,11 @@ body{
 }
 .thumbnail .item .content{
     position: absolute;
-    inset: auto auto 1rem auto;
+    /* inset: auto auto 1rem auto; */
+    top: auto;
+    right: auto;
+    bottom: 0.4rem;
+    left: auto;
     padding-left: 0.7rem;
 }
 
@@ -409,7 +413,7 @@ body{
 }
 
 .itinerario {
-    color: #333;
+    color: #555;
     list-style-type: none;
     padding: 0;
 }
@@ -470,8 +474,9 @@ body{
 }
 /* Carrusel hotel */
 .carousel-inner{
-    width: 35rem;
-    height: 20rem;
+    width: 100%;
+    height: 27rem;
+    border-radius: 10px;
 }
 @media (max-width: 768px) {
     .carousel-inner{
@@ -483,21 +488,21 @@ body{
     }
   }
 /* --------------------------------------------------------- */
-@media (max-width: 768px) {
-    .thumbnail{
-        justify-content: start;
-    }
-}
 @media screen and  (max-width: 678px){
     .thumbnail{
         justify-content: start;
+        bottom: 20px;
     }
     .slider .list .item .content{
         width: 58rem;
         max-width: 90%;
     }
     .thumbnail .item .content{
-        inset: auto auto 2rem auto;
+        /* inset: auto auto 2rem auto; */
+        top: auto;
+        right: auto;
+        bottom: 1rem;
+        left: auto;
     }
     .slider .list .item .content h2{
         font-size: 50px;
