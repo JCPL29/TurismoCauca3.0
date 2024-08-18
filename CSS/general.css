@@ -17,6 +17,8 @@ body{
     width: 100%; /* Asegura que la barra de navegación cubra todo el ancho */
     z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros contenidos */
     background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .Principal-text-nav{
     color: #0832A2;

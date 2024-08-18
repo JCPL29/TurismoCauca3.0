@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         } */
 
         // Inicializar el slider con la primera imagen visible
-        setTimeout(() => {
+ /*        setTimeout(() => {
             showSlider();  // Asegura que se muestre la primera imagen al cargar
-        }, 100);
+        }, 100); */
 
         const observerOptions = {
             root: null,

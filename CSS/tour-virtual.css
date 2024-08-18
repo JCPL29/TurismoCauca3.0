@@ -1,0 +1,180 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+}
+/*-------------------------------------- css slider (prueba) ------------------------------------------*/
+.slider{
+    height: 100vh;
+    /* margin-top: -50px; */
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center -250px;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #000000 19.5%, transparent);
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    width: 50rem;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 80px;
+    margin: 0;
+    font-weight: bolder;
+}
+.content p{
+    margin-top: 0.5rem;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+/* Animacion textos */
+@keyframes showContent{
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1), .slider .list .item.active h2, .slider .list .item.active p:nth-child(3), .slider .list .item.active .buttons-tour button {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.slider .list .item.active h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item.active p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+.slider .list .item.active .buttons-tour button {
+    animation-delay: 1.4s;
+}
+
+
+/* carrusel */
+.thumbnail{
+    position: absolute;
+    bottom: 5px;
+    z-index: 11;
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    height: 260px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: end;
+}
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .item{
+    width: 180px;
+    height: 235px;
+    filter: brightness(0.5);
+    transition: 0.5s;
+    flex-shrink: 0;
+}
+/* .thumbnail .item:hover{
+    filter: brightness(1.2);
+    transition: 0.5s;
+} */
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1.2);
+    width: 190px;
+    height: 240px;
+}
+.thumbnail .item .content{
+    position: absolute;
+    /* inset: auto auto 1rem auto; */
+    top: auto;
+    right: auto;
+    bottom: 0.4rem;
+    left: auto;
+    padding-left: 0.7rem;
+}
+@media screen and  (max-width: 678px){
+    .slider .list .item::after{
+        background-image: linear-gradient(to top, #000000 40%, transparent);
+    }
+    .thumbnail{
+        justify-content: start;
+        bottom: 20px;
+    }
+    .slider .list .item .content{
+        width: 58rem;
+        max-width: 90%;
+    }
+    .thumbnail .item .content{
+        /* inset: auto auto 2rem auto; */
+        top: auto;
+        right: auto;
+        bottom: 1rem;
+        left: auto;
+    }
+    .slider .list .item .content h2{
+        font-size: 50px;
+    }
+    .slider .list .item .content{
+        top: 10%;
+    }
+    /* .arrows{
+        top: 16%;
+        right: 33px;
+    } */
+}
+.buttons-tour button{
+    background-color: white;
+    border: none;
+    width: 11rem;
+    color: #0832A2;
+    font-size: 16px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.buttons-tour button:hover{
+    background-color: #0832A2;
+    color: white;
+}

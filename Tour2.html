@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./CSS/combinado.css">
+    <link rel="stylesheet" href="./CSS/tour-virtual.css">
     <link rel="stylesheet" href="./CSS/general.css">
-    <title>Document</title>
+    <title>Tour Virtual</title>
+    <link rel="shortcut icon" href="./IMAGES/agencia.png" type="image/x-icon">
 </head>
 <body>
     <!----------------------------------------- Idea contactos ------------------------------------->
@@ -50,130 +51,117 @@
           </div>
         </div>
       </nav>
-    <!-------------------- Presentación con tarjetas de los destinos --------------------------------->
-    <div class="carousel-tour">
-        <!-- list item -->
-        <div class="list-tour">
-            <div class="item-tour">
-                <img src="./IMAGES/1.png">
-                <div class="content-tour">
-                    <div class="author-tour">PATRIMONIO VIVO</div>
-                    <div class="title-tour">HISTORIA Y CULTURA</div>
-                    <div class="topic-tour">POPAYÁN</div>
-                    <div class="des-tour">
-                        <!-- lorem 50 -->
-                        Descubre la riqueza histórica y arquitectónica de Popayán, la Ciudad Blanca, famosa por su impresionante arquitectura colonial y sus tradicionales procesiones de Semana Santa. Sumérgete en el encanto de sus calles empedradas y plazas llenas de historia, todo desde la comodidad de tu hogar.
+    
+    <!------------------------------------------------ Cartas tour virtual ---------------------------------------------->
+    <div class="snap-section">
+        <div class="slider" id="bloque-popayan">
+            <!-- list Items -->
+            <div class="list">
+                <div class="item active">
+                    <img src="./IMAGES/POPAYAN/arquitectura6.JPEG">
+                    <div class="content">
+                        <p class="fst-italic">PATRIMONIO VIVO</p>
+                        <h2>POPAYÁN</h2>
+                        <p>
+                            Descubre la riqueza histórica y arquitectónica de Popayán, la Ciudad Blanca, famosa por su impresionante arquitectura colonial y sus tradicionales procesiones de Semana Santa. Sumérgete en el encanto de sus calles empedradas y plazas llenas de historia, todo desde la comodidad de tu hogar.
+                        </p>
+                        <div class="buttons-tour">
+                            <a href="./VR/index.html">
+                                <button>Iniciar Tour Virtual!</button><!-- O puede ser Explorar Ahora -->
+                            </a>
+                        </div>    
                     </div>
-                    <div class="buttons-tour">
-                        <a href="./VR/index.html">
-                            <button>Conocelo!</button><!-- cambiar por iniciar tour virtual -->
-                        </a>
+                </div>
+                <div class="item">
+                    <img src="./IMAGES/SILVIA/bienvenidos.JPEG">
+                    <div class="content">
+                        <p class="fst-italic">CULTURA MISAK</p>
+                        <h2>SILVIA</h2>
+                        <p>
+                            Explora los hermosos paisajes y la vibrante cultura indígena de Silvia, un tesoro escondido en el corazón del Cauca. Maravíllate con sus coloridos mercados y la calidez de su gente mientras descubres las tradiciones ancestrales que hacen de este lugar un destino único. Vive esta experiencia cultural sin salir de casa.
+                        </p>
+                        <div class="buttons-tour">
+                            <a href="./VR/index.html">
+                                <button>Iniciar Tour Virtual!</button><!-- O puede ser Explorar Ahora -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./IMAGES/purace4.jpg">
+                    <div class="content">
+                        <p class="fst-italic">AVENTURA Y RELAJACIÓN</p>
+                        <h2>PURACE Y COCONUCO</h2>
+                        <p>
+                            Descubre la impresionante belleza de Puracé y Coconuco, con sus majestuosos volcanes, termales relajantes y la oportunidad de avistar el cóndor de los Andes. Sumérgete en la diversidad de su fauna y flora, y disfruta de sus tranquilos paisajes andinos desde cualquier lugar.
+                        </p>
+                        <div class="buttons-tour">
+                            <a href="./VR/index.html">
+                                <button>Iniciar Tour Virtual!</button><!-- O puede ser Explorar Ahora -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./IMAGES/tierradentro.png">
+                    <div class="content">
+                        <p class="fst-italic">ARQUEOLOGÍA</p>
+                        <h2>TIERRADENTRO</h2>
+                        <p>
+                            Adéntrate en los misterios de Tierradentro y sus impresionantes tumbas subterráneas, declaradas Patrimonio de la Humanidad por la UNESCO. Descubre la riqueza arqueológica y la fascinante historia ancestral que envuelve a este sitio sagrado. Explora este patrimonio cultural desde tu hogar y siente la conexión con el pasado.
+                        </p>
+                        <div class="buttons-tour">
+                            <a href="./VR/index.html">
+                                <button>Iniciar Tour Virtual!</button><!-- O puede ser Explorar Ahora -->
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="item-tour">
-                <img src="./IMAGES/3.png">
-                <div class="content-tour">
-                    <div class="author-tour">TRADICIÓN</div>
-                    <div class="title-tour">CULTURA MISAK</div>
-                    <div class="topic-tour">SILVIA</div>
-                    <div class="des-tour">
-                        Explora los hermosos paisajes y la vibrante cultura indígena de Silvia, un tesoro escondido en el corazón del Cauca. Maravíllate con sus coloridos mercados y la calidez de su gente mientras descubres las tradiciones ancestrales que hacen de este lugar un destino único. Vive esta experiencia cultural sin salir de casa.
-                    </div>
-                    <div class="buttons-tour">
-                        <a href="./VR/index.html">
-                            <button>Conocelo!</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item-tour">
-                <img src="./IMAGES/2.png">
-                <div class="content-tour">
-                    <div class="author-tour">AVENTURA Y RELAJACIÓN</div>
-                    <div class="title-tour">NATURALEZA</div>
-                    <div class="topic-tour">PURACE Y COCONUCO</div>
-                    <div class="des-tour">
-                        Descubre la impresionante belleza de Puracé y Coconuco, con sus majestuosos volcanes, termales relajantes y la oportunidad de avistar el cóndor de los Andes. Sumérgete en la diversidad de su fauna y flora, y disfruta de sus tranquilos paisajes andinos desde cualquier lugar.
-                    </div>
-                    <div class="buttons-tour">
-                        <a href="./VR/index.html">
-                            <button>Conocelo!</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item-tour">
-                <img src="./IMAGES/4.png">
-                <div class="content-tour">
-                    <div class="author-tour">MISTERIOS ANCESTRALES</div>
-                    <div class="title-tour">ARQUEOLOGÍA</div>
-                    <div class="topic-tour">TIERRADENTRO</div>
-                    <div class="des-tour">
-                        Adéntrate en los misterios de Tierradentro y sus impresionantes tumbas subterráneas, declaradas Patrimonio de la Humanidad por la UNESCO. Descubre la riqueza arqueológica y la fascinante historia ancestral que envuelve a este sitio sagrado. Explora este patrimonio cultural desde tu hogar y siente la conexión con el pasado.
-                    </div>
-                    <div class="buttons-tour">
-                        <a href="./VR/index.html">
-                            <button>Conocelo!</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- list thumnail -->
-        <div class="thumbnail-tour">
-            <div class="item-tour">
-                <img src="./IMAGES/puente.JPEG">
-                <div class="content-tour">
-                    <div class="title-tour fw-bold">
+            <!-- button arrows -->
+            <!-- <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div> -->
+            <!-- thumbnail -->
+            <div class="thumbnail">
+                <div class="item active">
+                    <img src="./IMAGES/POPAYAN/arquitectura6.JPEG">
+                    <div class="content">
                         Popayán
-                    </div>
-                    <div class="description-tour">
-                        Patrimonio
+                        <br>Patrimonio
                     </div>
                 </div>
-            </div>
-            <div class="item-tour">
-                <img src="./IMAGES/silvia.jpg">
-                <div class="content-tour">
-                    <div class="title-tour fw-bold">
+                <!-------------------------------------------------------------------------------------------->
+                <div class="item">
+                    <img src="./IMAGES/SILVIA/bienvenidos.JPEG">
+                    <div class="content">
                         Silvia
-                    </div>
-                    <div class="description-tour">
-                        Tradición
+                        <br>Tradición
                     </div>
                 </div>
-            </div>
-            <div class="item-tour">
-                <img src="./IMAGES/purace.jpg">
-                <div class="content-tour">
-                    <div class="title-tour fw-bold">
+                <!-------------------------------------------------------------------------------------------->
+                <div class="item">
+                    <img src="./IMAGES/purace4.jpg">
+                    <div class="content">
                         Purace y Coconuco
-                    </div>
-                    <div class="description-tour">
-                        Naturaleza
+                        <br>Naturaleza
                     </div>
                 </div>
-            </div>
-            <div class="item-tour">
-                <img src="./IMAGES/tierradentro.png">
-                <div class="content-tour">
-                    <div class="title-tour fw-bold">
+                <!-------------------------------------------------------------------------------------------->
+                <div class="item">
+                    <img src="./IMAGES/tierradentro.png">
+                    <div class="content">
                         Tierradentro
-                    </div>
-                    <div class="description-tour">
-                        Arqueología
+                        <br>Arqueología
                     </div>
                 </div>
+                <!-------------------------------------------------------------------------------------------->
             </div>
         </div>
-        <!-- next prev -->
-        <div class="arrows-tour">
-            <button id="prev"><</button>
-            <button id="next">></button>
-        </div>
-        <!-- time running -->
-        <div class="time"></div>
+        <!-- <a href="#bloque-popayan">
+            <img class="arrow-down-section" src="./ICONS/arrow-down.svg" alt="">
+        </a> -->
     </div>
 
     <!--------------------------------------- Final pagina ------------------------------------------->
@@ -196,7 +184,7 @@
           <p class="pt-3 fs-6 text-center list-group w-100">© 2024 TurismoCauca3.0. Todos los derechos reservados.</p>
         </div>
       </footer>
-    <script src="Tour2.js"></script>
+    <script src="idea2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-------------------------------------- Boton contactos ---------------------------------------->
     <script>

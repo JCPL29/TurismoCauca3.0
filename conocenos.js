@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const images = [
-      'url("../IMAGES/parque.JPEG")',
-      'url("../IMAGES/silvia.jpg")',
+      'url("../IMAGES/POPAYAN/torre.JPEG")',
+      'url("../IMAGES/SILVIA/principal.JPEG")',
       'url("../IMAGES/purace3.jpg")',
       'url(../IMAGES/tierradentro5.jpg)'
     ];
@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
           currentIndex = (currentIndex + 1) % images.length;
           setTimeout(() => {
             overlay.style.opacity = 0;
-          }, 1000); // Espera el tiempo de la transición antes de ocultar el overlay
-        }, 1000); // Espera el tiempo de la transición antes de cambiar la imagen
+          }, 200); // Espera el tiempo de la transición antes de ocultar el overlay
+        }, 800); // Espera el tiempo de la transición antes de cambiar la imagen
       }
     
       // Cambia la imagen de fondo cada 5 segundos
-      setInterval(changeBackground, 7000);
+      setInterval(changeBackground, 5000);
     
       // Cambia la imagen inmediatamente al cargar la página
       changeBackground();
