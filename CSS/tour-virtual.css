@@ -119,6 +119,7 @@ body{
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
 }
 .thumbnail .item.active{
     filter: brightness(1.2);
