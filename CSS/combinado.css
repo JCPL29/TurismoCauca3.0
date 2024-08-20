@@ -404,6 +404,7 @@ body{
 .detalles-body p {
     margin: 10px 0;
     color: #555;
+    text-shadow: none;
 }
 
 .detalles-body h3 {
