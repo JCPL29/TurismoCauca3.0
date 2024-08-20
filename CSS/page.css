@@ -718,9 +718,15 @@ body{
     margin-right: 40px;
 }
 /*------------------------------------------ Colapsables --------------------------------------------------*/
-.btn{
+.colapsables{
     background-color: #0832A2;
-    border: #0832A2;
+}
+.btn{
+    background-color: #FFFFFF;
+    color: #0832A2;
+}
+.collapses{
+    border-color: #0832A2;
 }
 /*---------------------------------------- Final pagina ---------------------------------------------------*/
 footer{

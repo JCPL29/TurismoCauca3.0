@@ -28,7 +28,7 @@ body{
 .welcome{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to left, #000000c8 0%, #000000c8 100%), url('../IMAGES/popayan2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-image: linear-gradient(to top, #ffffff3c 0%, rgba(255, 255, 255, 0.503) 50%), url('../IMAGES/popayan2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -38,11 +38,14 @@ body{
 .welcome-texts{
     text-align: center;
     width: 70%;
-    
+    color: #0832A2;
+    margin-top: 4rem;
 }
-.welcome-texts h4{
-    margin-top: 7rem;
-    
+.welcome-texts h4, p{
+    margin-top: 8rem;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    font-size: 18px;
 }
 .arrow-down, .arrow-up {
     width: 4rem;
