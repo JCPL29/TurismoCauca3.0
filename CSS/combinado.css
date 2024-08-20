@@ -452,7 +452,8 @@ body{
 }
 @media (max-width: 768px) {
     .carousel-inner{
-        width: 10rem;
+        width: 17rem;
+        height: 10rem;
     }
     .hotel-room{
         align-items: center;
