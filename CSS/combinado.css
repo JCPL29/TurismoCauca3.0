@@ -28,7 +28,7 @@ body{
 .welcome{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to top, #ffffff3c 0%, rgba(255, 255, 255, 0.503) 50%), url('../IMAGES/popayan2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-image: linear-gradient(to top, #ffffff3c 0%, rgba(255, 255, 255, 0.503) 50%), url('../IMAGES/POPAYAN/morro2.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

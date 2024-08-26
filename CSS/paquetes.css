@@ -786,7 +786,7 @@ body{
 /* Carrusel hotel */
 .carousel-inner{
     width: 35rem;
-    height: 20rem;
+    height: 27rem;
 }
 @media (max-width: 768px) {
     .carousel-inner{
