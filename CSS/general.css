@@ -20,8 +20,12 @@ body{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.Principal-text-nav{
+/* .Principal-text-nav{
     color: #0832A2;
+} */
+.navbar-brand img{
+    height: 6rem;
+    padding-left: 3rem;
 }
 .nav-link{
     transition: all 0.4s ease;
@@ -46,6 +50,10 @@ body{
     }
     .fs-3 {
         font-size: calc(1.2rem + -0.5vw) !important;
+    }
+    .navbar-brand img{
+        height: 5rem;
+        padding-left: 0.5rem;
     }
 }
 /*--------------------------------------------------boton whatsapp------------------------------------------------*/

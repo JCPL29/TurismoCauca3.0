@@ -28,7 +28,7 @@ body{
 .welcome{
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(to top, #ffffff3c 0%, rgba(255, 255, 255, 0.503) 50%), url('../IMAGES/POPAYAN/morro2.JPEG'); /*Coloca la imagen de la figura con un negradado en negro*/
+    background-image: linear-gradient(to top, #ffffff3c 0%, rgba(255, 255, 255, 0.503) 20%), url('../IMAGES/POPAYAN/noche2.jpg'); /*Coloca la imagen de la figura con un negradado en negro*/
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -39,7 +39,7 @@ body{
     text-align: center;
     width: 70%;
     color: #0832A2;
-    margin-top: 4rem;
+    margin-top: 7rem;
 }
 .welcome-texts h4, p{
     margin-top: 8rem;
@@ -197,7 +197,7 @@ body{
         opacity: 1;
     }
 }
-.slider .list .item.active p:nth-child(1), .slider .list .item.active h2, .slider .list .item.active p:nth-child(3){
+/* .slider .list .item.active p:nth-child(1), .slider .list .item.active h2, .slider .list .item.active p:nth-child(3){
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
@@ -208,7 +208,7 @@ body{
 }
 .slider .list .item.active p:nth-child(3){
     animation-duration: 1.3s;
-}
+} */
 
 /* carrusel */
 .thumbnail{
