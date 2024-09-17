@@ -398,7 +398,7 @@ body{
 .detalles-body h2 {
     margin-top: 0;
     font-size: 24px;
-    color: #333;
+    color: #0832A2;
 }
 
 .detalles-body p {
@@ -450,6 +450,9 @@ body{
     height: 31rem;
     border-radius: 10px;
 }
+.secciones-images .carousel-inner{
+    height: 16rem;
+}
 @media (max-width: 768px) {
     .carousel-inner{
         width: 17rem;
@@ -491,6 +494,13 @@ body{
         background-image: linear-gradient(to top, #FFFFFF 40%, transparent);
     }
 }
-
+.secciones h2{
+    font-size: 21px;
+}
+.secciones-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
   
   
