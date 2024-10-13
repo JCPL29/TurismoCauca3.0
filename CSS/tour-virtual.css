@@ -23,7 +23,7 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center -250px;
+    object-position: center;
 }
 .slider .list .item::after{
     content: '';
@@ -32,13 +32,13 @@ body{
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to top, #FFFFFF 19.5%, transparent);
+    background-image: linear-gradient(to right, #FFFFFF 35%, transparent);
 }
 .slider .list .item .content{
     position: absolute;
-    left: 10%;
-    top: 15%;
-    width: 50rem;
+    left: 5%;
+    top: 21%;
+    width: 30rem;
     max-width: 80%;
     z-index: 1;
 }
@@ -55,8 +55,8 @@ body{
 }
 .content p{
     margin-top: 0.5rem;
-    color: #FFFFFF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    color: #000000;
+    text-shadow: 2px 2px 4px rgb(8, 50, 162);
     font-size: 17px;
 }
 .slider .list .item.active{

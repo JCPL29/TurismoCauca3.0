@@ -54,6 +54,13 @@ body{
     animation: pulse-svg 1.8s infinite;
     filter: drop-shadow(0 0 10px rgb(8, 50, 162, 1));
 }
+/* .arrow-up2{
+    width: 4rem;
+    margin-top: 100px;
+    cursor: pointer;
+    animation: pulse-svg 1.8s infinite;
+    filter: drop-shadow(0 0 10px rgb(8, 50, 162, 1));
+} */
 
 @keyframes pulse-svg {
     0% {
@@ -162,7 +169,7 @@ body{
 .slider .list .item .content{
     position: absolute;
     left: 10%;
-    top: 15%;
+    top: 18%;
     width: 50rem;
     max-width: 80%;
     z-index: 1;
@@ -181,6 +188,7 @@ body{
 .content p{
     margin-top: 0.5rem;
     color: #FFFFFF;
+    font-weight: 550;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: 17px;
 
@@ -491,6 +499,9 @@ body{
         background-image: linear-gradient(to top, #FFFFFF 40%, transparent);
     }
 }
+.secciones{
+    align-items: center;
+}
 .secciones h2{
     font-size: 21px;
 }
@@ -502,6 +513,7 @@ body{
 }
 .secciones-images{
     width: 50%;
+    align-items: center;
 }
 
 @media screen and  (max-width: 678px){
