@@ -1,5 +1,5 @@
 // Obtener todos los botones que abren modales
-var btns = document.querySelectorAll(".card-button");
+var btns = document.querySelectorAll(".item, .card-button");
 
 // Añadir evento de clic a cada botón
 btns.forEach(function(btn) {

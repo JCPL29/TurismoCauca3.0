@@ -37,7 +37,7 @@ body{
 .slider .list .item .content{
     position: absolute;
     left: 5%;
-    top: 21%;
+    top: 16%;
     width: 30rem;
     max-width: 80%;
     z-index: 1;
@@ -153,6 +153,7 @@ body{
     .slider .list .item .content{
         width: 58rem;
         max-width: 90%;
+        top: 15%;
     }
     .thumbnail .item .content{
         /* inset: auto auto 2rem auto; */
@@ -163,9 +164,6 @@ body{
     }
     .slider .list .item .content h2{
         font-size: 40px;
-    }
-    .slider .list .item .content{
-        top: 10%;
     }
     /* .arrows{
         top: 16%;

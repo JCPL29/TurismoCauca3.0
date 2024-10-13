@@ -47,20 +47,13 @@ body{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
     font-size: 18px;
 }
-.arrow-down, .arrow-up {
+.arrow-down, .arrow-full, .arrow-up2 {
     width: 4rem;
     margin-top: 10px;
     cursor: pointer;
     animation: pulse-svg 1.8s infinite;
     filter: drop-shadow(0 0 10px rgb(8, 50, 162, 1));
 }
-/* .arrow-up2{
-    width: 4rem;
-    margin-top: 100px;
-    cursor: pointer;
-    animation: pulse-svg 1.8s infinite;
-    filter: drop-shadow(0 0 10px rgb(8, 50, 162, 1));
-} */
 
 @keyframes pulse-svg {
     0% {
@@ -232,15 +225,15 @@ body{
     overflow: auto;
     justify-content: center;
 }
-.thumbnail .arrow-down{
+.thumbnail .arrow-down, .arrow-full{
     position: absolute;
     top: 60%;
     left: 3%;
     
 }
-.thumbnail .arrow-up{
+.thumbnail .arrow-up2{
     position: absolute;
-    top: 60%;
+    top: 40%;
     left: 3%;
     
 }
@@ -476,7 +469,8 @@ body{
     }
     .slider .list .item .content{
         width: 58rem;
-        max-width: 90%;
+        max-width: 85%;
+        top: 14%;
     }
     .thumbnail .item .content{
         /* inset: auto auto 2rem auto; */
@@ -486,10 +480,7 @@ body{
         left: auto;
     }
     .slider .list .item .content h2{
-        font-size: 50px;
-    }
-    .slider .list .item .content{
-        top: 10%;
+        font-size: 40px;
     }
     /* .arrows{
         top: 16%;

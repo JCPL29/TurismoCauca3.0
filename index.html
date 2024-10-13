@@ -36,7 +36,7 @@
     <nav class="navbar navbar-expand-lg p-3" id="menu">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">
-            <img src="./IMAGES/LogoAgencia.png" alt="Agencia de Viajes Sin Limites">
+            <img src="./IMAGES/Logo2.0.png" alt="Agencia de Viajes Sin Limites">
             <!-- <span class="Principal-text-nav fs-3 fw-bold">Agencia de Viajes Sin Limites</span> --><!-- span para poder configurar estilos al texto (linea generica) -->
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,17 +111,17 @@
                 </div> -->
                 <!-- thumbnail -->
                 <div class="thumbnail">
-                    <!-- <a href="#bloque-silvia">
-                        <img class="arrow-up2" src="./ICONS/arrow-down.svg" alt="">
-                    </a> -->
+                    <a href="#bloque-inicial">
+                        <img class="arrow-up2" src="./ICONS/arrow-up.svg" alt="">
+                    </a>
                     <a href="#bloque-silvia">
                         <img class="arrow-down" src="./ICONS/arrow-down.svg" alt="">
                     </a>
-                    <div class="item active">
+                    <div class="item active" id="openModal1-popayan" data-modal="gastronomia-popayan">
                         <img src="./IMAGES/POPAYAN/gastronomia5.JPEG">
                         <div class="content">
                             Gastronomía
-                            <button class="card-button mt-1" id="openModal1-popayan" data-modal="gastronomia-popayan">Más detalles</button>
+                            <!-- <button class="card-button mt-1" id="openModal1-popayan" data-modal="gastronomia-popayan">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa gastronomia ---------------------------------->
@@ -320,11 +320,11 @@
                         </div>
                     </div>
                     <!-------------------------------------------------------------------------------------------->
-                    <div class="item">
+                    <div class="item" id="openModal1-popayan" data-modal="arquitectura-popayan">
                         <img src="./IMAGES/POPAYAN/arquitectura7.JPEG">
                         <div class="content">
                             Arquitectura
-                            <button class="card-button mt-1" id="openModal1-popayan" data-modal="arquitectura-popayan">Más detalles</button>
+                            <!-- <button class="card-button mt-1" id="openModal1-popayan" data-modal="arquitectura-popayan">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa arquitectura ---------------------------------->
@@ -520,11 +520,11 @@
                         </div>
                     </div>
                     <!-------------------------------------------------------------------------------------------->
-                    <div class="item">
+                    <div class="item" id="openModal1-popayan" data-modal="museos-popayan">
                         <img src="./IMAGES/parque.JPEG">
                         <div class="content">
                             Museos
-                            <button class="card-button mt-1" id="openModal1-popayan" data-modal="museos-popayan">Más detalles</button>
+                            <!-- <button class="card-button mt-1" id="openModal1-popayan" data-modal="museos-popayan">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa museos ---------------------------------->
@@ -810,14 +810,17 @@
                 </div> -->
                 <!-- thumbnail -->
                 <div class="thumbnail">
+                    <a href="#bloque-popayan">
+                        <img class="arrow-up2" src="./ICONS/arrow-up.svg" alt="">
+                    </a>
                     <a href="#bloque-purace">
                         <img class="arrow-down" src="./ICONS/arrow-down.svg" alt="">
                     </a>
-                    <div class="item active">
+                    <div class="item active" data-modal="paisajes-silvia">
                         <img src="./IMAGES/SILVIA/principal.JPEG">
                         <div class="content">
                             Paisajes
-                            <button class="card-button mt-1" data-modal="paisajes-silvia">Más detalles</button>
+                            <!-- <button class="card-button mt-1" data-modal="paisajes-silvia">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa paisajes ---------------------------------->
@@ -903,11 +906,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-modal="cultura-silvia">
                         <img src="./IMAGES/SILVIA/guia-misak.JPEG">
                         <div class="content">
                             Cultura <em>Misak</em>
-                            <button class="card-button mt-1" data-modal="cultura-silvia">Más detalles</button>
+                            <!-- <button class="card-button mt-1" data-modal="cultura-silvia">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa Cultura ---------------------------------->
@@ -1042,11 +1045,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-modal="mercado-silvia">
                         <img src="./IMAGES/SILVIA/Mercado.JPEG">
                         <div class="content">
                             Mercado tradicional
-                            <button class="card-button mt-1" data-modal="mercado-silvia">Más detalles</button>
+                            <!-- <button class="card-button mt-1" data-modal="mercado-silvia">Más detalles</button> -->
                         </div>
                     </div>
                     <!------------------------------- Info completa Mercado Tradicional ---------------------------------->
@@ -1110,41 +1113,41 @@
             <div class="list">
                 <div class="item active">
                     <img src="./IMAGES/PURACE/Ecoturismo1.JPEG">
-                    <div class="content mt-5">
+                    <div class="content mt-md-5 mt-1">
                         <p class="fst-italic fw-bold">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            En el municipio de Puracé se encuentra el Parque Nacional Natural Puracé, declarado reserva de la Biosfera por la Unesco en 1979. Es un destino ideal para los amantes del ecoturismo y la conexión con la naturaleza, con caminatas y observación de vida silvestre. El parque ofrece paisajes volcánicos, páramos y una rica biodiversidad. Además, en Puracé se puede disfrutar de las aguas termales en Coconuco.
+                            El Parque Nacional Natural Puracé, en el municipio de Puracé, es una reserva de la biosfera declarada por la Unesco en 1979. Es un destino ideal para el ecoturismo, ofreciendo caminatas, observación de vida silvestre, paisajes volcánicos y páramos. Además, en Puracé se pueden disfrutar las aguas termales de Coconuco.
                         </p>
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/PURACE/termales1.JPEG">
-                    <div class="content mt-5">
+                    <div class="content mt-md-5 mt-1">
                         <p class="fst-italic fw-bold">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            En el municipio de Puracé se encuentra el Parque Nacional Natural Puracé, declarado reserva de la Biosfera por la Unesco en 1979. Es un destino ideal para los amantes del ecoturismo y la conexión con la naturaleza, con caminatas y observación de vida silvestre. El parque ofrece paisajes volcánicos, páramos y una rica biodiversidad. Además, en Puracé se puede disfrutar de las aguas termales en Coconuco.
+                            El Parque Nacional Natural Puracé, en el municipio de Puracé, es una reserva de la biosfera declarada por la Unesco en 1979. Es un destino ideal para el ecoturismo, ofreciendo caminatas, observación de vida silvestre, paisajes volcánicos y páramos. Además, en Puracé se pueden disfrutar las aguas termales de Coconuco.
                         </p>
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/PURACE/frailejones.JPEG">
-                    <div class="content mt-5">
+                    <div class="content mt-md-5 mt-1">
                         <p class="fst-italic fw-bold">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            En el municipio de Puracé se encuentra el Parque Nacional Natural Puracé, declarado reserva de la Biosfera por la Unesco en 1979. Es un destino ideal para los amantes del ecoturismo y la conexión con la naturaleza, con caminatas y observación de vida silvestre. El parque ofrece paisajes volcánicos, páramos y una rica biodiversidad. Además, en Puracé se puede disfrutar de las aguas termales en Coconuco.
+                            El Parque Nacional Natural Puracé, en el municipio de Puracé, es una reserva de la biosfera declarada por la Unesco en 1979. Es un destino ideal para el ecoturismo, ofreciendo caminatas, observación de vida silvestre, paisajes volcánicos y páramos. Además, en Puracé se pueden disfrutar las aguas termales de Coconuco.
                         </p>
                     </div>
                 </div>
                 <div class="item">
                     <img src="./IMAGES/PURACE/condor1.JPEG">
-                    <div class="content mt-5">
+                    <div class="content mt-md-5 mt-1">
                         <p class="fst-italic fw-bold">Ecoturismo y Termalismo</p>
                         <h2>Purace y Coconuco</h2>
                         <p>
-                            En el municipio de Puracé se encuentra el Parque Nacional Natural Puracé, declarado reserva de la Biosfera por la Unesco en 1979. Es un destino ideal para los amantes del ecoturismo y la conexión con la naturaleza, con caminatas y observación de vida silvestre. El parque ofrece paisajes volcánicos, páramos y una rica biodiversidad. Además, en Puracé se puede disfrutar de las aguas termales en Coconuco.
+                            El Parque Nacional Natural Puracé, en el municipio de Puracé, es una reserva de la biosfera declarada por la Unesco en 1979. Es un destino ideal para el ecoturismo, ofreciendo caminatas, observación de vida silvestre, paisajes volcánicos y páramos. Además, en Puracé se pueden disfrutar las aguas termales de Coconuco.
                         </p>
                     </div>
                 </div>
@@ -1156,17 +1159,17 @@
             </div> -->
             <!-- thumbnail -->
             <div class="thumbnail">
-                <!-- <a href="#bloque-inicial">
-                    <img class="arrow-up" src="./ICONS/arrow-up.svg" alt="">
-                </a> -->
+                <a href="#bloque-silvia">
+                    <img class="arrow-up2" src="./ICONS/arrow-up.svg" alt="">
+                </a>
                 <a href="#bloque-tierradentro">
                     <img class="arrow-down" src="./ICONS/arrow-down.svg" alt="">
                 </a>
-                <div class="item active">
+                <div class="item active" data-modal="coconuco-purace">
                     <img src="./IMAGES/PURACE/Ecoturismo1.JPEG">
                     <div class="content">
                         Coconuco
-                        <button class="card-button mt-1" data-modal="coconuco-purace">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="coconuco-purace">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa coconuco (Falta información o imagenes)------------------------------->
@@ -1218,11 +1221,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-modal="termales-purace">
                     <img src="./IMAGES/PURACE/termales1.JPEG">
                     <div class="content">
                         Termales de San Juan
-                        <button class="card-button mt-1" data-modal="termales-purace">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="termales-purace">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa termales ---------------------------------->
@@ -1265,12 +1268,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-modal="frailejones-purace">
                     <img src="./IMAGES/PURACE/frailejones.JPEG">
                     <div class="content">
                         Valle de Frailejones
                         <br>
-                        <button class="card-button mt-1" data-modal="frailejones-purace">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="frailejones-purace">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa valle de frailejones ---------------------------------->
@@ -1311,12 +1314,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-modal="aves-purace">
                     <img src="./IMAGES/PURACE/condor1.JPEG">
                     <div class="content">
                         Ruta del Condor
                         <br>
-                        <button class="card-button mt-1" data-modal="aves-purace">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="aves-purace">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa aves ---------------------------------->
@@ -1396,14 +1399,17 @@
             </div> -->
             <!-- thumbnail -->
             <div class="thumbnail">
-                <a href="#bloque-inicial">
-                    <img class="arrow-up" src="./ICONS/arrow-up.svg" alt="">
+                <a href="#bloque-purace">
+                    <img class="arrow-up2" src="./ICONS/arrow-up.svg" alt="">
                 </a>
-                <div class="item active">
+                <a href="#bloque-inicial">
+                    <img class="arrow-full" src="./ICONS/arrow-full.svg" alt="">
+                </a>
+                <div class="item active" data-modal="parque-tierradentro">
                     <img src="./IMAGES/TIERRADENTRO/Segovia.JPEG">
                     <div class="content">
                         Parque Arqueológico de Tierradentro
-                        <button class="card-button mt-1" data-modal="parque-tierradentro">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="parque-tierradentro">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa parque arqueológico ---------------------------------->
@@ -1538,11 +1544,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" data-modal="capilla-tierradentro">
                     <img src="./IMAGES/TIERRADENTRO/Iglesia.JPEG">
                     <div class="content">
                         Capilla San Andres de Pisimbalá
-                        <button class="card-button mt-1" data-modal="capilla-tierradentro">Más detalles</button>
+                        <!-- <button class="card-button mt-1" data-modal="capilla-tierradentro">Más detalles</button> -->
                     </div>
                 </div>
                 <!------------------------------- Info completa Capilla ---------------------------------->

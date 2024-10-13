@@ -24,7 +24,7 @@ body{
     color: #0832A2;
 } */
 .navbar-brand img{
-    height: 6rem;
+    height: 5rem;
     padding-left: 3rem;
 }
 .nav-link{
@@ -52,7 +52,7 @@ body{
         font-size: calc(1.2rem + -0.5vw) !important;
     }
     .navbar-brand img{
-        height: 5rem;
+        height: 4rem;
         padding-left: 0.5rem;
     }
 }
