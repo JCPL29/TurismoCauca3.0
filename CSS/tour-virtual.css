@@ -32,7 +32,7 @@ body{
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(to right, #FFFFFF 35%, transparent);
+    background-image: linear-gradient(to right, #FFFFFF 28%, transparent);
 }
 .slider .list .item .content{
     position: absolute;
@@ -55,8 +55,8 @@ body{
 }
 .content p{
     margin-top: 0.5rem;
-    color: #000000;
-    text-shadow: 2px 2px 4px rgb(8, 50, 162);
+    color: #0832A2;
+    /* text-shadow: 2px 2px 4px rgb(8, 50, 162); */
     font-size: 17px;
 }
 .slider .list .item.active{
