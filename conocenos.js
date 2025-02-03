@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = [
       'url("../IMAGES/POPAYAN/torre.JPEG")',
       'url("../IMAGES/SILVIA/principal.JPEG")',
-      'url("../IMAGES/purace3.jpg")',
-      'url(../IMAGES/tierradentro5.jpg)'
+      'url("../IMAGES/PURACE/condor1.JPEG")',
+      'url(../IMAGES/TIERRADENTRO/hipogeo2.JPEG)'
     ];
   
     const gradients = [
