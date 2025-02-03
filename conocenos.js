@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const images = [
-      'url("/IMAGES/POPAYAN/torre.JPEG")',
-      'url("/IMAGES/SILVIA/principal.JPEG")',
-      'url("/IMAGES/PURACE/condor1.JPEG")',
-      'url(/IMAGES/TIERRADENTRO/hipogeo2.JPEG)'
-    ];
+  const basePath = window.location.origin + "/TurismoCauca3.0/IMAGES/";
+
+  const images = [
+    `url("${basePath}POPAYAN/torre.JPEG")`,
+    `url("${basePath}SILVIA/principal.JPEG")`,
+    `url("${basePath}PURACE/condor1.JPEG")`,
+    `url("${basePath}TIERRADENTRO/hipogeo2.JPEG")`
+  ];
   
     const gradients = [
         'linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 255))',
