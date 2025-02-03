@@ -64,10 +64,10 @@
                         <p class="fst-italic">PATRIMONIO VIVO</p>
                         <h2>POPAYÁN</h2>
                         <p>
-                            Descubre la riqueza histórica y arquitectónica de Popayán, la Ciudad Blanca, famosa por su impresionante arquitectura colonial y sus tradicionales procesiones de Semana Santa. Sumérgete en el encanto de sus calles empedradas y plazas llenas de historia, todo desde la comodidad de tu hogar.
+                            Descubre la riqueza histórica y arquitectónica de Popayán, la Ciudad Blanca, famosa por su impresionante arquitectura colonial y sus tradicionales procesiones de Semana Santa.
                         </p>
                         <div class="buttons-tour">
-                            <a href="./VR/index.html">
+                            <a href="./TourWeb/Tour.html?scene=0">
                                 <button>Iniciar Tour Virtual!</button>
                             </a>
                         </div>    
@@ -79,10 +79,10 @@
                         <p class="fst-italic">CULTURA MISAK</p>
                         <h2>SILVIA</h2>
                         <p>
-                            Explora los hermosos paisajes y la vibrante cultura indígena de Silvia, un tesoro escondido en el corazón del Cauca. Maravíllate con sus coloridos mercados y la calidez de su gente mientras descubres las tradiciones ancestrales que hacen de este lugar un destino único. Vive esta experiencia cultural sin salir de casa.
+                            Explora los hermosos paisajes y la vibrante cultura indígena de Silvia.
                         </p>
                         <div class="buttons-tour">
-                            <a href="./VR/index.html">
+                            <a href="./TourWeb/Tour.html?scene=9">
                                 <button>Iniciar Tour Virtual!</button>
                             </a>
                         </div>
@@ -92,12 +92,12 @@
                     <img src="./IMAGES/PURACE/cascada1.JPEG">
                     <div class="content">
                         <p class="fst-italic">AVENTURA Y RELAJACIÓN</p>
-                        <h2>PURACE Y COCONUCO</h2>
+                        <h2>PURACÉ Y COCONUCO</h2>
                         <p>
-                            Descubre la impresionante belleza de Puracé y Coconuco, con sus majestuosos volcanes, termales relajantes y la oportunidad de avistar el cóndor de los Andes. Sumérgete en la diversidad de su fauna y flora, y disfruta de sus tranquilos paisajes andinos desde cualquier lugar.
+                            Descubre la impresionante belleza de Puracé y Coconuco, con sus majestuosos volcanes y termales.
                         </p>
                         <div class="buttons-tour">
-                            <a href="./VR/index.html">
+                            <a href="./TourWeb/Tour.html?scene=14">
                                 <button>Iniciar Tour Virtual!</button>
                             </a>
                         </div>
@@ -109,10 +109,10 @@
                         <p class="fst-italic">ARQUEOLOGÍA</p>
                         <h2>TIERRADENTRO</h2>
                         <p>
-                            Adéntrate en los misterios de Tierradentro y sus impresionantes tumbas subterráneas, declaradas Patrimonio de la Humanidad por la UNESCO. Descubre la riqueza arqueológica y la fascinante historia ancestral que envuelve a este sitio sagrado. Explora este patrimonio cultural desde tu hogar y siente la conexión con el pasado.
+                            Adéntrate en los misterios de Tierradentro y sus impresionantes tumbas subterráneas.
                         </p>
                         <div class="buttons-tour">
-                            <a href="./VR/index.html">
+                            <a href="./TourWeb/Tour.html?scene=18">
                                 <button>Iniciar Tour Virtual!</button>
                             </a>
                         </div>
@@ -182,7 +182,7 @@
           </div>
         </div> -->
         <div class="copyright">
-          <p class="pt-3 fs-6 text-center list-group w-100">© 2024 TurismoCauca3.0. Todos los derechos reservados.</p>
+          <p class="pt-3 fs-6 text-center list-group w-100">© 2024 Agencia de Viajes Sin Limites. Todos los derechos reservados.</p>
         </div>
       </footer>
     <script src="idea2.js"></script>
@@ -191,6 +191,12 @@
     <script>
         document.getElementById('generalButton').addEventListener('click', function() {
         const buttons = document.querySelectorAll('.contact-button.hidden, .contact-button.visible');
+
+        /* Cambio escenas tour web */
+
+        function loadScene(sceneIndex) {
+            document.getElementById('tour-container').src = `Tour.html?scene=${sceneIndex}`;
+        }
 
         buttons.forEach(button => {
             if (button !== document.getElementById('generalButton')) {
