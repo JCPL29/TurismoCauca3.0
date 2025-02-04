@@ -490,6 +490,23 @@ nav {
     text-align: right; 
 }
 
+.dist-text {
+    position: absolute;
+    top: 110px;
+    right: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    z-index: 0;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px; 
+    white-space: normal;
+    word-wrap: break-word; 
+    text-align: right; 
+}
+
 /* Estilos para dispositivos móviles */
 
 .close-btn {

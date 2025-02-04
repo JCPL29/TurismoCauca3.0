@@ -158,6 +158,7 @@
     <div id="container"></div>
     <div id="content"></div>
     <div id="scene-text" class="scene-text"></div>
+    <div id="dist-text" class="dist-text"></div>
 
     <div class="off-screen-menu">
         <ul>
@@ -281,7 +282,7 @@
 
             if (loadedTextures[sceneIndex]) {
                 addTextureToScene(newScene, loadedTextures[sceneIndex], sceneIndex);
-                addSceneSpecificText(newScene, sceneIndex);
+                //addSceneSpecificText(newScene, sceneIndex);
                 scene = newScene; 
                 if (callback) callback(scene);
             } else {
@@ -318,7 +319,7 @@
                     (texture) => {
                         loadedTextures[sceneIndex] = texture;
                         addTextureToScene(newScene, texture, sceneIndex);
-                        addSceneSpecificText(newScene, sceneIndex);
+                        //addSceneSpecificText(newScene, sceneIndex);
 
                         scene = newScene;
 
@@ -348,15 +349,18 @@
                 case 6: text = 'Popayán, Parque Caldas'; break;
                 case 7: text = 'Popayán, Iglesia La Encarnación'; break;
                 case 8: text = 'Popayán, Museo Negret'; break;
+
                 case 9: text = 'Silvia, Colina de Belén'; break;
                 case 10: text = 'Silvia, Jardín Botánico'; break;
                 case 11: text = 'Silvia, Parque Principal'; break;
                 case 12: text = 'Silvia, Mercado Tradicional'; break;
                 case 13: text = 'Silvia, Jardín Botánico Casa del Pensamiento'; break;
+
                 case 14: text = 'Puracé, Piedra del Cóndor'; break;
                 case 15: text = 'Puracé, Termales de San Juan'; break;
                 case 16: text = 'Puracé , Valle de los Frailejones'; break;
                 case 17: text = 'Puracé, Termales de San Juan'; break;
+
                 case 18: text = 'Parque Arqueológico Tierradentro, Alto de Segovia'; break;
                 case 19: text = 'Parque Arqueológico Tierradentro, Hipogeo 1'; break;
                 /*case 20: text = 'Parque Arqueológico Tierradentro, Hipogeo 2'; break;*/
@@ -368,6 +372,27 @@
             }
 
             sceneTextElement.textContent = text;
+        }
+
+        //funcion para ver la distancia----
+
+        function distanceText(sceneIndex){
+            const distanceTextElement = document.getElementById('dist-text');
+            let dist;
+
+            switch (sceneIndex) {
+
+                case 9: dist = '📍Popayán a 56 km'; break;
+
+                case 14: dist = '📍Popayán a 34 km'; break;
+
+                case 18: dist = '📍Popayán a 114 km'; break;
+
+                default:
+                dist = '';
+            }
+            distanceTextElement.textContent = dist;
+
         }
 
         //------Precargar siguiente escena------
@@ -439,6 +464,7 @@
                                 fetchWeatherData(lat, lon);
                             }
                             updateSceneText(targetSceneIndex);
+                            distanceText(targetSceneIndex);
                         });
                     }
                 });
@@ -455,6 +481,7 @@
                         fetchWeatherData(lat, lon);
                     }
                     updateSceneText(targetSceneIndex);
+                    distanceText(targetSceneIndex);
                 });
             }
         }
@@ -690,7 +717,7 @@
 
         //---------------------textos para indicar distancia con respecto a popayán--------------
 
-        function addSceneSpecificText(scene, sceneIndex) {
+        /*function addSceneSpecificText(scene, sceneIndex) {
         let text, position;
 
         switch (sceneIndex) {
@@ -712,7 +739,7 @@
         if (text && position) {
             addTextToScene(scene, text, position); 
         }
-    }
+    }*/
 
     //--------------------agregar texto a la escena
 
@@ -1251,36 +1278,22 @@
         };
 
         const sceneRegions = {
-            0: 'Popayán',
-            1: 'Popayán',
-            2: 'Popayán',
-            3: 'Popayán',
-            4: 'Popayán',
-            5: 'Popayán',
-            6: 'Popayán',
-            7: 'Popayán',
-            8: 'Popayán',
-
-            9: 'Silvia',
-            10: 'Silvia',
-            11: 'Silvia',
-            12: 'Silvia',
-            13: 'Silvia',
-
-            14: 'Puracé',
-            15: 'Puracé',
-            16: 'Puracé',
-            17: 'Puracé',
-
-            18: 'Tierradentro',
-            19: 'Tierradentro',
-            20: 'Tierradentro',
-            21: 'Tierradentro',
-            22: 'Tierradentro',
-            23: 'Tierradentro'
+            0: 'Popayán', 1: 'Popayán', 2: 'Popayán', 3: 'Popayán', 4: 'Popayán',
+            5: 'Popayán', 6: 'Popayán', 7: 'Popayán', 8: 'Popayán',
+            9: 'Silvia', 10: 'Silvia', 11: 'Silvia', 12: 'Silvia', 13: 'Silvia',
+            14: 'Puracé', 15: 'Puracé', 16: 'Puracé', 17: 'Puracé',
+            18: 'Tierradentro', 19: 'Tierradentro', 20: 'Tierradentro', 
+            21: 'Tierradentro', 22: 'Tierradentro', 23: 'Tierradentro'
         };
 
-        async function fetchWeatherData(lat, lon) {
+        const errorMessages = {
+            'Popayán': 'Temperatura: 18°C a 22°C',
+            'Silvia': 'Temperatura: 16°C a 20°C',
+            'Puracé': 'Temperatura:15°C a 19°C',
+            'Tierradentro': 'Temperatura: 16°C a 22°C'
+        };
+
+        async function fetchWeatherData(lat, lon, region) {
             const apiKey = '6bae8b38ab56fc803410a26d94082f88';
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=es`;
 
@@ -1307,19 +1320,30 @@
                 hours = hours ? hours : 12;
                 const time = hours.toString().padStart(2, '0') + ':' + minutes + ' ' + ampm;
 
-                const weatherData = document.getElementById('weather-data');
-                const weatherDescription = document.getElementById('weather-description');
-                weatherData.textContent = `${time}: ${temp}°C`;
-                weatherDescription.textContent = description;
+                document.getElementById('weather-data').textContent = `${time}: ${temp}°C`;
+                document.getElementById('weather-description').textContent = description;
             } catch (error) {
-                const weatherData = document.getElementById('weather-data');
-                const weatherDescription = document.getElementById('weather-description');
-                weatherData.textContent = 'Actualizando datos del clima...';
-                weatherDescription.textContent = '';
+                console.error(error);
+                document.getElementById('weather-data').textContent = errorMessages[region] || 'Error obteniendo el clima.';
+                document.getElementById('weather-description').textContent = '';
             }
         }
 
-        setInterval(fetchWeatherData, 60 * 1000);
+        // Llamar la función de clima con la región correspondiente
+        function updateWeatherForScene(sceneIndex) {
+            const region = sceneRegions[sceneIndex];
+            if (region && regionCoordinates[region]) {
+                const { lat, lon } = regionCoordinates[region];
+                fetchWeatherData(lat, lon, region);
+            }
+        }
+
+        // Actualiza el clima cada 60 segundos
+        setInterval(() => {
+            if (currentSceneIndex !== undefined) {
+                updateWeatherForScene(currentSceneIndex);
+            }
+        }, 60 * 1000);
 
         //---------Zoom en pc------------------------------------
 
