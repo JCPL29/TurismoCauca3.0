@@ -158,6 +158,8 @@
     <div id="container"></div>
     <div id="content"></div>
     <div id="scene-text" class="scene-text"></div>
+    <div id="dist-text" class="dist-text"></div>
+    <div id="dist-txt1" class="dist-txt1"></div>
 
     <div class="off-screen-menu">
         <ul>
@@ -281,7 +283,7 @@
 
             if (loadedTextures[sceneIndex]) {
                 addTextureToScene(newScene, loadedTextures[sceneIndex], sceneIndex);
-                addSceneSpecificText(newScene, sceneIndex);
+                //addSceneSpecificText(newScene, sceneIndex);
                 scene = newScene; 
                 if (callback) callback(scene);
             } else {
@@ -318,7 +320,7 @@
                     (texture) => {
                         loadedTextures[sceneIndex] = texture;
                         addTextureToScene(newScene, texture, sceneIndex);
-                        addSceneSpecificText(newScene, sceneIndex);
+                        //addSceneSpecificText(newScene, sceneIndex);
 
                         scene = newScene;
 
@@ -339,35 +341,74 @@
             let text;
 
             switch (sceneIndex) {
-                case 0: text = 'Popayán, Torre del Reloj'; break;
-                case 1: text = 'Popayán, Puente del Humilladero'; break;
-                case 2: text = 'Popayán, Arcada de la Herrería'; break;
-                case 3: text = 'Popayán, Morro de Tulcán'; break;
-                case 4: text = 'Popayán, Rincón Payanés'; break;
-                case 5: text = 'Popayán, Gastronomía'; break;
-                case 6: text = 'Popayán, Parque Caldas'; break;
-                case 7: text = 'Popayán, Iglesia La Encarnación'; break;
-                case 8: text = 'Popayán, Museo Negret'; break;
-                case 9: text = 'Silvia, Colina de Belén'; break;
-                case 10: text = 'Silvia, Jardín Botánico'; break;
-                case 11: text = 'Silvia, Parque Principal'; break;
-                case 12: text = 'Silvia, Mercado Tradicional'; break;
-                case 13: text = 'Silvia, Jardín Botánico Casa del Pensamiento'; break;
-                case 14: text = 'Puracé, Piedra del Cóndor'; break;
-                case 15: text = 'Puracé, Termales de San Juan'; break;
-                case 16: text = 'Puracé , Valle de los Frailejones'; break;
-                case 17: text = 'Puracé, Termales de San Juan'; break;
-                case 18: text = 'Parque Arqueológico Tierradentro, Alto de Segovia'; break;
-                case 19: text = 'Parque Arqueológico Tierradentro, Hipogeo 1'; break;
+                case 0: text = 'Popayán, Torre del Reloj.'; break;
+                case 1: text = 'Popayán, Puente del Humilladero.'; break;
+                case 2: text = 'Popayán, Arcada de la Herrería.'; break;
+                case 3: text = 'Popayán, Morro de Tulcán.'; break;
+                case 4: text = 'Popayán, Rincón Payanés.'; break;
+                case 5: text = 'Popayán, Gastronomía.'; break;
+                case 6: text = 'Popayán, Parque Caldas.'; break;
+                case 7: text = 'Popayán, Iglesia La Encarnación.'; break;
+                case 8: text = 'Popayán, Museo Negret.'; break;
+
+                case 9: text = 'Silvia, Colina de Belén.'; break;
+                case 10: text = 'Silvia, Jardín Botánico.'; break;
+                case 11: text = 'Silvia, Parque Principal.'; break;
+                case 12: text = 'Silvia, Mercado Tradicional.'; break;
+                case 13: text = 'Silvia, Jardín Botánico Casa del Pensamiento.'; break;
+
+                case 14: text = 'Puracé, Piedra del Cóndor.'; break;
+                case 15: text = 'Puracé, Termales de San Juan.'; break;
+                case 16: text = 'Puracé , Valle de los Frailejones.'; break;
+                case 17: text = 'Puracé, Termales de San Juan.'; break;
+
+                case 18: text = 'Parque Arqueológico Tierradentro, Alto de Segovia.'; break;
+                case 19: text = 'Parque Arqueológico Tierradentro, Hipogeo 1.'; break;
                 /*case 20: text = 'Parque Arqueológico Tierradentro, Hipogeo 2'; break;*/
-                case 21: text = 'Parque Arqueológico Tierradentro, Hipogeo 2'; break;
-                case 22: text = 'Parque Arqueológico Tierradentro, Estatuas Monolíticas'; break;
-                case 23: text = 'Parque Arqueológico Tierradentro, Museo Arqueológico'; break;
+                case 21: text = 'Parque Arqueológico Tierradentro, Hipogeo 2.'; break;
+                case 22: text = 'Parque Arqueológico Tierradentro, Estatuas Monolíticas.'; break;
+                case 23: text = 'Parque Arqueológico Tierradentro, Museo Arqueológico.'; break;
                 default:
                     text = '';
             }
 
             sceneTextElement.textContent = text;
+        }
+
+        //funcion para ver la distancia----
+
+        function distanceText(sceneIndex){
+            const distanceTextElement = document.getElementById('dist-text');
+            let dist;
+
+            switch (sceneIndex) {
+
+                case 9: dist = '📍Popayán a 56 km'; break;
+
+                case 14: dist = '📍Popayán a 34 km'; break;
+
+                default:
+                dist = '';
+            }
+            distanceTextElement.textContent = dist;
+
+        }
+
+        //funcion para ver la distancia Tierradentro----
+
+        function distanceText1(sceneIndex){
+            const distanceTextElement1 = document.getElementById('dist-txt1');
+            let dist1;
+
+            switch (sceneIndex) {
+
+                case 18: dist1 = '📍Popayán a 114 km'; break;
+
+                default:
+                dist1 = '';
+            }
+            distanceTextElement1.textContent = dist1;
+
         }
 
         //------Precargar siguiente escena------
@@ -439,6 +480,8 @@
                                 fetchWeatherData(lat, lon);
                             }
                             updateSceneText(targetSceneIndex);
+                            distanceText(targetSceneIndex);
+                            distanceText1(targetSceneIndex);
                         });
                     }
                 });
@@ -455,6 +498,8 @@
                         fetchWeatherData(lat, lon);
                     }
                     updateSceneText(targetSceneIndex);
+                    distanceText(targetSceneIndex);
+                    distanceText1(targetSceneIndex);
                 });
             }
         }
@@ -690,7 +735,7 @@
 
         //---------------------textos para indicar distancia con respecto a popayán--------------
 
-        function addSceneSpecificText(scene, sceneIndex) {
+        /*function addSceneSpecificText(scene, sceneIndex) {
         let text, position;
 
         switch (sceneIndex) {
@@ -712,7 +757,7 @@
         if (text && position) {
             addTextToScene(scene, text, position); 
         }
-    }
+    }*/
 
     //--------------------agregar texto a la escena
 
@@ -773,7 +818,7 @@
             const geometry = new THREE.PlaneGeometry(90, 66);
             videoTexture.minFilter = THREE.LinearFilter;
             videoTexture.magFilter = THREE.LinearFilter;
-            videoTexture.encoding = THREE.sRGBEncoding; 
+            videoTexture.colorSpace = THREE.SRGBColorSpace; 
             videoMesh = new THREE.Mesh(geometry, videoMaterial);
             videoMesh.position.copy(sprite.position);
             videoMesh.position.y += 40; 
@@ -1251,36 +1296,22 @@
         };
 
         const sceneRegions = {
-            0: 'Popayán',
-            1: 'Popayán',
-            2: 'Popayán',
-            3: 'Popayán',
-            4: 'Popayán',
-            5: 'Popayán',
-            6: 'Popayán',
-            7: 'Popayán',
-            8: 'Popayán',
-
-            9: 'Silvia',
-            10: 'Silvia',
-            11: 'Silvia',
-            12: 'Silvia',
-            13: 'Silvia',
-
-            14: 'Puracé',
-            15: 'Puracé',
-            16: 'Puracé',
-            17: 'Puracé',
-
-            18: 'Tierradentro',
-            19: 'Tierradentro',
-            20: 'Tierradentro',
-            21: 'Tierradentro',
-            22: 'Tierradentro',
-            23: 'Tierradentro'
+            0: 'Popayán', 1: 'Popayán', 2: 'Popayán', 3: 'Popayán', 4: 'Popayán',
+            5: 'Popayán', 6: 'Popayán', 7: 'Popayán', 8: 'Popayán',
+            9: 'Silvia', 10: 'Silvia', 11: 'Silvia', 12: 'Silvia', 13: 'Silvia',
+            14: 'Puracé', 15: 'Puracé', 16: 'Puracé', 17: 'Puracé',
+            18: 'Tierradentro', 19: 'Tierradentro', 20: 'Tierradentro', 
+            21: 'Tierradentro', 22: 'Tierradentro', 23: 'Tierradentro'
         };
 
-        async function fetchWeatherData(lat, lon) {
+        const errorMessages = {
+            'Popayán': 'Temperatura: 20°C',
+            'Silvia': 'Temperatura: 18°C',
+            'Puracé': 'Temperatura: 16°C',
+            'Tierradentro': 'Temperatura: 18°C'
+        };
+
+        async function fetchWeatherData(lat, lon, region) {
             const apiKey = '6bae8b38ab56fc803410a26d94082f88';
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=es`;
 
@@ -1307,19 +1338,30 @@
                 hours = hours ? hours : 12;
                 const time = hours.toString().padStart(2, '0') + ':' + minutes + ' ' + ampm;
 
-                const weatherData = document.getElementById('weather-data');
-                const weatherDescription = document.getElementById('weather-description');
-                weatherData.textContent = `${time}: ${temp}°C`;
-                weatherDescription.textContent = description;
+                document.getElementById('weather-data').textContent = `${time}: ${temp}°C`;
+                document.getElementById('weather-description').textContent = description;
             } catch (error) {
-                const weatherData = document.getElementById('weather-data');
-                const weatherDescription = document.getElementById('weather-description');
-                weatherData.textContent = 'Actualizando datos del clima...';
-                weatherDescription.textContent = '';
+                console.error(error);
+                document.getElementById('weather-data').textContent = errorMessages[region] || 'Error obteniendo el clima.';
+                document.getElementById('weather-description').textContent = '';
             }
         }
 
-        setInterval(fetchWeatherData, 60 * 1000);
+        // Llamar la función de clima con la región correspondiente
+        function updateWeatherForScene(sceneIndex) {
+            const region = sceneRegions[sceneIndex];
+            if (region && regionCoordinates[region]) {
+                const { lat, lon } = regionCoordinates[region];
+                fetchWeatherData(lat, lon, region);
+            }
+        }
+
+        // Actualiza el clima cada 60 segundos
+        setInterval(() => {
+            if (currentSceneIndex !== undefined) {
+                updateWeatherForScene(currentSceneIndex);
+            }
+        }, 60 * 1000);
 
         //---------Zoom en pc------------------------------------
 
