@@ -1,9 +1,14 @@
 const hamMenu = document.querySelector(".ham-menu");
 const offScreenMenu = document.querySelector(".off-screen-menu");
+const hiddenTextElements = document.querySelectorAll(".scene-text, .dist-text, .dist-txt1");
 
 hamMenu.addEventListener("click", () => {
     hamMenu.classList.toggle("active");
     offScreenMenu.classList.toggle("active");
+
+    hiddenTextElements.forEach(element => {
+        element.classList.toggle("hidden");
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {

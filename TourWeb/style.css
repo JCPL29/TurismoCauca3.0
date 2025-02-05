@@ -255,7 +255,7 @@ body, html {
 }
 
 .off-screen-menu ul li img:hover {
-    transform: scale(1.1); /* Escala al pasar el mouse */
+    transform: scale(1.2); /* Escala al pasar el mouse */
 }
 
 nav {
@@ -313,7 +313,7 @@ nav {
 }
 
 .ham-menu:hover {
-    transform: scale(1.1); /* Escala al pasar el mouse */
+    transform: scale(1.2); /* Escala al pasar el mouse */
 }
 
 /* Tarjetas */
@@ -360,6 +360,7 @@ nav {
 .hidden {
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .card {
@@ -491,6 +492,23 @@ nav {
 }
 
 .dist-text {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    z-index: 0;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px; 
+    white-space: normal;
+    word-wrap: break-word; 
+    text-align: right; 
+}
+
+.dist-txt1 {
     position: absolute;
     top: 110px;
     right: 10px;

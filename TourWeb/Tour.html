@@ -159,6 +159,7 @@
     <div id="content"></div>
     <div id="scene-text" class="scene-text"></div>
     <div id="dist-text" class="dist-text"></div>
+    <div id="dist-txt1" class="dist-txt1"></div>
 
     <div class="off-screen-menu">
         <ul>
@@ -340,33 +341,33 @@
             let text;
 
             switch (sceneIndex) {
-                case 0: text = 'Popayán, Torre del Reloj'; break;
-                case 1: text = 'Popayán, Puente del Humilladero'; break;
-                case 2: text = 'Popayán, Arcada de la Herrería'; break;
-                case 3: text = 'Popayán, Morro de Tulcán'; break;
-                case 4: text = 'Popayán, Rincón Payanés'; break;
-                case 5: text = 'Popayán, Gastronomía'; break;
-                case 6: text = 'Popayán, Parque Caldas'; break;
-                case 7: text = 'Popayán, Iglesia La Encarnación'; break;
-                case 8: text = 'Popayán, Museo Negret'; break;
+                case 0: text = 'Popayán, Torre del Reloj.'; break;
+                case 1: text = 'Popayán, Puente del Humilladero.'; break;
+                case 2: text = 'Popayán, Arcada de la Herrería.'; break;
+                case 3: text = 'Popayán, Morro de Tulcán.'; break;
+                case 4: text = 'Popayán, Rincón Payanés.'; break;
+                case 5: text = 'Popayán, Gastronomía.'; break;
+                case 6: text = 'Popayán, Parque Caldas.'; break;
+                case 7: text = 'Popayán, Iglesia La Encarnación.'; break;
+                case 8: text = 'Popayán, Museo Negret.'; break;
 
-                case 9: text = 'Silvia, Colina de Belén'; break;
-                case 10: text = 'Silvia, Jardín Botánico'; break;
-                case 11: text = 'Silvia, Parque Principal'; break;
-                case 12: text = 'Silvia, Mercado Tradicional'; break;
-                case 13: text = 'Silvia, Jardín Botánico Casa del Pensamiento'; break;
+                case 9: text = 'Silvia, Colina de Belén.'; break;
+                case 10: text = 'Silvia, Jardín Botánico.'; break;
+                case 11: text = 'Silvia, Parque Principal.'; break;
+                case 12: text = 'Silvia, Mercado Tradicional.'; break;
+                case 13: text = 'Silvia, Jardín Botánico Casa del Pensamiento.'; break;
 
-                case 14: text = 'Puracé, Piedra del Cóndor'; break;
-                case 15: text = 'Puracé, Termales de San Juan'; break;
-                case 16: text = 'Puracé , Valle de los Frailejones'; break;
-                case 17: text = 'Puracé, Termales de San Juan'; break;
+                case 14: text = 'Puracé, Piedra del Cóndor.'; break;
+                case 15: text = 'Puracé, Termales de San Juan.'; break;
+                case 16: text = 'Puracé , Valle de los Frailejones.'; break;
+                case 17: text = 'Puracé, Termales de San Juan.'; break;
 
-                case 18: text = 'Parque Arqueológico Tierradentro, Alto de Segovia'; break;
-                case 19: text = 'Parque Arqueológico Tierradentro, Hipogeo 1'; break;
+                case 18: text = 'Parque Arqueológico Tierradentro, Alto de Segovia.'; break;
+                case 19: text = 'Parque Arqueológico Tierradentro, Hipogeo 1.'; break;
                 /*case 20: text = 'Parque Arqueológico Tierradentro, Hipogeo 2'; break;*/
-                case 21: text = 'Parque Arqueológico Tierradentro, Hipogeo 2'; break;
-                case 22: text = 'Parque Arqueológico Tierradentro, Estatuas Monolíticas'; break;
-                case 23: text = 'Parque Arqueológico Tierradentro, Museo Arqueológico'; break;
+                case 21: text = 'Parque Arqueológico Tierradentro, Hipogeo 2.'; break;
+                case 22: text = 'Parque Arqueológico Tierradentro, Estatuas Monolíticas.'; break;
+                case 23: text = 'Parque Arqueológico Tierradentro, Museo Arqueológico.'; break;
                 default:
                     text = '';
             }
@@ -386,12 +387,27 @@
 
                 case 14: dist = '📍Popayán a 34 km'; break;
 
-                case 18: dist = '📍Popayán a 114 km'; break;
-
                 default:
                 dist = '';
             }
             distanceTextElement.textContent = dist;
+
+        }
+
+        //funcion para ver la distancia Tierradentro----
+
+        function distanceText1(sceneIndex){
+            const distanceTextElement1 = document.getElementById('dist-txt1');
+            let dist1;
+
+            switch (sceneIndex) {
+
+                case 18: dist1 = '📍Popayán a 114 km'; break;
+
+                default:
+                dist1 = '';
+            }
+            distanceTextElement1.textContent = dist1;
 
         }
 
@@ -465,6 +481,7 @@
                             }
                             updateSceneText(targetSceneIndex);
                             distanceText(targetSceneIndex);
+                            distanceText1(targetSceneIndex);
                         });
                     }
                 });
@@ -482,6 +499,7 @@
                     }
                     updateSceneText(targetSceneIndex);
                     distanceText(targetSceneIndex);
+                    distanceText1(targetSceneIndex);
                 });
             }
         }
@@ -800,7 +818,7 @@
             const geometry = new THREE.PlaneGeometry(90, 66);
             videoTexture.minFilter = THREE.LinearFilter;
             videoTexture.magFilter = THREE.LinearFilter;
-            videoTexture.encoding = THREE.sRGBEncoding; 
+            videoTexture.colorSpace = THREE.SRGBColorSpace; 
             videoMesh = new THREE.Mesh(geometry, videoMaterial);
             videoMesh.position.copy(sprite.position);
             videoMesh.position.y += 40; 
@@ -1287,10 +1305,10 @@
         };
 
         const errorMessages = {
-            'Popayán': 'Temperatura: 18°C a 22°C',
-            'Silvia': 'Temperatura: 16°C a 20°C',
-            'Puracé': 'Temperatura:15°C a 19°C',
-            'Tierradentro': 'Temperatura: 16°C a 22°C'
+            'Popayán': 'Temperatura: 20°C',
+            'Silvia': 'Temperatura: 18°C',
+            'Puracé': 'Temperatura: 16°C',
+            'Tierradentro': 'Temperatura: 18°C'
         };
 
         async function fetchWeatherData(lat, lon, region) {
