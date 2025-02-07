@@ -230,7 +230,6 @@
         const arrowTexture = textureLoader.load('images/location.png');
         const videoSpriteTexture = textureLoader.load('images/video1.png');
         const audioSpriteTexture = textureLoader.load('images/music.png');
-        const infoSpriteTexture = textureLoader.load('textures/homew.png');
 
         function getSceneFromURL() {
             const params = new URLSearchParams(window.location.search);
@@ -273,7 +272,6 @@
 
         function loadScene(sceneIndex, callback) {
             const newScene = new THREE.Scene();
-
             const ambientLight = new THREE.AmbientLight(0xFFFFFF, 1.6);
             newScene.add(ambientLight);
 
@@ -412,6 +410,7 @@
         }
 
         //------Precargar siguiente escena------
+
         function preloadNextScene(nextSceneIndex) {
             const scenesToPreload = 6; 
             const startSceneIndex = nextSceneIndex;
@@ -736,36 +735,36 @@
         //---------------------textos para indicar distancia con respecto a popayán--------------
 
         /*function addSceneSpecificText(scene, sceneIndex) {
-        let text, position;
+            let text, position;
 
-        switch (sceneIndex) {
+            switch (sceneIndex) {
 
-            case 9:
-                text = "📍Popayán, 56 km";
-                position = new THREE.Vector3(-70, 5, -65); 
-                break;
-            case 14:
-                text = "📍Popayán, 34 km";
-                position = new THREE.Vector3(90, 3, -10); 
-                break;
-            case 18:
-                text = "📍Popayán, 114 km";
-                position = new THREE.Vector3(-90, 8, -50);
-                break;
+                case 9:
+                    text = "📍Popayán, 56 km";
+                    position = new THREE.Vector3(-70, 5, -65); 
+                    break;
+                case 14:
+                    text = "📍Popayán, 34 km";
+                    position = new THREE.Vector3(90, 3, -10); 
+                    break;
+                case 18:
+                    text = "📍Popayán, 114 km";
+                    position = new THREE.Vector3(-90, 8, -50);
+                    break;
+            }
+
+            if (text && position) {
+                addTextToScene(scene, text, position); 
+            }
+        }*/
+
+        //--------------------agregar texto a la escena
+
+        function addTextToScene(scene, text, position) {
+            const textSprite = createTextLabel(text);
+            textSprite.position.copy(position); 
+            scene.add(textSprite); 
         }
-
-        if (text && position) {
-            addTextToScene(scene, text, position); 
-        }
-    }*/
-
-    //--------------------agregar texto a la escena
-
-    function addTextToScene(scene, text, position) {
-        const textSprite = createTextLabel(text);
-        textSprite.position.copy(position); 
-        scene.add(textSprite); 
-    }
 
         //------------Sprite para video------------------
 
@@ -777,8 +776,7 @@
             sprite.userData = { type: 'video', label: label, videoPath: videoPath };
             sprite.material.depthTest = false;
             sprite.material.depthWrite = false;
-            
-
+        
             sprite.onPointerOver = function(event) {
                 sprite.scale.set(11, 11, 11);
                 showTextLabel(sprite);
@@ -790,10 +788,9 @@
                 hideTextLabel(sprite);
                 document.body.classList.remove('pointer-cursor');
             };
-
-            sprite.addEventListener('click', () => {
-                handleVideoSpriteClick(sprite);
-            });
+            //---------------------
+            sprite.addEventListener("click", () => handleVideoSpriteClick(sprite));
+            sprite.addEventListener("touchstart", () => handleVideoSpriteClick(sprite), { passive: true });
 
             return sprite;
         }
@@ -802,97 +799,206 @@
 
         function openVideo(sprite) {
             if (videoElement) {
-                videoElement.pause();
+                //videoElement.pause();
                 closeVideo();
             }
 
-            videoElement = document.createElement('video');
+            videoElement = document.createElement("video");
             videoElement.src = sprite.userData.videoPath;
             videoElement.loop = false;
-            videoElement.autoplay = true;
+            videoElement.autoplay = true; 
             videoElement.crossOrigin = "anonymous";
-            videoElement.style.display = 'none'; 
+            videoElement.setAttribute("playsinline", "true"); 
+            videoElement.style.display = "none"; 
+
+            const canPlayMP4 = videoElement.canPlayType("video/mp4");
+
+            if (canPlayMP4 === "" || canPlayMP4 === "no") {
+                console.error("⚠ El navegador no puede reproducir este formato de video.");
+                return;
+            }
+
+            videoElement.oncanplay = () => {
+                console.log("Video cargado.");
+                videoElement.play().then(() => {
+                    console.log("Reproducción iniciada.");
+                }).catch(error => {
+                    console.error("Error al reproducir video:", error);
+                });
+            };
 
             videoTexture = new THREE.VideoTexture(videoElement);
-            const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
-            const geometry = new THREE.PlaneGeometry(90, 66);
             videoTexture.minFilter = THREE.LinearFilter;
             videoTexture.magFilter = THREE.LinearFilter;
-            videoTexture.colorSpace = THREE.SRGBColorSpace; 
+            videoTexture.colorSpace = THREE.SRGBColorSpace;
+
+            const videoMaterial = new THREE.MeshBasicMaterial({ map: videoTexture });
+            const geometry = new THREE.PlaneGeometry(90, 66);
             videoMesh = new THREE.Mesh(geometry, videoMaterial);
             videoMesh.position.copy(sprite.position);
             videoMesh.position.y += 40; 
             videoMesh.lookAt(camera.position);
             currentScene.add(videoMesh);
 
-            videoElement.play().catch((error) => {
-                console.error('Error playing video:', error);
-            });
-
-            videoElement.onended = () => {
-                closeVideo();
-            };
-
-            updateMuteIcon(true);
             videoElement.onended = () => {
                 closeVideo();
                 updateMuteIcon(false);
             };
+
+            updateMuteIcon(true);
+        }
+
+        //-------------------Cerrar el video-----------------------------------
+
+        function closeVideo() {
+            if (videoMesh) {
+                currentScene.remove(videoMesh);
+                videoMesh = null;
+            }
+            if (videoElement) {
+                videoElement.pause();
+                videoElement.src = "";
+                videoElement.remove();
+                videoElement = null;
+                updateMuteIcon(false);
+            }
+        }
+
+        //handle para video
+
+        let lastInteractionTime = 0;
+
+        function handleVideoSpriteClick(sprite) {
+            const now = Date.now();
+
+            if (now - lastInteractionTime < 300) {
+                return;
+            }
+
+            lastInteractionTime = now;
+
+            if (videoElement) {
+                closeVideo();
+            } else {
+                openVideo(sprite);
+            }
         }
 
         //--------------Sprites para audio----------------------------------
 
         function createAudioSprite(position, label, audioPath) {
-            const spriteMaterial = new THREE.SpriteMaterial({ map: audioSpriteTexture });
-            const sprite = new THREE.Sprite(spriteMaterial);
-            sprite.position.copy(position);
-            sprite.scale.set(8, 8, 8);
-            sprite.userData = { type: 'audio', label: label, audioPath: audioPath };
-            sprite.material.depthTest = false;
-            sprite.material.depthWrite = false;
+    const spriteMaterial = new THREE.SpriteMaterial({ map: audioSpriteTexture });
+    const sprite = new THREE.Sprite(spriteMaterial);
+    sprite.position.copy(position);
+    sprite.scale.set(8, 8, 8);
+    sprite.userData = { type: 'audio', label: label, audioPath: audioPath };
+    sprite.material.depthTest = false;
+    sprite.material.depthWrite = false;
 
-            sprite.onPointerOver = function(event) {
-                sprite.scale.set(11, 11, 11);
-                showTextLabel(sprite);
-                document.body.classList.add('pointer-cursor');
-            };
+    sprite.onPointerOver = function(event) {
+        sprite.scale.set(11, 11, 11);
+        showTextLabel(sprite);
+        document.body.classList.add('pointer-cursor');
+    };
 
-            sprite.onPointerOut = function() {
-                sprite.scale.set(8, 8, 8);
-                hideTextLabel(sprite);
-                document.body.classList.remove('pointer-cursor');
-            };
+    sprite.onPointerOut = function() {
+        sprite.scale.set(8, 8, 8);
+        hideTextLabel(sprite);
+        document.body.classList.remove('pointer-cursor');
+    };
 
-            sprite.addEventListener('click', () => {
-                handleAudioSpriteClick(sprite);
-            });
+    sprite.addEventListener("click", () => handleAudioSpriteClick(sprite));
+    sprite.addEventListener("touchstart", () => handleAudioSpriteClick(sprite), { passive: false });
 
-            return sprite;
-        }
+    return sprite;
+}
+
 
         //--------------------Crear audio-------------------------
 
         function playAudio(sprite) {
-            const audio = new THREE.PositionalAudio(listener);
-            const audioPath = sprite.userData.audioPath;
-            audioLoader.load(audioPath, function(buffer) {
-                audio.setBuffer(buffer);
-                audio.setRefDistance(20);
-                audio.setVolume(3.0); 
-                audio.play();
-                audio.onEnded = () => {
-                    audioElements[`audio_${sprite.id}`] = null;
-                    updateMuteIcon(false);
-                };
-            });
-            sprite.add(audio);
-            audioElements[`audio_${sprite.id}`] = audio;
-            updateMuteIcon(true);
+    const audioKey = `audio_${sprite.id}`;
 
-            audio.onEnded = () => {
-                updateMuteIcon(false);
-            };
+    // Si el audio ya existe y se está reproduciendo, lo detenemos antes de iniciar uno nuevo.
+    if (audioElements[audioKey]) {
+        audioElements[audioKey].stop();
+        delete audioElements[audioKey];
+    }
+
+    const audio = new THREE.Audio(listener); // Usamos THREE.Audio en lugar de THREE.PositionalAudio
+    const audioPath = sprite.userData.audioPath;
+
+    audioLoader.load(audioPath, function(buffer) {
+        audio.setBuffer(buffer);
+        audio.setVolume(3.0);
+        audio.setLoop(false);
+
+        // ⚠️ Aseguramos que el AudioContext esté activo antes de intentar reproducir
+        if (listener.context.state === "suspended") {
+            listener.context.resume().then(() => {
+                console.log("🔊 AudioContext reactivado, reproduciendo...");
+                audio.play();
+            });
+        } else {
+            audio.play();
         }
+
+        // Manejo de errores en reproducción
+        audio.play().then(() => {
+            console.log("✅ Audio reproduciéndose correctamente");
+        }).catch(error => {
+            console.error("⚠ Error al reproducir audio en móvil:", error);
+        });
+
+        audio.onEnded = () => {
+            updateMuteIcon(false);
+            delete audioElements[audioKey];
+        };
+    });
+
+    sprite.add(audio);
+    audioElements[audioKey] = audio;
+    updateMuteIcon(true);
+}
+
+
+        //------------Cerrar audio----------------------------------------
+
+        let lastAudioInteractionTime = 0;
+
+function handleAudioSpriteClick(sprite) {
+    const now = Date.now();
+
+    if (now - lastAudioInteractionTime < 300) {
+        return; // Evita doble clic rápido
+    }
+
+    lastAudioInteractionTime = now;
+
+    const audioKey = `audio_${sprite.id}`;
+    if (audioElements[audioKey] && audioElements[audioKey].isPlaying) {
+        audioElements[audioKey].stop();
+        delete audioElements[audioKey];
+        updateMuteIcon(false);
+    } else {
+        stopAllMedia();
+        playAudio(sprite);
+    }
+}
+        //------------Quitar video y audio-------------------
+
+        function stopAllMedia() {
+            if (videoElement) {
+                closeVideo();
+            }
+
+            for (let key in audioElements) {
+                if (audioElements[key] && audioElements[key].isPlaying) {
+                    audioElements[key].stop();
+                }
+            }
+            updateMuteIcon(false);
+        }        
 
         //-----------Texto para sprites de audio y video---------------------
 
@@ -931,61 +1037,6 @@
             }
         }
 
-        //-------------------Cerrar el video-----------------------------------
-
-        function closeVideo() {
-            if (videoMesh) {
-                currentScene.remove(videoMesh);
-                videoMesh = null;
-            }
-            if (videoElement) {
-                videoElement.pause();
-                videoElement.src = '';
-                videoElement = null;
-                updateMuteIcon(false);
-            }
-        }
-
-        function handleVideoSpriteClick(sprite) {
-            if (videoElement) {
-                if (videoElement.paused) {
-                    openVideo(sprite);
-                } else {
-                    closeVideo();
-                }
-            } else {
-                openVideo(sprite);
-            }
-        }
-
-        //------------Cerrar audio----------------------------------------
-
-        function handleAudioSpriteClick(sprite) {
-            const audioKey = `audio_${sprite.id}`;
-            if (audioElements[audioKey] && audioElements[audioKey].isPlaying) {
-                audioElements[audioKey].stop();
-                updateMuteIcon(false);
-            } else {
-                stopAllMedia();
-                playAudio(sprite);
-            }
-        }
-
-        //------------Quitar video y audio-------------------
-
-        function stopAllMedia() {
-            if (videoElement) {
-                closeVideo();
-            }
-
-            for (let key in audioElements) {
-                if (audioElements[key] && audioElements[key].isPlaying) {
-                    audioElements[key].stop();
-                }
-            }
-            updateMuteIcon(false);
-        }
-
         //-----------------Asignar texto a sprites de video y audio---------------------------
 
         function loadInteractiveSprite(scene, sceneIndex) {
@@ -1022,36 +1073,6 @@
                     break;
                 
             }
-        }
-
-        //------------Funciones adicionales para la ventana informativa----------------
-
-        function createInfoSprite(position, label) {
-            const spriteMaterial = new THREE.SpriteMaterial({ map: infoSpriteTexture });
-            const sprite = new THREE.Sprite(spriteMaterial);
-            sprite.position.copy(position);
-            sprite.scale.set(8, 8, 8);
-            sprite.userData = { type: 'info', label: label };
-            sprite.material.depthTest = false;
-            sprite.material.depthWrite = false;
-
-            sprite.onPointerOver = function(event) {
-                sprite.scale.set(11, 11, 11);
-                showTextLabel(sprite);
-                document.body.classList.add('pointer-cursor');
-            };
-
-            sprite.onPointerOut = function() {
-                sprite.scale.set(8, 8, 8);
-                hideTextLabel(sprite);
-                document.body.classList.remove('pointer-cursor');
-            };
-
-            sprite.addEventListener('click', () => {
-                showInfoWindow();
-            });
-
-            return sprite;
         }
 
         //-------------Eventos de click para objetos----------------------------------
@@ -1216,6 +1237,15 @@
             document.getElementById('menu-toggle').addEventListener('click', () => {
                 document.getElementById('menu-content').classList.toggle('show');
             });
+
+            document.addEventListener("touchstart", () => {
+    if (listener.context.state === "suspended") {
+        listener.context.resume().then(() => {
+            console.log("🔊 AudioContext activado en móvil");
+        });
+    }
+}, { passive: false });
+
         }
 
         //---------------Actualizar quitar sonido --------------------------------------------
