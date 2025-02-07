@@ -127,7 +127,7 @@ body, html {
         align-items: center;
         height: 60px; 
         padding: 0px 20px;
-        z-index: 10000;
+        z-index: 9000;
     }
 
     .menu-toggle {
@@ -215,8 +215,10 @@ body, html {
 }
 
 .image-button img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.2); 
 }
+
+
 
 /* Menú hamburguesa */
 .off-screen-menu {
