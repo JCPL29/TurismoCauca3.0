@@ -887,104 +887,70 @@
         //--------------Sprites para audio----------------------------------
 
         function createAudioSprite(position, label, audioPath) {
-    const spriteMaterial = new THREE.SpriteMaterial({ map: audioSpriteTexture });
-    const sprite = new THREE.Sprite(spriteMaterial);
-    sprite.position.copy(position);
-    sprite.scale.set(8, 8, 8);
-    sprite.userData = { type: 'audio', label: label, audioPath: audioPath };
-    sprite.material.depthTest = false;
-    sprite.material.depthWrite = false;
+            const spriteMaterial = new THREE.SpriteMaterial({ map: audioSpriteTexture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(position);
+            sprite.scale.set(8, 8, 8);
+            sprite.userData = { type: 'audio', label: label, audioPath: audioPath };
+            sprite.material.depthTest = false;
+            sprite.material.depthWrite = false;
 
-    sprite.onPointerOver = function(event) {
-        sprite.scale.set(11, 11, 11);
-        showTextLabel(sprite);
-        document.body.classList.add('pointer-cursor');
-    };
+            sprite.onPointerOver = function(event) {
+                sprite.scale.set(11, 11, 11);
+                showTextLabel(sprite);
+                document.body.classList.add('pointer-cursor');
+            };
 
-    sprite.onPointerOut = function() {
-        sprite.scale.set(8, 8, 8);
-        hideTextLabel(sprite);
-        document.body.classList.remove('pointer-cursor');
-    };
+            sprite.onPointerOut = function() {
+                sprite.scale.set(8, 8, 8);
+                hideTextLabel(sprite);
+                document.body.classList.remove('pointer-cursor');
+            };
 
-    sprite.addEventListener("click", () => handleAudioSpriteClick(sprite));
-    sprite.addEventListener("touchstart", () => handleAudioSpriteClick(sprite), { passive: false });
+            sprite.addEventListener('click', () => {
+                handleAudioSpriteClick(sprite);
+            });
 
-    return sprite;
-}
-
+            return sprite;
+        }
 
         //--------------------Crear audio-------------------------
 
         function playAudio(sprite) {
-    const audioKey = `audio_${sprite.id}`;
-
-    // Si el audio ya existe y se está reproduciendo, lo detenemos antes de iniciar uno nuevo.
-    if (audioElements[audioKey]) {
-        audioElements[audioKey].stop();
-        delete audioElements[audioKey];
-    }
-
-    const audio = new THREE.Audio(listener); // Usamos THREE.Audio en lugar de THREE.PositionalAudio
-    const audioPath = sprite.userData.audioPath;
-
-    audioLoader.load(audioPath, function(buffer) {
-        audio.setBuffer(buffer);
-        audio.setVolume(3.0);
-        audio.setLoop(false);
-
-        // ⚠️ Aseguramos que el AudioContext esté activo antes de intentar reproducir
-        if (listener.context.state === "suspended") {
-            listener.context.resume().then(() => {
-                console.log("🔊 AudioContext reactivado, reproduciendo...");
+            const audio = new THREE.PositionalAudio(listener);
+            const audioPath = sprite.userData.audioPath;
+            audioLoader.load(audioPath, function(buffer) {
+                audio.setBuffer(buffer);
+                audio.setRefDistance(20);
+                audio.setVolume(3.0); 
                 audio.play();
+                audio.onEnded = () => {
+                    audioElements[`audio_${sprite.id}`] = null;
+                    updateMuteIcon(false);
+                };
             });
-        } else {
-            audio.play();
+            sprite.add(audio);
+            audioElements[`audio_${sprite.id}`] = audio;
+            updateMuteIcon(true);
+
+            audio.onEnded = () => {
+                updateMuteIcon(false);
+            };
         }
-
-        // Manejo de errores en reproducción
-        audio.play().then(() => {
-            console.log("✅ Audio reproduciéndose correctamente");
-        }).catch(error => {
-            console.error("⚠ Error al reproducir audio en móvil:", error);
-        });
-
-        audio.onEnded = () => {
-            updateMuteIcon(false);
-            delete audioElements[audioKey];
-        };
-    });
-
-    sprite.add(audio);
-    audioElements[audioKey] = audio;
-    updateMuteIcon(true);
-}
-
 
         //------------Cerrar audio----------------------------------------
 
-        let lastAudioInteractionTime = 0;
+        function handleAudioSpriteClick(sprite) {
+            const audioKey = `audio_${sprite.id}`;
+            if (audioElements[audioKey] && audioElements[audioKey].isPlaying) {
+                audioElements[audioKey].stop();
+                updateMuteIcon(false);
+            } else {
+                stopAllMedia();
+                playAudio(sprite);
+            }
+        }
 
-function handleAudioSpriteClick(sprite) {
-    const now = Date.now();
-
-    if (now - lastAudioInteractionTime < 300) {
-        return; // Evita doble clic rápido
-    }
-
-    lastAudioInteractionTime = now;
-
-    const audioKey = `audio_${sprite.id}`;
-    if (audioElements[audioKey] && audioElements[audioKey].isPlaying) {
-        audioElements[audioKey].stop();
-        delete audioElements[audioKey];
-        updateMuteIcon(false);
-    } else {
-        stopAllMedia();
-        playAudio(sprite);
-    }
-}
         //------------Quitar video y audio-------------------
 
         function stopAllMedia() {
@@ -998,7 +964,7 @@ function handleAudioSpriteClick(sprite) {
                 }
             }
             updateMuteIcon(false);
-        }        
+        }
 
         //-----------Texto para sprites de audio y video---------------------
 
