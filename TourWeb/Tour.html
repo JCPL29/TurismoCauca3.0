@@ -264,6 +264,8 @@
             //changeScene(0);
             animate();
             animate1();
+
+
             fetchWeatherData();
             
         }
@@ -287,7 +289,7 @@
             } else {
                 let texturePath;
                 switch (sceneIndex) {
-                    case 0: texturePath = 'Popayan/Torrelimpia.jpg'; break;
+                    case 0: texturePath = 'Popayan/TorreLimpia.jpg'; break;
                     case 1: texturePath = 'Popayan/2.jpg'; break;
                     case 2: texturePath = 'Popayan/4.jpg'; break;
                     case 3: texturePath = 'Popayan/MorroLimpia.jpg'; break;
@@ -445,63 +447,60 @@
         //----------Cambiar escena con animación de zoom----------------
 
         function changeScene(targetSceneIndex) {
-            if (currentSceneIndex === targetSceneIndex) {
-                return;
-            }
+    if (currentSceneIndex === targetSceneIndex) {
+        return;
+    }
 
-            if (currentScene) {
-                stopAllMedia();
+    if (currentScene) {
+        stopAllMedia();
 
-                gsap.to(camera, {
-                    zoom: MAX_ZOOM,
-                    duration: 1.5,
-                    onUpdate: function () {
-                        camera.updateProjectionMatrix();
-                    },
-                    onComplete: function () {
-                        loadScene(targetSceneIndex, (scene) => {
-                            currentSceneIndex = targetSceneIndex;
-                            currentScene = scene;
-
-                            loadModels(scene, currentSceneIndex);
-
-                            gsap.to(camera, {
-                                zoom: 1,
-                                duration: 1.5,
-                                onUpdate: function () {
-                                    camera.updateProjectionMatrix();
-                                }
-                            });
-
-                            const region = sceneRegions[targetSceneIndex];
-                            if (region) {
-                                const { lat, lon } = regionCoordinates[region];
-                                fetchWeatherData(lat, lon);
-                            }
-                            updateSceneText(targetSceneIndex);
-                            distanceText(targetSceneIndex);
-                            distanceText1(targetSceneIndex);
-                        });
-                    }
-                });
-            } else {
+        gsap.to(camera, {
+            zoom: MAX_ZOOM,
+            duration: 1.5,
+            onUpdate: function () {
+                camera.updateProjectionMatrix();
+            },
+            onComplete: function () {
                 loadScene(targetSceneIndex, (scene) => {
                     currentSceneIndex = targetSceneIndex;
                     currentScene = scene;
 
                     loadModels(scene, currentSceneIndex);
 
-                    const region = sceneRegions[targetSceneIndex];
-                    if (region) {
-                        const { lat, lon } = regionCoordinates[region];
-                        fetchWeatherData(lat, lon);
-                    }
+                    gsap.to(camera, {
+                        zoom: 1,
+                        duration: 1.5,
+                        onUpdate: function () {
+                            camera.updateProjectionMatrix();
+                        }
+                    });
+
+                    // Llamar a la función de clima con el índice de la escena
+                    fetchWeatherData(targetSceneIndex);
+
                     updateSceneText(targetSceneIndex);
                     distanceText(targetSceneIndex);
                     distanceText1(targetSceneIndex);
                 });
             }
-        }
+        });
+    } else {
+        loadScene(targetSceneIndex, (scene) => {
+            currentSceneIndex = targetSceneIndex;
+            currentScene = scene;
+
+            loadModels(scene, currentSceneIndex);
+
+            // Llamar a la función de clima con el índice de la escena
+            fetchWeatherData(targetSceneIndex);
+
+            updateSceneText(targetSceneIndex);
+            distanceText(targetSceneIndex);
+            distanceText1(targetSceneIndex);
+        });
+    }
+}
+
         //----------------Sprites para cambio de escena--------------------
 
         function createArrow(position, targetSceneIndex, label) {
@@ -549,9 +548,9 @@
 
             if (sceneIndex === 0) {
                 //torre del reloj
-                scene.add(createArrow(new THREE.Vector3(59, 22, 65), 6, "Parque Caldas"));
-                scene.add(createArrow(new THREE.Vector3(-43, 1, -80), 5, "Gastronomía"));
-                scene.add(createArrow(new THREE.Vector3(-39, 20, -75), 8, "Museo Negret"));
+                scene.add(createArrow(new THREE.Vector3(59, 22, 57), 6, "Parque Caldas"));
+                scene.add(createArrow(new THREE.Vector3(-30, 1, -85), 5, "Gastronomía"));
+                scene.add(createArrow(new THREE.Vector3(-30, 20, -85), 8, "Museo Negret"));
             } 
             else if (sceneIndex === 1) {
                 //puente del humlladero
@@ -709,7 +708,7 @@
 
         function loadModels(scene, sceneIndex) {
             if (sceneIndex === 0) {  
-                loadModel(scene, './3Dmodels/arrow.glb', { x: -40, y: 3, z: -50 }, 0.7, sceneIndex);
+                loadModel(scene, './3Dmodels/arrow.glb', { x: -35, y: 3, z: -60 }, 0.7, sceneIndex);
             }
         }
 
@@ -1011,7 +1010,7 @@
             let videoPath;
             switch (sceneIndex) {
                 case 0:
-                    position = new THREE.Vector3(-90, 36, 1.7);
+                    position = new THREE.Vector3(-90, 43, 6.5);
                     audioPath = './SoundsPopVR/1.-La-torre-del-reloj.ogg';
                     const audioSprite = createAudioSprite(position, "Torre de Reloj", audioPath);
                     scene.add(audioSprite);    
@@ -1301,13 +1300,26 @@
         };
 
         const errorMessages = {
-            'Popayán': 'Temperatura: 20°C',
-            'Silvia': 'Temperatura: 18°C',
-            'Puracé': 'Temperatura: 16°C',
-            'Tierradentro': 'Temperatura: 18°C'
+            'Popayán': 'Temperatura',
+            'Silvia': 'Temperatura',
+            'Puracé': 'Temperatura',
+            'Tierradentro': 'Temperatura'
+        };
+        const errorDescriptions = {
+            'Popayán': '20°C',
+            'Silvia': '18°C',
+            'Puracé': '16°C',
+            'Tierradentro': '18°C'
         };
 
-        async function fetchWeatherData(lat, lon, region) {
+        async function fetchWeatherData(sceneId) {
+            const region = sceneRegions[sceneId]; // Obtener la región basada en el ID de escena
+            if (!region || !regionCoordinates[region]) {
+                //console.error("Región no válida:", region);
+                return;
+            }
+
+            const { lat, lon } = regionCoordinates[region]; // Obtener coordenadas de la región
             const apiKey = '6bae8b38ab56fc803410a26d94082f88';
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}&lang=es`;
 
@@ -1323,23 +1335,16 @@
                 }
 
                 const temp = Math.round(data.main.temp);
-                let description = data.weather[0].description;
-                description = description.charAt(0).toUpperCase() + description.slice(1);
+                //let description = data.weather[0].description;
+                //description = description.charAt(0).toUpperCase() + description.slice(1);
 
-                const now = new Date();
-                let hours = now.getHours();
-                const minutes = now.getMinutes().toString().padStart(2, '0');
-                const ampm = hours >= 12 ? 'PM' : 'AM';
-                hours = hours % 12;
-                hours = hours ? hours : 12;
-                const time = hours.toString().padStart(2, '0') + ':' + minutes + ' ' + ampm;
-
-                document.getElementById('weather-data').textContent = `${time}: ${temp}°C`;
-                document.getElementById('weather-description').textContent = description;
-            } catch (error) {
+                document.getElementById('weather-data').textContent = 'Temperatura';
+                document.getElementById('weather-description').textContent = `${temp}°C`/*description*/;
+            } 
+            catch (error) {
                 console.error(error);
-                document.getElementById('weather-data').textContent = errorMessages[region] || 'Error obteniendo el clima.';
-                document.getElementById('weather-description').textContent = '';
+                document.getElementById('weather-data').textContent = errorMessages[region] || 'Temperatura';
+                document.getElementById('weather-description').textContent = errorDescriptions[region] || '18°C';
             }
         }
 
