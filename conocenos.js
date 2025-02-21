@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const basePath = window.location.origin + "/TurismoCauca3.0/IMAGES/";
+  const basePath = "/IMAGES/";
 
   const images = [
     `url("${basePath}POPAYAN/torre.JPEG")`,
