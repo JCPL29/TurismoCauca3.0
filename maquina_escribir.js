@@ -1,9 +1,9 @@
 const words = ["Popayán", "Silvia", "Purace", "Tierradentro"];
 const images = {
-  "Popayán": "../IMAGES/parque.JPEG",
-  "Silvia": "../IMAGES/silvia.jpg",
-  "Purace": "../IMAGES/purace4.jpg",
-  "Tierradentro": "../IMAGES/tierradentro5.jpg"
+  "Popayán": "../IMAGES/POPAYAN/arquitectura1.JPEG",
+  "Silvia": "../IMAGES/SILVIA/cultura-vestidos.JPEG",
+  "Purace": "../IMAGES/PURACE/termales5.JPEG",
+  "Tierradentro": "../IMAGES/TIERRADENTRO/Segovia.JPEG"
 };
 const typewriterElement = document.getElementById('typewriter');
 typewriterElement.className = 'typewriter'; // Añadir la clase para el estilo

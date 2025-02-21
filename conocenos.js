@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `url("${basePath}POPAYAN/torre.JPEG")`,
     `url("${basePath}SILVIA/principal.JPEG")`,
     `url("${basePath}PURACE/condor1.JPEG")`,
-    `url("${basePath}TIERRADENTRO/hipogeo2.JPEG")`
+    `url("${basePath}TIERRADENTRO/Hipogeo4.JPEG")`
   ];
   
     const gradients = [
