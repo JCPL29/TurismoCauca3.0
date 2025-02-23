@@ -15,26 +15,31 @@
     <div class="contact-buttons">
         <div class="contact-button" id="generalButton">
             <img src="./ICONS/client.svg" class="icon__general">
+            <span class="tooltip">¡Contáctanos!</span>
         </div>
         <div class="contact-button hidden" id="whatsappButton">
             <a href="https://api.whatsapp.com/send?phone=3147966959&text=Me encantaría conocer el Cauca!" target="_blank">
                 <img src="./ICONS/whatsapp.svg" class="icon_whatsapp">
             </a>
+            <span class="tooltip">(+57) 3147966959</span>
         </div>
         <div class="contact-button hidden" id="phoneButton">
             <a href="https://www.facebook.com/ViajesSinLimitesPopayan/" target="_blank">
                 <img src="./ICONS/facebook.svg" class="icon__facebook">
             </a>
+            <span class="tooltip">Viajes Sin Limites Popayan</span>
         </div>
         <div class="contact-button hidden" id="InstaButton">
             <a href="https://www.instagram.com/viajessinlimitespopayan/" target="_blank">
                 <img src="./ICONS/instagram.svg" class="icon__instagram">
             </a>
+            <span class="tooltip">@viajessinlimitespopayan</span>
         </div>
         <div class="contact-button hidden" id="emailButton">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gerencia@sinlimitesturismo.com" target="_blank">
                 <img src="./ICONS/email.svg" class="icon__email">
             </a>
+            <span class="tooltip">gerencia@sinlimitesturismo.com</span>
         </div>
     </div>
     <!---------------------------------------- Barra de navegación --------------------------------------------->
@@ -1597,22 +1602,25 @@
     <script src="more-detalis.js"></script>
     <!-------------------------------------- Boton contactos ---------------------------------------->
     <script>
-        document.getElementById('generalButton').addEventListener('click', function() {
-        const buttons = document.querySelectorAll('.contact-button.hidden, .contact-button.visible');
 
-        buttons.forEach(button => {
-            if (button !== document.getElementById('generalButton')) {
-                if (button.classList.contains('visible')) {
-                    button.classList.remove('visible');
-                    button.classList.add('hidden');
-                } else {
-                    button.classList.remove('hidden');
-                    button.classList.add('visible');
-                }
-                button.classList.add('transition');
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            const generalButton = document.getElementById('generalButton');
+            const buttons = document.querySelectorAll('.contact-button.hidden');
+
+            generalButton.addEventListener('click', function () {
+                buttons.forEach(button => {
+                    button.classList.toggle('visible');
+                    button.classList.toggle('hidden');
+                    button.classList.add('transition');
+                });
+            });
         });
-        });
+
+        
+
+
+
+
     </script>
 </body>
 </html>

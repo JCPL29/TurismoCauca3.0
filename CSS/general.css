@@ -120,42 +120,63 @@ footer p{
     bottom: 30px;
     right: 30px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .contact-button {
     width: 50px;
     height: 50px;
     background: #0832A2;
-    border-radius: 50px;
-    text-align: center;
-    line-height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
 }
-
 .contact-button img {
     width: 30px;
     height: 30px;
+    transition: transform 0.3s ease;
 }
 
 .contact-button:hover {
     transform: scale(1.2);
 }
-
 .hidden {
     display: none;
 }
-
 .contact-button.hidden {
     opacity: 0;
-    transform: translateY(20px); /* Ajusta el desplazamiento vertical según sea necesario */
+    transform: translateY(20px);
 }
-
 .contact-button.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
 .contact-button.transition {
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.tooltip {
+    position: absolute;
+    background-color: white;
+    color: #0832A2;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+    top: 25px;
+    right: calc(100% + 5px); 
+    transform: translateY(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: right; 
+}
+.contact-button:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
