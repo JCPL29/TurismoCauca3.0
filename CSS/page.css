@@ -663,13 +663,23 @@ body{
     z-index: 2;
     text-align: center;
   }
-  .sin-limites img{
-    height: 250px;
+  .sin-limites p{
+    color: #0832A2;
+    font-size: 20px;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .sin-limites .logo{
+    height: 220px;
+  }
+  .wpp .icon{
+    color: #0832A2;
   }
   .title-agencia{
     color: #0832A2;
     font-size: 50px;
-    margin-top: 3rem;
+    margin-bottom: 1rem;
+    /* margin-top: 1rem; */
   }
   .about{
     display: flex;
@@ -683,6 +693,10 @@ body{
     height: 600px;
   }
 @media (max-width: 768px) {
+    .title-agencia{
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
     .about{
         height: 1200px;
     }
